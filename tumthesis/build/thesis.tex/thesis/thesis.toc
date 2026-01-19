@@ -1,0 +1,24 @@
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}How do I use \LaTeX {} correctly?}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}How do I write titles?}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}How do I cite?}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}How do I include pictures?}{2}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}How do I include subpictures?}{2}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}How do I plot data?}{3}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}How do I create tables?}{3}{section.1.4}%
+\contentsline {section}{\numberline {1.5}How do I correctly write down values and units?}{4}{section.1.5}%
+\contentsline {section}{\numberline {1.6}How do I use acronyms?}{4}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Theses guidelines}{5}{chapter.2}%
+\contentsline {chapter}{\numberline {A}Appendix}{7}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Appendix section}{7}{section.A.1}%
+\contentsline {section}{\numberline {A.2}List of acronyms}{8}{section.A.2}%
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Bibliography}{9}{appendix*.10}%

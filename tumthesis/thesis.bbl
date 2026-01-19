@@ -1,0 +1,440 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global/global}
+  \entry{yang2014embedding}{article}{}{}
+    \name{author}{5}{}{%
+      {{hash=YB}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Bishan},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=YWt}{%
+         family={Yih},
+         familyi={Y\bibinitperiod},
+         given={Wen-tau},
+         giveni={W\bibinithyphendelim t\bibinitperiod},
+      }}%
+      {{hash=HX}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Xiaodong},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Gao},
+         familyi={G\bibinitperiod},
+         given={Jianfeng},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=DL}{%
+         family={Deng},
+         familyi={D\bibinitperiod},
+         given={Li},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{YB+1}
+    \strng{fullhash}{YBYWtHXGJDL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Embedding entities and relations for learning and inference in knowledge bases}
+    \field{journaltitle}{arXiv preprint arXiv:1412.6575}
+    \field{year}{2014}
+  \endentry
+
+  \entry{schlichtkrull2017modelingrelationaldatagraph}{misc}{}{}
+    \name{author}{6}{}{%
+      {{hash=SM}{%
+         family={Schlichtkrull},
+         familyi={S\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=KTN}{%
+         family={Kipf},
+         familyi={K\bibinitperiod},
+         given={Thomas\bibnamedelima N.},
+         giveni={T\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=BP}{%
+         family={Bloem},
+         familyi={B\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=vdBR}{%
+         prefix={van\bibnamedelima den},
+         prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod},
+         family={Berg},
+         familyi={B\bibinitperiod},
+         given={Rianne},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=TI}{%
+         family={Titov},
+         familyi={T\bibinitperiod},
+         given={Ivan},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=WM}{%
+         family={Welling},
+         familyi={W\bibinitperiod},
+         given={Max},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SM+1}
+    \strng{fullhash}{SMKTNBPBRvdTIWM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 1703.06103
+    \endverb
+    \field{title}{Modeling Relational Data with Graph Convolutional Networks}
+    \verb{url}
+    \verb https://arxiv.org/abs/1703.06103
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{stat.ML}
+    \field{year}{2017}
+  \endentry
+
+  \entry{rong2019dropedge}{article}{}{}
+    \name{author}{4}{}{%
+      {{hash=RY}{%
+         family={Rong},
+         familyi={R\bibinitperiod},
+         given={Yu},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=HW}{%
+         family={Huang},
+         familyi={H\bibinitperiod},
+         given={Wenbing},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=XT}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Tingyang},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Huang},
+         familyi={H\bibinitperiod},
+         given={Junzhou},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RY+1}
+    \strng{fullhash}{RYHWXTHJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Dropedge: Towards deep graph convolutional networks on node classification}
+    \field{journaltitle}{arXiv preprint arXiv:1907.10903}
+    \field{year}{2019}
+  \endentry
+
+  \entry{szegedy2016rethinking}{inproceedings}{}{}
+    \name{author}{5}{}{%
+      {{hash=SC}{%
+         family={Szegedy},
+         familyi={S\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=VV}{%
+         family={Vanhoucke},
+         familyi={V\bibinitperiod},
+         given={Vincent},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=IS}{%
+         family={Ioffe},
+         familyi={I\bibinitperiod},
+         given={Sergey},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Shlens},
+         familyi={S\bibinitperiod},
+         given={Jon},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=WZ}{%
+         family={Wojna},
+         familyi={W\bibinitperiod},
+         given={Zbigniew},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SC+1}
+    \strng{fullhash}{SCVVISSJWZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the IEEE conference on computer vision and pattern recognition}
+    \field{pages}{2818\bibrangedash 2826}
+    \field{title}{Rethinking the inception architecture for computer vision}
+    \field{year}{2016}
+  \endentry
+
+  \entry{gal2016dropoutbayesianapproximationrepresenting}{misc}{}{}
+    \name{author}{2}{}{%
+      {{hash=GY}{%
+         family={Gal},
+         familyi={G\bibinitperiod},
+         given={Yarin},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=GZ}{%
+         family={Ghahramani},
+         familyi={G\bibinitperiod},
+         given={Zoubin},
+         giveni={Z\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GYGZ1}
+    \strng{fullhash}{GYGZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 1506.02142
+    \endverb
+    \field{title}{Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning}
+    \verb{url}
+    \verb https://arxiv.org/abs/1506.02142
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{stat.ML}
+    \field{year}{2016}
+  \endentry
+
+  \entry{lakshminarayanan2017simplescalablepredictiveuncertainty}{misc}{}{}
+    \name{author}{3}{}{%
+      {{hash=LB}{%
+         family={Lakshminarayanan},
+         familyi={L\bibinitperiod},
+         given={Balaji},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Pritzel},
+         familyi={P\bibinitperiod},
+         given={Alexander},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BC}{%
+         family={Blundell},
+         familyi={B\bibinitperiod},
+         given={Charles},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LB+1}
+    \strng{fullhash}{LBPABC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 1612.01474
+    \endverb
+    \field{title}{Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles}
+    \verb{url}
+    \verb https://arxiv.org/abs/1612.01474
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{stat.ML}
+    \field{year}{2017}
+  \endentry
+
+  \entry{tomani2022parameterizedtemperaturescalingboosting}{misc}{}{}
+    \name{author}{3}{}{%
+      {{hash=TC}{%
+         family={Tomani},
+         familyi={T\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=CD}{%
+         family={Cremers},
+         familyi={C\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BF}{%
+         family={Buettner},
+         familyi={B\bibinitperiod},
+         given={Florian},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TC+1}
+    \strng{fullhash}{TCCDBF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 2102.12182
+    \endverb
+    \field{title}{Parameterized Temperature Scaling for Boosting the Expressive Power in Post-Hoc Uncertainty Calibration}
+    \verb{url}
+    \verb https://arxiv.org/abs/2102.12182
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.LG}
+    \field{year}{2022}
+  \endentry
+
+  \entry{guo2017calibrationmodernneuralnetworks}{misc}{}{}
+    \name{author}{4}{}{%
+      {{hash=GC}{%
+         family={Guo},
+         familyi={G\bibinitperiod},
+         given={Chuan},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=PG}{%
+         family={Pleiss},
+         familyi={P\bibinitperiod},
+         given={Geoff},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=SY}{%
+         family={Sun},
+         familyi={S\bibinitperiod},
+         given={Yu},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=WKQ}{%
+         family={Weinberger},
+         familyi={W\bibinitperiod},
+         given={Kilian\bibnamedelima Q.},
+         giveni={K\bibinitperiod\bibinitdelim Q\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GC+1}
+    \strng{fullhash}{GCPGSYWKQ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb 1706.04599
+    \endverb
+    \field{title}{On Calibration of Modern Neural Networks}
+    \verb{url}
+    \verb https://arxiv.org/abs/1706.04599
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.LG}
+    \field{year}{2017}
+  \endentry
+
+  \entry{dettmers2018convolutional}{inproceedings}{}{}
+    \name{author}{4}{}{%
+      {{hash=DT}{%
+         family={Dettmers},
+         familyi={D\bibinitperiod},
+         given={Tim},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=MP}{%
+         family={Minervini},
+         familyi={M\bibinitperiod},
+         given={Pasquale},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=SP}{%
+         family={Stenetorp},
+         familyi={S\bibinitperiod},
+         given={Pontus},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=RS}{%
+         family={Riedel},
+         familyi={R\bibinitperiod},
+         given={Sebastian},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DT+1}
+    \strng{fullhash}{DTMPSPRS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the AAAI conference on artificial intelligence}
+    \field{number}{1}
+    \field{title}{Convolutional 2d knowledge graph embeddings}
+    \field{volume}{32}
+    \field{year}{2018}
+  \endentry
+
+  \entry{toutanova2015observed}{inproceedings}{}{}
+    \name{author}{2}{}{%
+      {{hash=TK}{%
+         family={Toutanova},
+         familyi={T\bibinitperiod},
+         given={Kristina},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=CD}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Danqi},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TKCD1}
+    \strng{fullhash}{TKCD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the 3rd workshop on continuous vector space models and their compositionality}
+    \field{pages}{57\bibrangedash 66}
+    \field{title}{Observed versus latent features for knowledge base and text inference}
+    \field{year}{2015}
+  \endentry
+
+  \entry{pujara2017sparsity}{inproceedings}{}{}
+    \name{author}{3}{}{%
+      {{hash=PJ}{%
+         family={Pujara},
+         familyi={P\bibinitperiod},
+         given={Jay},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AE}{%
+         family={Augustine},
+         familyi={A\bibinitperiod},
+         given={Eriq},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=GL}{%
+         family={Getoor},
+         familyi={G\bibinitperiod},
+         given={Lise},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PJ+1}
+    \strng{fullhash}{PJAEGL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Proceedings of the 2017 conference on empirical methods in natural language processing}
+    \field{pages}{1751\bibrangedash 1756}
+    \field{title}{Sparsity and noise: Where knowledge graph embeddings fall short}
+    \field{year}{2017}
+  \endentry
+\enddatalist
+\endinput

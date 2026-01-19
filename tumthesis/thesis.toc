@@ -1,0 +1,71 @@
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Research Objectives}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Thesis Structure}{1}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Related Work}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Graph Convolutional Networks}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Knowledge Graph Embeddings}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Uncertainty Estimation in Neural Networks}{3}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Calibration Techniques}{3}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Approach}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Model Architecture}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Regularisation Techniques}{5}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Uncertainty Estimation}{5}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Monte Carlo Dropout}{5}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Deep Ensembles}{6}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Uncertainty Calibration}{6}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Parameteric Approaches}{6}{subsection.3.4.1}%
+\contentsline {subsubsection}{Parameterised Temperature Scaling (PTS)}{6}{subsubsection*.4}%
+\contentsline {subsection}{\numberline {3.4.2}Non-Parametric Approaches}{6}{subsection.3.4.2}%
+\contentsline {subsubsection}{Scalar Temperature Scaling}{6}{subsubsection*.5}%
+\contentsline {subsubsection}{Isotonic Regression}{6}{subsubsection*.6}%
+\contentsline {chapter}{\numberline {4}Dataset}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Dataset Properties}{7}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Sparsity Analysis}{7}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Experiment}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Experimental Setup}{10}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Link Prediction metrics (OPTIONAL)}{10}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Mean Rank}{10}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Mean Reciprocal Rank}{10}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Hits@K}{10}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Uncertainty Estimation metrics (USEFUL)}{10}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Expected Calibration Error (ECE)}{10}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Adaptive Calibration Error (ACE)}{10}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Brier Score}{10}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5.3.4}Reliability Diagram}{10}{subsection.5.3.4}%
+\contentsline {section}{\numberline {5.4}Calibration Level}{10}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Model Level Calibration}{10}{subsection.5.4.1}%
+\contentsline {subsubsection}{Negative Sampling}{10}{subsubsection*.7}%
+\contentsline {subsubsection}{Edge Dropout}{10}{subsubsection*.8}%
+\contentsline {subsubsection}{Label Smoothning}{10}{subsubsection*.9}%
+\contentsline {subsection}{\numberline {5.4.2}Ensemble Level Calibration}{10}{subsection.5.4.2}%
+\contentsline {subsubsection}{Monte Carlo Dropout}{10}{subsubsection*.10}%
+\contentsline {subsubsection}{Deep Ensembles}{10}{subsubsection*.11}%
+\contentsline {subsection}{\numberline {5.4.3}Calibration Techniques}{10}{subsection.5.4.3}%
+\contentsline {subsubsection}{Parameteric Approaches}{10}{subsubsection*.12}%
+\contentsline {paragraph}{Parameterised Temperature Scaling (PTS)}{10}{paragraph*.13}%
+\contentsline {subsubsection}{Non-Parametric Approaches}{11}{subsubsection*.14}%
+\contentsline {paragraph}{Scalar Temperature Scaling}{11}{paragraph*.15}%
+\contentsline {paragraph}{Isotonic Regression}{11}{paragraph*.16}%
+\contentsline {chapter}{\numberline {6}Results}{13}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Performance Evaluation}{13}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Calibration Analysis}{13}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Monte Carlo Dropout}{13}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Deep Ensembles}{13}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Difference in Dataset Characteristics}{13}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Summary}{13}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Discussion}{15}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Summary of Findings}{15}{section.7.1}%
+\contentsline {chapter}{\numberline {8}Conclusion and Future Work}{17}{chapter.8}%
+\contentsline {chapter}{\numberline {A}Appendix}{19}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Appendix section}{19}{section.A.1}%
+\contentsline {section}{\numberline {A.2}List of acronyms}{20}{section.A.2}%
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{Bibliography}{21}{appendix*.17}%

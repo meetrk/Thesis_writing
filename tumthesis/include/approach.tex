@@ -1,0 +1,68 @@
+\chapter{Approach}
+\label{chap:approach}
+
+In this chapter, We describe how we have designed and organized our approach to 
+
+
+\section{Model Architecture}
+\label{sec:model_architecture}
+
+\begin{itemize}
+    \item Encoder - Relation Graph Convolutional Network (R-GCN) 
+    \item Decoder - Knowledge Graph Embedding (KGE) - Dismult \cite{yang2014embedding}
+    \item Autoencoder Approach for link prediction\cite{schlichtkrull2017modelingrelationaldatagraph}
+\end{itemize}
+
+\section{Regularisation Techniques}
+\label{sec:regularisation_techniques}
+
+\itemize
+    \item add mathematical description of eaach technique
+    \item Negative Sampling - negative edges are sampled using simple random sampling on number of entities. 
+    \item Edge Dropout - dropping edges during message passing and loss is computed on all train edges. \cite{rong2019dropedge}
+    \item Label Smoothing - adding noise to one-hot encoded labels.\cite{szegedy2016rethinking}
+\enditemize
+
+
+\section{Uncertainty Estimation}
+\label{sec:uncertainty_estimation}
+
+\subsection{Monte Carlo Dropout}
+\label{subsec:monte_carlo_dropout}
+
+\begin{itemize}
+    \item having dropout after every layer in R-GCN\cite{gal2016dropoutbayesianapproximationrepresenting}
+    \item during inference, perform T stochastic forward passes with dropout enabled
+\end{itemize}
+
+
+\subsection{Deep Ensembles}
+\label{subsec:deep_ensembles}
+
+\begin{itemize}
+    \item training M models with different random initialisations\cite{lakshminarayanan2017simplescalablepredictiveuncertainty}
+    \item during inference, perform prediction with all M models and aggregate results
+\end{itemize}
+
+
+\section{Uncertainty Calibration}
+\label{sec:uncertainty_calibration}
+
+\subsection{Parameteric Approaches}
+\label{subsec:parametric_approaches}
+
+\subsubsection{Parameterised Temperature Scaling (PTS)}
+\label{subsubsec:parameterised_temperature_scaling}
+using neural network for input based temperature scaling. \cite{tomani2022parameterizedtemperaturescalingboosting}
+
+\subsection{Non-Parametric Approaches}
+\label{subsec:non_parametric_approaches}
+
+\subsubsection{Scalar Temperature Scaling}
+\label{subsubsec:scalar_temperature_scaling}
+Using a scalar value for scaling the probabilities of the neural network\cite{guo2017calibrationmodernneuralnetworks}
+
+\subsubsection{Isotonic Regression}
+\label{subsubsec:isotonic_regression}
+Using regression to fit the probability according to probabilities\cite{guo2017calibrationmodernneuralnetworks}
+
