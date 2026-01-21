@@ -1,34 +1,121 @@
 \chapter{Approach}
 \label{chap:approach}
 
-In this chapter, We describe how we have designed and organized our approach to 
+In this chapter, We provide overview of our architecture and techniques used in Knowledge graph link prediction. In the first part, we will focus on task of link prediction by used architecture and regularisation techniques. Later in the second part of the chapter we will focus on the uncertainty estimation, by using different ensemble techniques, and calibration, by using different calibration techniques. 
 
 
 \section{Model Architecture}
 \label{sec:model_architecture}
 
-\begin{itemize}
-    \item Encoder - Relation Graph Convolutional Network (R-GCN) 
-    \item Decoder - Knowledge Graph Embedding (KGE) - Dismult \cite{yang2014embedding}
-    \item Autoencoder Approach for link prediction\cite{schlichtkrull2017modelingrelationaldatagraph}
-\end{itemize}
+Our model is inspired from Graph Convolutional Networks architecture proposed in (Kipf et al. 2017) \cite{kipf2017semisupervisedclassificationgraphconvolutional}. We implemented extension of GCN called Relational Graph Convolutional Networks (R-GCN) \cite{schlichtkrull2017modelingrelationaldatagraph}. To understand the architecture we need to understand underlying component of GCNs. Let's begin with \text{Message Passing}.
 
-\section{Regularisation Techniques}
-\label{sec:regularisation_techniques}
+\subsection{Message Passing}
+\label{subsec:message_passing}
+ 
+The nature of our dataset is connectivity between entities which forms a network. To leverage our network structure we need to share information between connected nodes. Idea of the message passing comes from this basic intuition. Each node in the graph must be aware about other nodes in the network. As shown in the figure \ref{fig:message_passing} Message passing consists of Three Stages - \textit{1. Message Receiving,} \textit{2. Message Aggregation} and \textit{3. Message Update}. In the first stage, each node receives messages from its connected immediate neighbours. For node \begin{math} u \end{math}, message from each neighbour node \begin{math}v \in N(u)\end{math}. Here message means embedding of the node. As there might be too many neighbours nodes, in the second stage messages are aggregated using a function \begin{math}AGGREGATE\end{math} like sum, mean or max. In the final stage, aggregated message is used to update the current node embedding of the receiving node by passing function \begin{math}UPDATE\end{math}. This can be mathematically represented as follows:
+\begin{align}
+    h_{u}^{(k+1)} &= UPDATE^{(k)} \left( h_{u}^{(k)}, AGGREGATE^{(k)} \left( \{ h_{v}^{(k)}, \forall v \in N(u) \} \right) \right) \label{eq:message_passing} \\
+                  &= UPDATE^{(k)} \left( h_{u}^{(k)}, m_{u}^{(k+1)} \right) \notag
+\end{align}
+
+Where \begin{math}h_{u}^{(k)}\end{math} is the embedding of node \begin{math}u\end{math} at layer \begin{math}k\end{math} and \begin{math}m_{u}^{(k+1)}\end{math} is the aggregated message for node \begin{math}u\end{math} at layer \begin{math}k+1\end{math}. 
+\begin{math}AGGREGATE \end{math} function take input embedding of all neighbour nodes 
+    \begin{math}v \in N(u)\end{math} at layer \begin{math}k\end{math} and aggregates them to form messaage \begin{math}m_{u}^{(k+1)}
+\end{math}. 
+\begin{math}
+    UPDATE\end{math} function takes \begin{math}m_{u}^{(k+1)} \end{math} and combines it with previous node embedding \begin{math} h_{u}^{k-1}\end{math} to produce new node embedding \begin{math} h_{u}^{(k+1)} \end{math}.
+This process happens for all nodes in the graph simultaneously. One iteration of message passing is called a \textit{Message Passing layer}. However, as we know one layer only allows nodes to be aware about their immediate neighbours. This can be extended to multiple layers to allow more distant nodes to share information in one forward pass. First layer where \begin{math} k=0\end{math} is called input layer. Here initial node embeddings can be used. In our case we use one hot encoding as starting information. Final layer \textit{K} is called output layer. Here the embeddings produced can be used for downstream tasks like node classification, link prediction etc. The layers \begin{math} k=1,2,...,K-1\end{math} are called hidden layers. 
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{figures/messagepassing}
+    \caption{Figure representing Message Passing}
+    \label{fig:message_passing}
+\end{figure}
+
+\subsection{Graph Convolutional Network}
+\label{subsec:graph_convolutional_network}
+
+Grpah Convolutional Networks uses message passing framework to learn node embeddings. In GCN, the \begin{math}AGGREGATE\end{math} function is defined as follows:
+\begin{align}
+    m_{u}^{(k+1)} = \sum_{v \in N(u)} \frac{1}{\sqrt{|N(u)|} \sqrt{|N(v)|}} h_{v}^{(k)} \label{eq:gcn_aggregate}
+\end{align} Here the messages are normalized by the degree of the nodes to avoid numerical instabilities. and
+\begin{equation}
+      UPDATE^{(k)}(h,m) = \sigma ( W^{(k)} \cdot  m_{u}^{(k+1)} ) 
+\end{equation}  \cite{kipf2017semisupervisedclassificationgraphconvolutional}. Here \begin{math}W^{(k)}\end{math} is the learnable weight matrix at layer \begin{math}k\end{math}.
+So our function \ref{eq:message_passing} becomes:
+\begin{align}
+    h_{u}^{(k+1)} = \sigma \left( W^{(k)} \cdot \sum_{v \in N(u)} \frac{1}{\sqrt{|N(u)|} \sqrt{|N(v)|}} h_{v}^{(k)} \right) \label{eq:gcn_message_passing}
+\end{align} Until now we discussed GCN which works pretty well on simple graph which have only one type of relation between nodes. However, We are interested in multi-relational graphs where we have multiple types of relations between nodes. This architecture clearly cannot capture multiple relations information as we are sharing single weight matrix \begin{math}W^{(k)}\end{math} for all relations. Now let's see how R-GCN extends GCN to handle multi-relational graphs.
+
+\subsection{Relational Graph Convolutional Network}
+\label{subsec:relational_graph_convolutional_network}
+Relational Graph Convolutional Network extends GCN to handle multi-relational graphs by using different weight matrices for different relations. So for each relation \begin{math}r \in R\end{math} we have a separate weight matrix \begin{math}W_{r}^{(k)}\end{math} at layer \begin{math}k\end{math}. The message passing function becomes:
+\begin{align}
+    h_{u}^{(k+1)} = \sigma \left( \sum_{r \in R} \sum_{v \in N_{r}(u)} \frac{1}{|N_{r}(u)|} W_{r}^{(k)} h_{v}^{(k)} + W_{0}^{(k)} h_{u}^{(k)} \right) \label{eq:rgcn_message_passing}
+\end{align} Here \begin{math}N_{r}(u)\end{math} is the set of neighbour nodes of \begin{math}u\end{math} under relation \begin{math}r\end{math} and \begin{math}W_{0}^{(k)}\end{math} is the weight matrix for self loop. This allows each relation to have its own transformation which helps in capturing the multi-relational information in the graph. By this suite of weight matrices, R-GCN can learn more about importance of each relation seperately. However, in dataset like FB15k-237 we have large number of relations which leads to large number of parameter in the model. To overcome this issue, R-GCN uses 2 techniques - \textit{Basis Decomposition} and \textit{Block Diagonal Decomposition}. In Basis Decomposition, We share a number of basis matrices \begin{math}V_{b}^{(k)}\end{math} where \begin{math}b=1,2,...,B\end{math} and each relation weight matrix is represented as a linear combination of these basis matrices. So we have:
+\begin{align}
+    W_{r}^{(k)} = \sum_{b=1}^{B} a_{rb}^{(k)} V_{b}^{(k)} \label{eq:basis_decomposition}
+\end{align} Here \begin{math}a_{rb}^{(k)}\end{math} are the coefficients for relation \begin{math}r\end{math} and basis \begin{math}b\end{math} at layer \begin{math}k\end{math}. This significantly reduces the number of parameters in the model. In Block Diagonal Decomposition, each relation weight matrix is represented as a block diagonal matrix where each block is a smaller matrix.
+\begin{align}
+    W_{r}^{(k)} = \begin{bmatrix}
+    B_{r1}^{(k)} & 0 & \cdots & 0 \\
+    0 & B_{r2}^{(k)} & \cdots & 0 \\
+    \vdots & \vdots & \ddots & \vdots \\
+    0 & 0 & \cdots & B_{rM}^{(k)}
+    \end{bmatrix}
+ \label{eq:block_diagonal_decomposition}
+\end{align}
+This also helps in reducing the number of parameters while still allowing each relation to have its own transformation. In our implementation we used Basis Decomposition technique.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1\textwidth]{figures/autoencoder}
+	\caption{Figure representing Autoencoder Architecture}
+	\label{fig:autoencoder_architecture}
+\end{figure}
+
+\subsection{Autoencoder}
+\label{subsec:autoencoder}
+In the paper \cite{schlichtkrull2017modelingrelationaldatagraph}, R-GCN is used for mainly for two tasks - \textbf{Node Classification} and \textbf{Link Prediction}. In node classification task, the output node embeddings from R-GCN are directly passed to softmax layer for classification. However, in link prediction task, We need to predict missing edges in the graph which requires a scoring function to determine the plausiblity of the triple. To achieve this we use an autoencoder architecture as shown in figure \ref{fig:autoencoder_architecture}. Here as discussed in subsection \ref{subsec:relational_graph_convolutional_network}, R-GCN acts as an encoder which takes the graph as input and produces node embeddings as output. The encoder maps each enitity \begin{math} e \in \mathbf{E}\end{math} to a node embedding \begin{math}h_{e} \in \mathbb{R}^{d}\ \end{math}. Now we want a function SCORING FUNCTION \begin{math} s: (\mathbb{R}^{d} * \mathbf{R} * \mathbb{R}^{d}) \end{math} These node embeddings are then passed to a decoder whose job is to score the liklihood of a triple. As in the paper, DistMult \cite{yang2014embedding} is used as a decoder scoring function. In DistMult, each relation is represented as a diagonal matrix \begin{math}R_{r}\end{math} and the score for a triple \begin{math}(e_h, r, e_t)\end{math} is computed as:
+\begin{align}
+    f(e_h, r, e_t) = h_{e_h}^{T} R_{r} h_{e_t} \label{eq:distmult_scoring}
+\end{align} Here \begin{math}h_{e_h}\end{math} and \begin{math}h_{e_t}\end{math} are the embeddings of head entity \begin{math}e_h\end{math} and tail entity \begin{math}e_t\end{math} respectively. \begin{math} R_{r} \in \mathbb{R}^{d \times d}\end{math} is the diagonal matrix for relation \begin{math} r
+\end{math}. The score \begin{math}f(e_h, r, e_t)\end{math} indicates the plausibility of the triple. Higher the score, more likely the triple is valid.
+
+\section{Link Prediction}
+\label{sec:link_prediction} 
+
+A graph \begin{math}G=(E,R,T)\end{math} consist of a set of entities \begin{math}E=\{e_1,e_2,...,e_n\}\end{math}, a set of relations \begin{math}R=\{r_1,r_2,...,r_m\}\end{math} and a set of triples \begin{math}T=\{(e_h,r,e_t)|e_h,e_t \in E, r \in R\}\end{math} where \begin{math}e_h\end{math} is head entity, \begin{math}e_t\end{math} is tail entity and \begin{math}r\end{math} is relation between head and tail entity. The task of link prediction is to predict missing triples in the knowledge graph. So we will predict a triple \begin{math}t \notin G\end{math}. We want \begin{math}\operatorname*{arg\,max}_{e_t} P(e_t \mid e_h, r)\end{math} or \begin{math}\operatorname*{arg\,max}_{e_h} P(e_h \mid r, e_t)\end{math}. The score for triple \begin{math}(e_h, r, e_t)\end{math} is computed using scoring function defined in equation \ref{eq:distmult_scoring}.
+
+\subsection{Training}
+\label{subsec:training}
+
+As described in the previous works (Bordes et al. 2013)\cite{bordes_translating_2013}, We trained our model using negative sampling. For each positive triple \begin{math}(e_h, r, e_t) \in T\end{math}, we generate \begin{math} \omega \end{math} negative triples by corrupting either head or tail entity. So we have negative triples \begin{math}(e_h', r, e_t)\end{math} or \begin{math}(e_h, r, e_t')\end{math} where \begin{math}e_h' \in E\end{math} and \begin{math}e_t' \in E\end{math}. We generate true labels \begin{math} y \in \{0,1\}\end{math} by assigning 1 for positive triples and 0 for corrupted negative triples. We optimised the model using cross entropy loss over positive and negative triples. The loss function can be defined as:
+\begin{align}
+    \mathcal{L} = - \sum_{(e_h, r, e_t) \in T} \log \sigma(f(e_h, r, e_t)) - \sum_{(e_h', r, e_t') \in T'} \log (1 - \sigma(f(e_h', r, e_t'))) \label{eq:loss_function}
+\end{align} Here \begin{math}T'\end{math} is the set of negative triples generated using negative sampling and \begin{math}\sigma\end{math} is the sigmoid function.
+
+
+\subsection{Regularisation Techniques}
+\label{subsec:regularisation_techniques}
+
+To prevent over
 
 \itemize
-    \item add mathematical description of eaach technique
     \item Negative Sampling - negative edges are sampled using simple random sampling on number of entities. 
     \item Edge Dropout - dropping edges during message passing and loss is computed on all train edges. \cite{rong2019dropedge}
     \item Label Smoothing - adding noise to one-hot encoded labels.\cite{szegedy2016rethinking}
 \enditemize
 
+\section{Uncertainty}
+\label{uncertainty}
+\subsection{Estimation}
+\label{subsec:uncertainty_estimation}
 
-\section{Uncertainty Estimation}
-\label{sec:uncertainty_estimation}
-
-\subsection{Monte Carlo Dropout}
-\label{subsec:monte_carlo_dropout}
+\subsubsection{Monte Carlo Dropout}
+\label{subsubsec:monte_carlo_dropout}
 
 \begin{itemize}
     \item having dropout after every layer in R-GCN\cite{gal2016dropoutbayesianapproximationrepresenting}
@@ -36,8 +123,8 @@ In this chapter, We describe how we have designed and organized our approach to
 \end{itemize}
 
 
-\subsection{Deep Ensembles}
-\label{subsec:deep_ensembles}
+\subsubsection{Deep Ensembles}
+\label{subsubsec:deep_ensembles}
 
 \begin{itemize}
     \item training M models with different random initialisations\cite{lakshminarayanan2017simplescalablepredictiveuncertainty}
@@ -45,7 +132,7 @@ In this chapter, We describe how we have designed and organized our approach to
 \end{itemize}
 
 
-\section{Uncertainty Calibration}
+\subsection{Calibration}
 \label{sec:uncertainty_calibration}
 
 \subsection{Parameteric Approaches}
