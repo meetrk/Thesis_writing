@@ -122,7 +122,7 @@ Having a hard ground truths \begin{math} y \end{math} like 0s and 1s for positiv
 
 \subsubsection{Dropout}
 \label{subsubsec:dropout}
-Another regularisation technique we used is Dropout proposed by (Srivastava et al. 2014)\cite{srivastava2014dropout}. In Dropout, during training, we randomly drop units from neural network with certain probability \begin{math}p\end{math}. This prevents the units from co-adapting too much and thus improving generalisation. In our implementation, we applied dropout after each R-GCN layer with dropout probability \begin{math}p=0.2\end{math}. During inference, we use the full network without dropping any units. This technique has been used in many different neural network architectures and has shown to be effective. In previous works\cite{xiao2021node},Dropout was used in the same way as we are using. It has been shown to improve accuracy in GCN node classification tasks. However, its effect on uncertainty estimation and calibration in GCNs is not well studied. We will evaluate this technique in our experiments. \ref{fig:pipeline} 
+Another regularisation technique we used is Dropout proposed by (Srivastava et al. 2014)\cite{srivastava2014dropout}. In Dropout, during training, we randomly drop units from neural network with certain probability \begin{math}p\end{math}. This prevents the units from co-adapting too much and thus improving generalisation. In our implementation, we applied dropout after each R-GCN layer with dropout probability \begin{math}p=0.2\end{math}. During inference, we use the full network without dropping any units. This technique has been used in many different neural network architectures and has shown to be effective. In previous works\cite{xiao2021node},Dropout was used in the same way as we are using. It has been shown to improve accuracy in GCN node classification tasks. However, its effect on uncertainty estimation and calibration in GCNs is not well studied. We will evaluate this technique in our experiments.
 
 
 \subsubsection{Batch Normalisation}
@@ -133,14 +133,17 @@ Batch Normalisation is a technique proposed by (Ioffe et al. 2015)\cite{ioffe201
 \section{Uncertainty}
 \label{uncertainty}
 
-In this section, We will discuss techniques to estimate uncertainty in our link prediction model.  
+In this section, We will discuss techniques for uncertainty estimation and calibration. We will explore two different ensemble techniques for uncertainty estimation - Monte Carlo Dropout and Deep Ensembles. We will also explore different calibration techniques for calibrating uncertainty estimates. We will also discuss implementation details of these techniques in our architecture. 
 
-
-\subsection{Estimation}
+\subsection{Uncertainty Estimation}
 \label{subsec:uncertainty_estimation}
+
+As we have discussed in \ref{chap:introduction}, Knowledge Graph Embeddings models are uncalibrated\cite{zhu2023closerlookprobabilitycalibration} \cite{tabacof2019probability}. To tackle this issue, we will use ensemble techniques from Deep learning literature to estimate uncertainty. We have two different uncertainty estimation method - Bayesian Method and Ensemble Method \cite{gawlikowski2023survey}. For Bayesian Method, we will use Monte Carlo Dropout and for Ensemble method, we will use Deep Ensembles. We will implement these techniques in our R-GCN architcture and evaluate their performance on uncertainty estimation. 
 
 \subsubsection{Monte Carlo Dropout}
 \label{subsubsec:monte_carlo_dropout}
+
+Monte Carlo Dropout is a technique proposed by (Gal et al. 2016)\cite{gal2016dropoutbayesianapproximationrepresenting} to estimate uncertainty in the neural network. It is a method where we use dropout during inference to perform multiple stochastic forward passes through the network. This allows us to obtain a distribution of the model's predictions, which we can use to estimate uncertainty. To estimate uncertainty using Monte Carlo Dropout, we train the model with dropout enabled. During inference, We perform M stochastic forward passes through the network with dropout enabled. 
 
 \begin{itemize}
     \item having dropout after every layer in R-GCN\cite{gal2016dropoutbayesianapproximationrepresenting}
