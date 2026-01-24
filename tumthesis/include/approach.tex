@@ -143,16 +143,18 @@ As we have discussed in \ref{chap:introduction}, Knowledge Graph Embeddings mode
 \subsubsection{Monte Carlo Dropout}
 \label{subsubsec:monte_carlo_dropout}
 
-Monte Carlo Dropout is a technique proposed by (Gal et al. 2016)\cite{gal2016dropoutbayesianapproximationrepresenting} to estimate uncertainty in the neural network. It is a method where we use dropout during inference to perform multiple stochastic forward passes through the network. This allows us to obtain a distribution of the model's predictions, which we can use to estimate uncertainty. To estimate uncertainty using Monte Carlo Dropout, we train the model with dropout enabled. During inference, We perform M stochastic forward passes through the network with dropout enabled. 
-
-\begin{itemize}
-    \item having dropout after every layer in R-GCN\cite{gal2016dropoutbayesianapproximationrepresenting}
-    \item during inference, perform T stochastic forward passes with dropout enabled
-\end{itemize}
+Monte Carlo Dropout is a technique proposed by (Gal et al. 2016)\cite{gal2016dropoutbayesianapproximationrepresenting} to estimate uncertainty in the neural network. It is a method where we use dropout during inference to perform multiple stochastic forward passes through the network. This allows us to obtain a distribution of the model's predictions, which we can use to estimate uncertainty. To estimate uncertainty using Monte Carlo Dropout, we train the model with dropout enabled. During inference, We perform M stochastic forward passes through the network with dropout enabled. This gives us M different probability distributions for our triple. \begin{align} p(y \mid ( e_h, r, e_t), D) \approx \frac{1}{M} \sum_{i=1}^{M} p(y \mid ( e_h, r, e_t), w_i)  \label{eq:monte_carlo} \end{align} Here \begin{math} p(y \mid ( e_h, r, e_t), D)\end{math} is Predictive Posterior where \begin{math}D\end{math} is training data and \begin{math} w_i \end{math} are the weights sampled from the dropout distribution. In our implementation, we applied sigmoid to convert the scores obtained from equation \ref{eq:distmult_scoring} to form \begin{math} p(y \mid ( e_h, r, e_t), w_i) \end{math} . We use the mean and variance of these M predictions to get the final prediction and uncertainty estimate: \begin{align}
+    \hat{y} &= \frac{1}{M} \sum_{i=1}^{M} p(y \mid ( e_h, r, e_t), w_i) \label{eq:mc_mean} \\
+    \text{Uncertainty} &= \frac{1}{M} \sum_{i=1}^{M} \left( p(y \mid ( e_h, r, e_t), w_i) - \hat{y} \right)^2 \label{eq:mc_uncertainty}
+\end{align}
 
 
 \subsubsection{Deep Ensembles}
 \label{subsubsec:deep_ensembles}
+
+
+
+
 
 \begin{itemize}
     \item training M models with different random initialisations\cite{lakshminarayanan2017simplescalablepredictiveuncertainty}
