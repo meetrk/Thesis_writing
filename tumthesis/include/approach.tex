@@ -70,10 +70,10 @@ Relational Graph Convolutional Network extends GCN to handle multi-relational gr
 This also helps in reducing the number of parameters while still allowing each relation to have its own transformation. In our implementation we used Basis Decomposition technique.
 
 \begin{figure}
-	\centering
-	\includegraphics[width=1\textwidth]{figures/autoencoder}
-	\caption{Figure representing Autoencoder Architecture}
-	\label{fig:autoencoder_architecture}
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/autoencoder}
+    \caption{Figure representing Autoencoder Architecture}
+    \label{fig:autoencoder_architecture}
 \end{figure}
 
 \subsection{Autoencoder}
@@ -95,22 +95,47 @@ A graph \begin{math}G=(E,R,T)\end{math} consist of a set of entities \begin{math
 As described in the previous works (Bordes et al. 2013)\cite{bordes_translating_2013}, We trained our model using negative sampling. For each positive triple \begin{math}(e_h, r, e_t) \in T\end{math}, we generate \begin{math} \omega \end{math} negative triples by corrupting either head or tail entity. So we have negative triples \begin{math}(e_h', r, e_t)\end{math} or \begin{math}(e_h, r, e_t')\end{math} where \begin{math}e_h' \in E\end{math} and \begin{math}e_t' \in E\end{math}. We generate true labels \begin{math} y \in \{0,1\}\end{math} by assigning 1 for positive triples and 0 for corrupted negative triples. We optimised the model using cross entropy loss over positive and negative triples. The loss function can be defined as:
 \begin{align}
     \mathcal{L} = - \sum_{(e_h, r, e_t) \in T} \log \sigma(f(e_h, r, e_t)) - \sum_{(e_h', r, e_t') \in T'} \log (1 - \sigma(f(e_h', r, e_t'))) \label{eq:loss_function}
-\end{align} Here \begin{math}T'\end{math} is the set of negative triples generated using negative sampling and \begin{math}\sigma\end{math} is the sigmoid function.
+\end{align} Here \begin{math}T'\end{math} is the set of negative triples generated using negative sampling and \begin{math}\sigma\end{math} is the sigmoid function. We are using negative sampling to train model to distinguish between valid and invalid triples in the knowledge graph. Figure \ref{fig:pipeline} shows the complete pipeline of our approach for link prediction task. 
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/pipeline}
+    \caption{Figure representing Autoencoder Architecture}
+    \label{fig:pipeline}
+\end{figure}
 
 \subsection{Regularisation Techniques}
 \label{subsec:regularisation_techniques}
 
-To prevent over
+Issue of overfitting and oversmoothing is prevalent in GCNs \cite{rong2019dropedge}. Overfitting occurs when the model learns to fit the training data too closely and fails to generalise on unseen data. Oversmoothing occurs when node embeddings becomes too similar to each other and converges to a stationary point when we increase number of layers in GCN. We are also interested in the effect of this techniques on uncertainty estimation and calibration. We will used following techniques and evaluate both performance and uncertainty estimation. 
 
-\itemize
-    \item Negative Sampling - negative edges are sampled using simple random sampling on number of entities. 
-    \item Edge Dropout - dropping edges during message passing and loss is computed on all train edges. \cite{rong2019dropedge}
-    \item Label Smoothing - adding noise to one-hot encoded labels.\cite{szegedy2016rethinking}
-\enditemize
+
+\subsubsection{Edge Dropout}
+\label{subsubsec:edge_dropout}
+In the earlier work by (Rong et al. 2019)\cite{rong2019dropedge}, DropEdge technique is proposed to tackle both overfitting and oversmoothing in GCNs. DropEdge involves dropping edges during message passing with certain probability p. So during each training iteration, from our message passing set \begin{math}\mathbf{A}\end{math} we randomly choose edges with probabilities \begin{math}p\end{math} to form set \begin{math}\mathbf{A_{drop}}\end{math}. Then we use \begin{math}\mathbf{A'} = \mathbf{A} - \mathbf{A_{drop}}\end{math} for message passing in equation \ref{eq:rgcn_message_passing}. And we use \begin{math}\mathbf{A}\end{math} for negative sampling and loss computation. This way we are forcing the model to learn absence of the edges during message passing and thus improving geenralisation. 
+\subsubsection{Label Smoothing}
+\label{subsubsec:label_smoothing}
+Having a hard ground truths \begin{math} y \end{math} like 0s and 1s for positive and negative samples can lead to overfitting when using cross entropy loss function\cite{szegedy2016rethinking}. To over come this issue, we can use Label Smoothing Regularisation technique proposed by (Szegedy et al. 2016)\cite{szegedy2016rethinking}. In this technique, we soften the hard label by \begin{math} \epsilon \end{math}. So instead of using labels \begin{math} y \in \{0,1\}\end{math}, we use smoothed labels \begin{math} y_{smooth} \end{math} defined as:
+\begin{align}
+    y_{smooth} = y \cdot (1 - \epsilon) + \frac{\epsilon}{K} \label{eq:label_smoothing}
+\end{align} Here \begin{math}K\end{math} is the number of classes. In our case of link prediction, we have binary classification problem so \begin{math}K=2\end{math}. In our case, we set \begin{math}\epsilon = 0.1\end{math}. So our positive labels becomes 0.95 and negative labels becomes 0.05. This way we are preventing the model from becoming too confident about its predictions and thus improving generalisation.
+
+\subsubsection{Dropout}
+\label{subsubsec:dropout}
+Another regularisation technique we used is Dropout proposed by (Srivastava et al. 2014)\cite{srivastava2014dropout}. In Dropout, during training, we randomly drop units from neural network with certain probability \begin{math}p\end{math}. This prevents the units from co-adapting too much and thus improving generalisation. In our implementation, we applied dropout after each R-GCN layer with dropout probability \begin{math}p=0.2\end{math}. During inference, we use the full network without dropping any units. This technique has been used in many different neural network architectures and has shown to be effective. In previous works\cite{xiao2021node},Dropout was used in the same way as we are using. It has been shown to improve accuracy in GCN node classification tasks. However, its effect on uncertainty estimation and calibration in GCNs is not well studied. We will evaluate this technique in our experiments. \ref{fig:pipeline} 
+
+
+\subsubsection{Batch Normalisation}
+\label{subsubsec:batch_normalisation}
+Batch Normalisation is a technique proposed by (Ioffe et al. 2015)\cite{ioffe2015batch} to improve training of deep neural networks. In Batch Normalisation, we normalise the activations of each layer to have zero mean and unit variance. This helps in stabilising the training and allows for higher learning rates. In our implementation, we applied batch normalisation after each R-GCN layer before applying non-linearity. This has been shown to improve accuracy in many different neural network architectures. In the recent work by \cite{luobeyond}, Batch Normalisation was studied in GCNs to observe improvemnt in the performance. However, its effect on uncertainty estoimation and calibration is still not well studied. We will evaluate this technique in our experiments.
+
 
 \section{Uncertainty}
 \label{uncertainty}
+
+In this section, We will discuss techniques to estimate uncertainty in our link prediction model.  
+
+
 \subsection{Estimation}
 \label{subsec:uncertainty_estimation}
 
