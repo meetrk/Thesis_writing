@@ -1,0 +1,87 @@
+%% Creator: Inkscape 1.4.3 (0d15f75, 2025-12-25), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'autoencoder_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{496.71002197bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.39333815)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{autoencoder_svg-tex.pdf}}%
+    \put(0.98296896,0.3033913){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.35\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{autoencoder_svg-tex.pdf}}%
+    \put(0.98296896,0.25809324){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.17\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{autoencoder_svg-tex.pdf}}%
+    \put(0.98296896,0.21279518){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.12\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{autoencoder_svg-tex.pdf}}%
+    \put(0.98296896,0.16749711){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{0.45}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{autoencoder_svg-tex.pdf}}%
+    \put(0.98296896,0.12219905){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0.04\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{autoencoder_svg-tex.pdf}}%
+    \put(0.39409419,0.18119224){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\textit{RGCN}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{autoencoder_svg-tex.pdf}}%
+    \put(0.69796867,0.18119224){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\textit{DistMult}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{autoencoder_svg-tex.pdf}}%
+    \put(0.39598161,0.01509935){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\textit{Input Layer}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{autoencoder_svg-tex.pdf}}%
+    \put(0.69796867,0.01509935){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\textit{Output Layer}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{autoencoder_svg-tex.pdf}}%
+    \put(0.11475616,0.01509935){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\textit{Knowledge graph}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{autoencoder_svg-tex.pdf}}%
+    \put(0.92257155,0.01509935){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{\textit{Link Prediction}}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{autoencoder_svg-tex.pdf}}%
+    \put(0.69759119,0.21592075){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Decoder\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{autoencoder_svg-tex.pdf}}%
+    \put(0.39409419,0.21592075){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Encoder\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{autoencoder_svg-tex.pdf}}%
+    \put(0.54357779,0.20686114){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Z\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{autoencoder_svg-tex.pdf}}%
+    \put(0.54357779,0.34879506){\color[rgb]{1,1,1}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\textbf{Latent Spa...}\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
