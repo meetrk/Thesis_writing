@@ -76,9 +76,9 @@ This also helps in reducing the number of parameters while still allowing each r
     \label{fig:autoencoder_architecture}
 \end{figure}
 
-\subsection{Autoencoder}
-\label{subsec:autoencoder}
-In the paper \cite{schlichtkrull2017modelingrelationaldatagraph}, R-GCN is used for mainly for two tasks - \textbf{Node Classification} and \textbf{Link Prediction}. In node classification task, the output node embeddings from R-GCN are directly passed to softmax layer for classification. However, in link prediction task, We need to predict missing edges in the graph which requires a scoring function to determine the plausiblity of the triple. To achieve this we use an autoencoder architecture as shown in figure \ref{fig:autoencoder_architecture}. Here as discussed in subsection \ref{subsec:relational_graph_convolutional_network}, R-GCN acts as an encoder which takes the graph as input and produces node embeddings as output. The encoder maps each enitity \begin{math} e \in \mathbf{E}\end{math} to a node embedding \begin{math}h_{e} \in \mathbb{R}^{d}\ \end{math}. Now we want a function SCORING FUNCTION \begin{math} s: (\mathbb{R}^{d} * \mathbf{R} * \mathbb{R}^{d}) \end{math} These node embeddings are then passed to a decoder whose job is to score the liklihood of a triple. As in the paper, DistMult \cite{yang2014embedding} is used as a decoder scoring function. In DistMult, each relation is represented as a diagonal matrix \begin{math}R_{r}\end{math} and the score for a triple \begin{math}(e_h, r, e_t)\end{math} is computed as:
+\subsection{Graph Autoencoder}
+\label{subsec:graph_autoencoder}
+In the paper \cite{schlichtkrull2017modelingrelationaldatagraph}, R-GCN is used for mainly for two tasks - \textbf{Node Classification} and \textbf{Link Prediction}. In node classification task, the output node embeddings from R-GCN are directly passed to softmax layer for classification. However, in link prediction task, We need to predict missing edges in the graph which requires a scoring function to determine the plausiblity of the triple. To achieve this we use Graph Autoencoder architecture as shown in figure \ref{fig:autoencoder_architecture}. Here as discussed in subsection \ref{subsec:relational_graph_convolutional_network}, R-GCN acts as an encoder which takes the graph as input and produces node embeddings as output. The encoder maps each enitity \begin{math} e \in \mathbf{E}\end{math} to a node embedding \begin{math}h_{e} \in \mathbb{R}^{d}\ \end{math}. Now we want a function SCORING FUNCTION \begin{math} s: (\mathbb{R}^{d} * \mathbf{R} * \mathbb{R}^{d}) \end{math} These node embeddings are then passed to a decoder whose job is to score the liklihood of a triple. As in the paper, DistMult \cite{yang2014embedding} is used as a decoder scoring function. In DistMult, each relation is represented as a diagonal matrix \begin{math}R_{r}\end{math} and the score for a triple \begin{math}(e_h, r, e_t)\end{math} is computed as:
 \begin{align}
     f(e_h, r, e_t) = h_{e_h}^{T} R_{r} h_{e_t} \label{eq:distmult_scoring}
 \end{align} Here \begin{math}h_{e_h}\end{math} and \begin{math}h_{e_t}\end{math} are the embeddings of head entity \begin{math}e_h\end{math} and tail entity \begin{math}e_t\end{math} respectively. \begin{math} R_{r} \in \mathbb{R}^{d \times d}\end{math} is the diagonal matrix for relation \begin{math} r
@@ -128,19 +128,14 @@ Another regularisation technique we used is Dropout proposed by (Srivastava et a
 \subsubsection{Batch Normalisation}
 \label{subsubsec:batch_normalisation}
 Batch Normalisation is a technique proposed by (Ioffe et al. 2015)\cite{ioffe2015batch} to improve training of deep neural networks. In Batch Normalisation, we normalise the activations of each layer to have zero mean and unit variance. This helps in stabilising the training and allows for higher learning rates. In our implementation, we applied batch normalisation after each R-GCN layer before applying non-linearity. This has been shown to improve accuracy in many different neural network architectures. In the recent work by \cite{luobeyond}, Batch Normalisation was studied in GCNs to observe improvemnt in the performance. However, its effect on uncertainty estoimation and calibration is still not well studied. We will evaluate this technique in our experiments.
+ 
 
-
-\section{Uncertainty}
-\label{uncertainty}
-
-In this section, We will discuss techniques for uncertainty estimation and calibration. We will explore two different ensemble techniques for uncertainty estimation - Monte Carlo Dropout and Deep Ensembles. We will also explore different calibration techniques for calibrating uncertainty estimates. We will also discuss implementation details of these techniques in our architecture. 
-
-\subsection{Uncertainty Estimation}
+\section{Uncertainty Estimation}
 \label{subsec:uncertainty_estimation}
 
-As we have discussed in \ref{chap:introduction}, Knowledge Graph Embeddings models are uncalibrated\cite{zhu2023closerlookprobabilitycalibration} \cite{tabacof2019probability}. To tackle this issue, we will use ensemble techniques from Deep learning literature to estimate uncertainty. We have two different uncertainty estimation method - Bayesian Method and Ensemble Method \cite{gawlikowski2023survey}. For Bayesian Method, we will use Monte Carlo Dropout and for Ensemble method, we will use Deep Ensembles. We will implement these techniques in our R-GCN architcture and evaluate their performance on uncertainty estimation. 
+As we have discussed in \nameref{chap:introduction}, Knowledge Graph Embeddings models are uncalibrated\cite{zhu2023closerlookprobabilitycalibration} \cite{tabacof2019probability}. To tackle this issue, we will use ensemble techniques from Deep learning literature to estimate uncertainty. We have two different uncertainty estimation method - Bayesian Method and Ensemble Method \cite{gawlikowski2023survey}. For Bayesian Method, we will use Monte Carlo Dropout and for Ensemble method, we will use Deep Ensembles. We will implement these techniques in our R-GCN architcture and evaluate their performance on uncertainty estimation. 
 
-\subsubsection{Monte Carlo Dropout}
+\subsection{Monte Carlo Dropout}
 \label{subsubsec:monte_carlo_dropout}
 
 Monte Carlo Dropout is a technique proposed by (Gal et al. 2016)\cite{gal2016dropoutbayesianapproximationrepresenting} to estimate uncertainty in the neural network. It is a method where we use dropout during inference to perform multiple stochastic forward passes through the network. This allows us to obtain a distribution of the model's predictions, which we can use to estimate uncertainty. To estimate uncertainty using Monte Carlo Dropout, we train the model with dropout enabled. During inference, We perform M stochastic forward passes through the network with dropout enabled. This gives us M different probability distributions for our triple. \begin{align} p(y \mid ( e_h, r, e_t), D) \approx \frac{1}{M} \sum_{i=1}^{M} p(y \mid ( e_h, r, e_t), w_i)  \label{eq:monte_carlo} \end{align} Here \begin{math} p(y \mid ( e_h, r, e_t), D)\end{math} is Predictive Posterior where \begin{math}D\end{math} is training data and \begin{math} w_i \end{math} are the weights sampled from the dropout distribution. In our implementation, we applied sigmoid to convert the scores obtained from equation \ref{eq:distmult_scoring} to form \begin{math} p(y \mid ( e_h, r, e_t), w_i) \end{math}. We use variance of these M predictions to get uncertainty estimate: \begin{align}
@@ -149,7 +144,7 @@ Monte Carlo Dropout is a technique proposed by (Gal et al. 2016)\cite{gal2016dro
 % do we need a diagram here?
 
 
-\subsubsection{Deep Ensembles}
+\subsection{Deep Ensembles}
 \label{subsubsec:deep_ensembles}
 
 Deep Ensemble is a method proposed by (Lakshminarayanan et al.(2017))\cite{lakshminarayanan2017simplescalablepredictiveuncertainty} for estimating predictive uncertainty in deep learning model. The method uses ensemble approach where \begin{math}M\end{math} models are randomly initialised and trained independently on the same dataset. During inference, We perform inference on all \begin{math}M\end{math} models and aggregate the results to obtain final prediction and uncertainty estimate. The paper suggest that Deep Ensemble provides better calibrated predictions as compared to standard single model inference and Monte Carlo Dropout for other Deep Learning architectures. In our implementation, we train \begin{math}M=5\end{math} R-GCN models to test this approach. We use the same architecture and hyperparameters for all models. During inference, we perform prediction with all \begin{math}M\end{math} models and aggregate the results to obtain final prediction. Similar to \nameref{subsubsec:monte_carlo_dropout}, we will perform following steps to obtain final prediction and uncertainty estimate:
@@ -161,7 +156,7 @@ Deep Ensemble is a method proposed by (Lakshminarayanan et al.(2017))\cite{laksh
 \end{itemize}
 
 
-\subsection{Calibration Techniques}
+\section{Calibration Techniques}
 \label{sec:uncertainty_calibration}
 
 In earlier section \nameref{subsec:uncertainty_estimation}, we discussed techniques for uncertainty estimation. However, these techniques are not guaranteed to produce calibrated uncertainty estimates. To tackle the issue of uncalibrated predictions, we will use calibration techniques from Deep Learning literature. We will investigate Post-hoc calibration techniques in which we explore both parameteric and non-parameteric calibration techniques. We will also discuss how we implemented these techniques for our architecture.
@@ -203,3 +198,7 @@ Isotonic Regression is a non-parametric calibration technique proposed by (Zadro
 \end{align} The function \begin{math} g \end{math} is learned by minimising the Mean Squared Error (MSE) between the calibrated probabilities and true labels on the validation set. This method is post-hoc and does not require retraining of the model. Once the function \begin{math} g \end{math} is learned, it can be used to calibrate the predictions on the test set. Isotonic Regression is particularly useful when the miscalibration pattern is complex and cannot be captured by simple parametric methods like Temperature Scaling.
 In our implementation, we used the logits score from equation \ref{eq:distmult_scoring} learned the isotonic function \begin{math} g \end{math} directly on the logits using PAV algorithm on validation set. We then used the learned function to calibrate the predictions on test set. Here we did not applied sigmoid because isotonic regression can work directly on the logits. We used the implementation from scikit-learn library\cite{scikit-learn} for isotonic regression.
 
+
+
+
+% what about the hybrid approaches? We can put that in the experiments setting as we have already expalined the both of them seperately in detail. We 

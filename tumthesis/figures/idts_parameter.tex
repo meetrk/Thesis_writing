@@ -1,0 +1,21 @@
+\documentclass[preview,border=2pt]{standalone}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+\textbf{Layer} & \textbf{Type} & \textbf{Input Shape} & \textbf{Output Shape} \\
+\midrule
+1 & Linear & $2 \times 500_{dim}$ & $500_{dim} / 2$ \\
+2 & ReLU & $500_{dim} / 2$ & $500_{dim} / 2$ \\
+3 & Linear & $500_{dim} / 2$ & 1 \\
+4 & Softplus & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{document}

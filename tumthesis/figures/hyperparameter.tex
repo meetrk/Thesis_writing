@@ -1,0 +1,38 @@
+\documentclass[preview,border=2pt]{standalone}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{tabular}{llr}
+\toprule
+\textbf{Component} & \textbf{Hyperparameter} & \textbf{Value} \\
+\midrule
+\multirow{4}{*}{Encoder (RGCN)} 
+    & Hidden layer size & 500 \\
+    & Embedding dimension & 500 \\
+    & Dropout & 0.2 \\
+    & Number of bases & 5 \\
+\midrule
+\multirow{3}{*}{Decoder (DistMult)} 
+    & $L_2$ penalty & 0.001 \\
+    & Weight gain & False \\
+    & Bias initialization & False \\
+\midrule
+\multirow{4}{*}{Training} 
+    & Epochs & 10,000 \\
+    & Learning rate & 0.01 \\
+    & Weight decay & 0.0001 \\
+    & Evaluation frequency & 100 \\
+\midrule
+\multirow{1}{*}{Sampling} 
+    & Negative sampling ratio & 1 \\
+\midrule
+\multirow{3}{*}{Early Stopping} 
+    & Enabled & True \\
+    & Patience & 10 \\
+    & Delta & 0.001 \\
+\bottomrule
+\end{tabular}
+\end{document}

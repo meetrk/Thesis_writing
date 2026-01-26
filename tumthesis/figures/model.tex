@@ -1,0 +1,34 @@
+\documentclass[preview,border=2pt]{standalone}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{tabular}{llr}
+\toprule
+\textbf{No.} & \textbf{Component} & \textbf{Dimension} \\
+\midrule
+\multirow{1}{*}{1} 
+    & Node Embedding: Initialization  &  $num\_nodes \times 500_{in}$ \\
+\midrule
+\multirow{2}{*}{2} 
+    & RGCN Convolution Layer 1: Input Dimension  &  $500_{in}$ \\
+    & RGCN Convolution Layer 1: Number of Relations  &  $num\_relations * 2$ \\
+    & RGCN Convolution Layer 1: Bases  &  $5$ \\
+    & RGCN Convolution Layer 1: Output Dimension(Hidden)  &  $500_{hidden}$ \\
+\midrule
+\multirow{2}{*}{3} 
+    & RGCN Convolution Layer 2: Input Dimension &  $500_{hidden}$ \\
+    & RGCN Convolution Layer 2: Number of Relations  &  $num\_relations * 2$ \\
+    & RGCN Convolution Layer 2: Bases  &  $5$ \\
+    & RGCN Convolution Layer 2: Output Dimension  &  $500_{out}$ \\
+\midrule
+\multirow{2}{*}{4} 
+    & DistMult: Node Embedding Dimension &  $500_{out}$ \\
+    & DistMult: Relation Embedding Dimension &  $500_{rel}$ \\
+    & DistMult: Number of Relations &  $num\_relations$ \\
+    & DistMult: Output Dimension &  $1$ \\
+\bottomrule
+\end{tabular}
+\end{document}
