@@ -67,7 +67,7 @@ Relational Graph Convolutional Network extends GCN to handle multi-relational gr
     \end{bmatrix}
  \label{eq:block_diagonal_decomposition}
 \end{align}
-This also helps in reducing the number of parameters while still allowing each relation to have its own transformation. In our implementation we used Basis Decomposition technique.
+This also helps in reducing the number of parameters while still allowing each relation to have its own transformation. In our implementation we used Basis Decomposition technique. We will use implementation of R-GCN from PyTorch Geometric library \cite{Fey/etal/2025} \cite{Fey/Lenssen/2019}.
 
 \begin{figure}
     \centering
@@ -143,43 +143,63 @@ As we have discussed in \ref{chap:introduction}, Knowledge Graph Embeddings mode
 \subsubsection{Monte Carlo Dropout}
 \label{subsubsec:monte_carlo_dropout}
 
-Monte Carlo Dropout is a technique proposed by (Gal et al. 2016)\cite{gal2016dropoutbayesianapproximationrepresenting} to estimate uncertainty in the neural network. It is a method where we use dropout during inference to perform multiple stochastic forward passes through the network. This allows us to obtain a distribution of the model's predictions, which we can use to estimate uncertainty. To estimate uncertainty using Monte Carlo Dropout, we train the model with dropout enabled. During inference, We perform M stochastic forward passes through the network with dropout enabled. This gives us M different probability distributions for our triple. \begin{align} p(y \mid ( e_h, r, e_t), D) \approx \frac{1}{M} \sum_{i=1}^{M} p(y \mid ( e_h, r, e_t), w_i)  \label{eq:monte_carlo} \end{align} Here \begin{math} p(y \mid ( e_h, r, e_t), D)\end{math} is Predictive Posterior where \begin{math}D\end{math} is training data and \begin{math} w_i \end{math} are the weights sampled from the dropout distribution. In our implementation, we applied sigmoid to convert the scores obtained from equation \ref{eq:distmult_scoring} to form \begin{math} p(y \mid ( e_h, r, e_t), w_i) \end{math} . We use the mean and variance of these M predictions to get the final prediction and uncertainty estimate: \begin{align}
-    \hat{y} &= \frac{1}{M} \sum_{i=1}^{M} p(y \mid ( e_h, r, e_t), w_i) \label{eq:mc_mean} \\
+Monte Carlo Dropout is a technique proposed by (Gal et al. 2016)\cite{gal2016dropoutbayesianapproximationrepresenting} to estimate uncertainty in the neural network. It is a method where we use dropout during inference to perform multiple stochastic forward passes through the network. This allows us to obtain a distribution of the model's predictions, which we can use to estimate uncertainty. To estimate uncertainty using Monte Carlo Dropout, we train the model with dropout enabled. During inference, We perform M stochastic forward passes through the network with dropout enabled. This gives us M different probability distributions for our triple. \begin{align} p(y \mid ( e_h, r, e_t), D) \approx \frac{1}{M} \sum_{i=1}^{M} p(y \mid ( e_h, r, e_t), w_i)  \label{eq:monte_carlo} \end{align} Here \begin{math} p(y \mid ( e_h, r, e_t), D)\end{math} is Predictive Posterior where \begin{math}D\end{math} is training data and \begin{math} w_i \end{math} are the weights sampled from the dropout distribution. In our implementation, we applied sigmoid to convert the scores obtained from equation \ref{eq:distmult_scoring} to form \begin{math} p(y \mid ( e_h, r, e_t), w_i) \end{math}. We use variance of these M predictions to get uncertainty estimate: \begin{align}
     \text{Uncertainty} &= \frac{1}{M} \sum_{i=1}^{M} \left( p(y \mid ( e_h, r, e_t), w_i) - \hat{y} \right)^2 \label{eq:mc_uncertainty}
 \end{align}
+% do we need a diagram here?
 
 
 \subsubsection{Deep Ensembles}
 \label{subsubsec:deep_ensembles}
 
-
-
-
-
+Deep Ensemble is a method proposed by (Lakshminarayanan et al.(2017))\cite{lakshminarayanan2017simplescalablepredictiveuncertainty} for estimating predictive uncertainty in deep learning model. The method uses ensemble approach where \begin{math}M\end{math} models are randomly initialised and trained independently on the same dataset. During inference, We perform inference on all \begin{math}M\end{math} models and aggregate the results to obtain final prediction and uncertainty estimate. The paper suggest that Deep Ensemble provides better calibrated predictions as compared to standard single model inference and Monte Carlo Dropout for other Deep Learning architectures. In our implementation, we train \begin{math}M=5\end{math} R-GCN models to test this approach. We use the same architecture and hyperparameters for all models. During inference, we perform prediction with all \begin{math}M\end{math} models and aggregate the results to obtain final prediction. Similar to \nameref{subsubsec:monte_carlo_dropout}, we will perform following steps to obtain final prediction and uncertainty estimate:
 \begin{itemize}
-    \item training M models with different random initialisations\cite{lakshminarayanan2017simplescalablepredictiveuncertainty}
-    \item during inference, perform prediction with all M models and aggregate results
+    \item Initialise and train \begin{math}M\end{math} models independently on the same dataset.
+    \item During inference, perform prediction with all \begin{math}M\end{math} models to obtain \begin{math}  f_i(e_h, r, e_t) \end{math} for \begin{math}i=1,2,...,M\end{math}.
+    \item Take a sigmoid of each score to obtain probability to form \begin{math} p(y \mid ( e_h, r, e_t), w_i) \end{math}.
+    \item Aggregate the results to obtain final prediction and uncertainty estimate using equations \ref{eq:monte_carlo} and \ref{eq:mc_uncertainty}.
 \end{itemize}
 
 
-\subsection{Calibration}
+\subsection{Calibration Techniques}
 \label{sec:uncertainty_calibration}
+
+In earlier section \nameref{subsec:uncertainty_estimation}, we discussed techniques for uncertainty estimation. However, these techniques are not guaranteed to produce calibrated uncertainty estimates. To tackle the issue of uncalibrated predictions, we will use calibration techniques from Deep Learning literature. We will investigate Post-hoc calibration techniques in which we explore both parameteric and non-parameteric calibration techniques. We will also discuss how we implemented these techniques for our architecture.
 
 \subsection{Parameteric Approaches}
 \label{subsec:parametric_approaches}
+In the parameteric approaches, Platt Scaling\cite{platt1999probabilistic} based approaches like Temperature Scaling and its extension Input Dependent Temperature Scaling (IDTS) \cite{joy2022sampledependentadaptivetemperaturescaling} are used to calibrate the predictions. These methods involve learning a single or multiple parameters to scale the logits obtained from the model before applying softmax or sigmoid function.
 
-\subsubsection{Parameterised Temperature Scaling (PTS)}
-\label{subsubsec:parameterised_temperature_scaling}
-using neural network for input based temperature scaling. \cite{tomani2022parameterizedtemperaturescalingboosting}
+
+\subsubsection{Scalar Temperature Scaling}
+\label{subsubsec:scalar_temperature_scaling}
+The simplest extension of the platt scaling is Temperature Scaling \cite{guo2017calibrationmodernneuralnetworks}. In this method, we use a single scalar parameter \begin{math} T > 0 \end{math} to scale the logits obtained from the model. Given the logits \begin{math} s = f(e_h, r, e_t) \end{math} from equation \ref{eq:distmult_scoring}, we scale the logits as:
+\begin{align}
+    p_{calibrated} = \sigma\left(\frac{s}{T}\right) \label{eq:temperature_scaling}
+\end{align} We use validation set to learn the optimal value for parameter \begin{math} T \end{math} by minimising the Negative Log Likelihood (NLL) loss between the calibrated probabilities and true labels. This method is post-hoc and does not requires retraining of the model or optimising any parameter from the model. Once we learned the optimal value of \begin{math} T \end{math}, we can use it to calibrate the predictions on test set. If the value of the \begin{math} T \end{math} is greater than 1, it indicates that the model is overconfident and underconfident when the value is less than 1. 
+
+\subsubsection{Input Dependent Temperature Scaling (IDTS)}
+\label{subsubsec:input_dependent_temperature_scaling}
+This is inspired version of the Sample Dependent Temperature Scaling proposed by (Joy et al. 2022)\cite{joy2022sampledependentadaptivetemperaturescaling} where instead of using a single scalar parameter \begin{math} T \end{math}, a neural network is used to predict a function \begin{math} T(x) \end{math} which maps input \begin{math} x \end{math} to a temperature value. This allows for more sophisticated calibration where temperature scaling is dependent on the input.  This method can capture more complex miscalibration patterns for Out of Distribution (OOD) samples and assign them higher uncertainty. Our method Input Dependent Temperature Scaling is defined as: Given the logits \begin{math} s = f(e_h, r, e_t) \end{math} from equation \ref{eq:distmult_scoring}, we scale the logits as:
+\begin{align}
+    P_{calibrated} &= \sigma\left(\frac{s}{T(e_h,r)}\right)\label{eq:input_dependent_temperature_scaling} \\
+    T(e_h, r) &= \zeta\left( \mathbf{w}_2^\top \text{ReLU}\left( \mathbf{W}_1 [e_h; r] + \mathbf{b}_1 \right) + b_2 \right) + \epsilon 
+\end{align}
+Here \begin{math} \zeta \end{math} is the softplus function to ensure that temperature is always positive and \begin{math} \epsilon \end{math} is a small constant to avoid division by zero. And \begin{math}[e_h; r] \end{math} denotes concatenation of head entity embedding and relation embedding. \begin{math} \mathbf{W}_1, \mathbf{b}_1, \mathbf{w}_2, b_2 \end{math} are the learnable parameters of the neural network. Similar to Temperature Scaling, we use validation set to learn the parameters of the neural network by minimising the Negative Log Likelihood (NLL) loss between the calibrated probabilities and true labels.
+%We need a diagram here 100%
 
 \subsection{Non-Parametric Approaches}
 \label{subsec:non_parametric_approaches}
 
-\subsubsection{Scalar Temperature Scaling}
-\label{subsubsec:scalar_temperature_scaling}
-Using a scalar value for scaling the probabilities of the neural network\cite{guo2017calibrationmodernneuralnetworks}
+In the non-parameteric approaches, techniques like Isotonic Regression\cite{zadrozny2002transformingclassifierscores} and Histogram Binning\cite{zadrozny2001obtaining} are widely used to calibrate the predicitons\cite{guo2017calibrationmodernneuralnetworks}. These methods do not involve learning any parameters and instead use non-parametric methods to calibrate the predictions. In our usecase, We will analyse isotonic regression as it is best performing calibration technique in previous works\cite{zhu2023closerlookprobabilitycalibration}.
+
 
 \subsubsection{Isotonic Regression}
 \label{subsubsec:isotonic_regression}
-Using regression to fit the probability according to probabilities\cite{guo2017calibrationmodernneuralnetworks}
+
+Isotonic Regression is a non-parametric calibration technique proposed by (Zadrozny et al. 2002)\cite{zadrozny2002transformingclassifierscores}. In this method, a monotonic function is learned to map the uncalibrated probabilities to calibrated probabilities. Pool Adjacent Violators (PAV) algorithm is used to learn the isotonic fucntion. Given the uncalibrated probabilities \begin{math} p \end{math} obtained from the model and true labels \begin{math} y \end{math}, we learn a monotonic function \begin{math} g \end{math} such that:
+\begin{align}
+    p_{calibrated} = g(p) \label{eq:isotonic_regression}
+\end{align} The function \begin{math} g \end{math} is learned by minimising the Mean Squared Error (MSE) between the calibrated probabilities and true labels on the validation set. This method is post-hoc and does not require retraining of the model. Once the function \begin{math} g \end{math} is learned, it can be used to calibrate the predictions on the test set. Isotonic Regression is particularly useful when the miscalibration pattern is complex and cannot be captured by simple parametric methods like Temperature Scaling.
+In our implementation, we used the logits score from equation \ref{eq:distmult_scoring} learned the isotonic function \begin{math} g \end{math} directly on the logits using PAV algorithm on validation set. We then used the learned function to calibrate the predictions on test set. Here we did not applied sigmoid because isotonic regression can work directly on the logits. We used the implementation from scikit-learn library\cite{scikit-learn} for isotonic regression.
 
