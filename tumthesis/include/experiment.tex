@@ -55,30 +55,78 @@ In this section, we describe the evaluation metrics used to assess the performan
 
 \subsection{Link Prediction Metrics}
 \label{subsec:link_prediction_metrics}
+In previous research, the ranks are used as main quantitative measure to evaluate link predictions\cite{bordes_translating_2013,dettmers2018convolutional}. The Head and Relation is used as input and score for each entity as tail is calculated using scoring function. We suppose that if our entity embedding is correctly formed than we will have better predictions for tails. However, It is difficult to used ranks every time for comparative and comprehensive analysis therefore we have different metrics which are calculated using ranks. Each of them have their own qualities and purpose. We will list and discuss them one by one. 
 
-
-\subsubsection{Mean Rank}
+\subsubsection{Mean Rank (MR)}
 \label{subsubsec:mean_rank}
+As we have different number of entities in different datasets, we are interested in the metric which we can compare across different dataset results. Mean Rank is calculated by taking mean of the ranks attained from each correct tail prediction. \ref{eq:mean_rank} shows how Mean Rank is calculated. This is simple, fast and easy to use metric. When mean rank is lower our model makes generally good prediction as it consistently predicting correct tails and making lesser error. However, the downside for this metric is that it penalise the big outliers. When model fails to predict some entity at lower rank. The average becomes higher and thus we can't analyse how good our model actually is.
+
+\begin{equation}
+    MR = \frac{1}{N} \sum_{i=1}^{N} rank_i \label{eq:mean_rank}
+\end{equation}
+
 
 \subsubsection{Mean Reciprocal Rank}
 \label{subsubsec:mean_reciprocal_rank}
+
+To solve the problems related to the Mean Rank, Mean Reciprocal Rank is used. It is metric where average of reciprocal of the ranks is used. By taking reciprocal, we minimise the effect of outliers on the final results. It helps use to focus on the how consistent our model is in predicting correct tails at lower ranks. The formula for MRR is shown in \ref{eq:mean_reciprocal_rank}. Higher the MRR better the model is performing. 
+
+\begin{equation}
+    MRR = \frac{1}{N} \sum_{i=1}^{N} \frac{1}{rank_i} \label{eq:mean_reciprocal_rank}
+\end{equation}
+
+
 \subsubsection{Hits@K}
 \label{subsubsec:hits_at_k}
+Following the same idea of focusing on lower ranks, Hits@K is used. It calculates the proportion of the correct tail predictions that fall with top K ranks. It gives us exact measurement to evaluate how well model is performing at specific rank zone. In previous studies, K = 1,3,10 is used to measure the performance of the model. Formula for Hits@K is shown in \ref{eq:hits_at_k}. So when we are interested in how many time our model consistently predicting correct tail at rank 1. We will check Hits@1 score. 
+
+\begin{equation}
+    Hits@K = \frac{1}{N} \sum_{i=1}^{N} \mathbb{I}(rank_i \leq K) \label{eq:hits_at_k}
+\end{equation}
 
 
 \subsection{Uncertainty Estimation Metrics}
 \label{subsec:uncertainty_estimation_metrics}
 
+To evaluate how well the output probilities of the model are calibrated with the actual correctness likelihood, we use several metrics from the literature on uncertainty estimation and calibration. Metrics like Expected Calibration Error (ECE)\cite{naeini2015obtaining}, Adaptive Calibration Error (ACE)\cite{nixon2019measuring}, Brier Score\cite{glenn1950verification} and Reliability Diagram are widely used to assess the quality of uncertainty estimates in classification tasks. Testing these metrics in the context of Knowledge Graph Link Prediction is different as compared to traditional classification tasks. We adapt these method to suit our link prediction setting. As in real life, We are interested in the top ranked prediction and its associated confidence score. We adapt the accuracy calculation for link prediction by considering a prediction to be correct if the true tail entity is in the top K predicted tails for a given head and relation. We use K = 1 for our experiments. In this way, we can effectively measure both link prediction performance and uncertainty calibration in single testing pass. This maintains ranking based uncertainty evaluation as compared to other literatures \cite{zhu2023closerlookprobabilitycalibration}. We will describe each metric and how it is adapted for our link prediction setting.
+
+
 \subsubsection{Expected Calibration Error (ECE)}
 \label{subsubsec:expected_calibration_error_ece}
+
+Expected Calibration Error (ECE) measures the discrepancy between predicted confidence and actual accuracy across different confidence bins. In this method prediction probilities are divided into M equally spaced bins. For each bin, accuracy and average confidence are calculated. ECE is then computed as the weighted average of the absolute differences between accuracy and confidence across all bins as shown in \ref{eq:ece}. Lower ECE indicates better calibration of the model's uncertainty estimates. In the equation, \( |B_m| \) is the number of samples in bin \( m \), \( N \) is the total number of samples, \( acc(B_m) \) is the accuracy in bin \( m \), and \( conf(B_m) \) is the average confidence in bin \( m \). 
+\newline 
+In our implementation, we set M = 10 for ECE calculation. As described earlier, we assign true label if the top predicted tail matches the actual tail for given head and relation else false label. This allows us to compute accuracy and confidence for each bin effectively in the link prediction context. However, ECE can be sensitive to binning strategy due to fixed-width bins. Sometimes there might be single sample in a bin which can lead to high variance in accuracy estimates for that bin. Therefore, we also consider Adaptive Calibration Error (ACE) which uses adaptive binning to address this issue.
+
+\begin{equation}
+    ECE = \sum_{m=1}^{M} \frac{|B_m|}{N} | acc(B_m) - conf(B_m) | \label{eq:ece}
+\end{equation}
+
+
 \subsubsection{Adaptive Calibration Error (ACE)}
 \label{subsubsec:adaptive_calibration_error_ace}
+Adaptive Calibration Error (ACE) is similar to ECE but uses adaptive binning to ensure each bin has an equal number of samples. This solves the problem of high variance in accuracy estimates for bins with few samples. In ACE, the predictions are sorted by confidence and divided into M bins with equal number of samples. The ACE is then computed as the average absolute difference between accuracy and confidence across these adaptive bins as shown in \ref{eq:ace}. Lower ACE indicates better calibration. In the equation, \( M \) is the number of bins, \( acc(B_m) \) is the accuracy in bin \( m \), and \( conf(B_m) \) is the average confidence in bin \( m \).
+
+\begin{equation}
+    ACE = \frac{1}{M} \sum_{m=1}^{M} | acc(B_m) - conf(B_m) | \label{eq:ace}
+\end{equation}
+
 
 \subsubsection{Brier Score}
 \label{subsubsec:brier_score}
 
+Brier Score is a mean square error metric that measures the accuracy of the predicted probabilities. It is calculated as the average squared difference between the predicted probabilities and the actual outcomes (0 or 1) as shown in \ref{eq:brier_score}. Lower Brier Score indicates better calibrated probabilities. In the equation, \( N \) is the total number of samples, \( f_i \) is the predicted probability for sample \( i \), and \( o_i \) is the actual outcome. 
+
+\begin{equation}
+    Brier\ Score = \frac{1}{N} \sum_{i=1}^{N} (f_i - o_i)^2 \label{eq:brier_score}
+\end{equation}
+
 \subsubsection{Reliability Diagram}
 \label{subsubsec:reliability_diagram}
+Reliability Diagram provides a visual representation of the calibration of predicted probabilities. It plots the average predicted confidence against the actual accuracy for different confidence bins. If the model is perfectly calibrated, the points will lie on the diagonal line of x=y. Deviations from this line indicate miscalibration, if points lie below the line, the model is overconfident, and if they lie above, it is underconfident. Reliability diagram complements quantitative metrics like ECE and ACE by providing an expressive visualisation of calibration performance across the confidence spectrum.
+
+
+
 
 
 \section{Experimental Protocols}
