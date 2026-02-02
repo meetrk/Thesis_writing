@@ -1,0 +1,30 @@
+\documentclass[preview,border=2pt]{standalone}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{makecell} 
+
+\begin{document}
+
+% \setlength{\tabcolsep}{7pt} 
+
+\begin{tabular}{lcccc}
+\toprule
+\multirow{2}{*}{\textbf{Model}} & \multicolumn{2}{c}{\textbf{ECE}} & \multicolumn{2}{c}{\textbf{ACE}} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+ & \textbf{WN18RR} & \textbf{\makecell{FB15K\\-237}} & \textbf{WN18RR} & \textbf{\makecell{FB15K\\-237}} \\
+\midrule
+\textbf{Baseline} & 0.2968 & 0.0 & 0.2753 & \textbf{0.0} \\
+\addlinespace
+\makecell[l]{Baseline \\+ Edge Dropout (0.1)} & 0.2946 & 0.0 & 0.2109 & 0.0 \\
+\addlinespace
+\makecell[l]{Baseline \\+ Edge Dropout (0.2)} & 0.2985 & 0.0 & 0.2178 & 0.0 \\
+\addlinespace
+\makecell[l]{Baseline \\+ Label Smoothing (0.1)} & 0.4530 & 0.0 & 0.4530 & \textbf{0.0} \\
+\addlinespace
+\makecell[l]{Baseline \\+ Label Smoothing (0.2)} & 0.4403 & 0.0 & 0.4403 & \textbf{0.0} \\
+\addlinespace
+\makecell[l]{Baseline \\+ Edge Dropout (0.2) \\+ Label Smoothing (0.1)} & \textbf{0.5142} & 0.0 & \textbf{0.5142} & \textbf{0.0} \\
+\bottomrule
+\end{tabular}
+
+\end{document}

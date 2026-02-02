@@ -1,0 +1,39 @@
+\documentclass[preview,border=2pt]{standalone}
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+\begin{document}
+
+\begin{minipage}{0.48\textwidth}
+\centering
+% Table 1: WN18RR Results
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lcccc@{}}
+\hline
+\textbf{Model} & \textbf{MRR} & \textbf{Hits@1} & \textbf{Hits@3} & \textbf{Hits@10} \\
+\hline
+Baseline \\+ Edge Dropout (0.2) \\+ Label Smoothing (0.1) & \textbf{0.440} & \textbf{0.398} & \textbf{0.457} & \textbf{0.516} \\
+Baseline \\+ Edge Dropout (0.2) \\+ Label Smoothing (0.1) \\+ Monte Carlo (M = 5) & 0.438 & 0.396 & 0.455 & 0.517 \\
+Baseline \\+ Edge Dropout (0.2) \\+ Label Smoothing (0.1) \\+ Deep Ensemble (M = 5) & \textbf{0.458} & \textbf{0.416} & \textbf{0.475} & \textbf{0.535} \\
+\hline
+\end{tabular}%
+}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\centering
+% Table 2: FB15K-237 Results
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lcccc@{}}
+\hline
+\textbf{Model} & \textbf{MRR} & \textbf{Hits@1} & \textbf{Hits@3} & \textbf{Hits@10} \\
+\hline
+Baseline \\+ Edge Dropout (0.2) & \textbf{0.252} & \textbf{0.159} & \textbf{0.278} & \textbf{0.444} \\
+Baseline \\+ Edge Dropout (0.2)  \\+ Monte Carlo (M = 5) & 0.2518 & 0.159 & 0.278 & 0.444 \\
+Baseline \\+ Edge Dropout (0.2)  \\+ Deep Ensemble (M = 5) & \textbf{0.292} & \textbf{0.195} & \textbf{0.324} & \textbf{0.490} \\
+\hline
+\end{tabular}%
+}
+\end{minipage}
+
+\end{document}

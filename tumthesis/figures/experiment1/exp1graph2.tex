@@ -1,0 +1,83 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{cycle list/Set1-6}
+
+\begin{document}
+
+\begin{tikzpicture}
+\begin{axis}[
+    title={\textbf{WN18RR Reliability Curves}},
+    xlabel={Mean Predicted Probability},
+    ylabel={Fraction of Positives},
+    xmin=0, xmax=1,
+    ymin=0, ymax=1,
+    xtick={0, 0.2, 0.4, 0.6, 0.8, 1.0},
+    ytick={0, 0.2, 0.4, 0.6, 0.8, 1.0},
+    legend pos=north west,
+    legend style={nodes={scale=0.7, transform shape}, font=\small},
+    grid=both,
+    grid style={line width=.1pt, draw=gray!20},
+    major grid style={line width=.2pt, draw=gray!40},
+    width=12cm,
+    height=9cm,
+    cycle list name=Set1-6
+]
+
+% Perfectly Calibrated Line
+\addplot [color=gray, dashed, line width=1pt, forget plot]
+    coordinates {(0,0)(1,1)};
+
+% Baseline
+\addplot+[mark=*, thick] coordinates {
+    (0.010122, 0.02711324) (0.03765802, 0.05901116) (0.13659117, 0.09409888) (0.53912783, 0.09105431)
+    (0.93046553, 0.34290271) (0.99051676, 0.54864434) (0.9968059, 0.67412141) (0.99878607, 0.66826156)
+    (0.99957259, 0.66347687) (0.99990691, 0.52950558)
+};
+\addlegendentry{Baseline ECE: 0.3018}
+
+% Baseline + Edge Dropout (0.1)
+\addplot+[mark=square*, thick] coordinates {
+    (0.05408921, 0.02232855) (0.23957187, 0.05263158) (0.48839442, 0.09728868) (0.74856356, 0.23162939)
+    (0.93005705, 0.33333333) (0.98538553, 0.4800638) (0.99705903, 0.55271565) (0.99927344, 0.64490446)
+    (0.99982312, 0.66134185) (0.99998048, 0.62519936)
+};
+\addlegendentry{Baseline + ED (0.1) ECE: 0.3741}
+
+% Baseline + Edge Dropout (0.2)
+\addplot+[mark=triangle*, thick] coordinates {
+    (0.11336318, 0.03030303) (0.3191781, 0.05582137) (0.53854242, 0.11323764) (0.74093092, 0.2284345)
+    (0.90339904, 0.28229665) (0.97192913, 0.40510367) (0.99315148, 0.51757188) (0.99829609, 0.67145136)
+    (0.99961264, 0.6953748) (0.9999588, 0.6969697)
+};
+\addlegendentry{Baseline + ED (0.2) ECE: 0.3881}
+
+% Baseline + Label Smoothing (0.1)
+\addplot+[mark=diamond*, thick] coordinates {
+    (5.89564721e-05, 0.06539075) (1.38365491e-04, 0.15629984) (3.89560157e-04, 0.09569378) (1.89897232e-03, 0.08945687)
+    (3.01956611e-03, 0.16267943) (3.67622319e-03, 0.40031898) (4.22349107e-03, 0.62460064) (4.74416995e-03, 0.67623604)
+    (5.27921683e-03, 0.80701754) (6.39128927e-03, 0.79106858)
+};
+\addlegendentry{Baseline + LS (0.1) ECE: 0.3838}
+
+% Baseline + Label Smoothing (0.2)
+\addplot+[mark=pentagon*, thick] coordinates {
+    (4.66309487e-05, 0.0414673) (9.54351517e-05, 0.10685805) (2.09212812e-04, 0.13397129) (6.45113250e-04, 0.23482428)
+    (9.05044481e-04, 0.45933014) (1.04202013e-03, 0.49760766) (1.16318233e-03, 0.55111821) (1.28212719e-03, 0.59170654)
+    (1.41655339e-03, 0.64433812) (1.66217925e-03, 0.56140351)
+};
+\addlegendentry{Baseline + LS (0.2) ECE: 0.3814}
+
+% Baseline + Edge Dropout (0.2) + Label Smoothing (0.1)
+\addplot+[mark=star, thick, mark size=3pt] coordinates {
+    (9.44693909e-05, 0.06220096) (3.88346429e-04, 0.19617225) (1.02194531e-03, 0.22009569) (1.90336419e-03, 0.42651757)
+    (2.27444838e-03, 0.55183413) (2.48049950e-03, 0.57256778) (2.63678205e-03, 0.56230032) (2.81207867e-03, 0.59489633)
+    (3.02313277e-03, 0.49282297) (3.62914718e-03, 0.3062201)
+};
+\addlegendentry{Baseline + ED (0.2) + LS (0.1) ECE: 0.3965}
+
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

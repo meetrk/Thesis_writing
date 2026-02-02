@@ -5,7 +5,7 @@ In this chapter, we describe the experimental setup used in our study for uncert
 
 \section{Dataset Description}
 \label{sec:dataset_description}
-In our study, we mainly focus on two widely used benchmark datasets for Knowledge Graph Link Prediction: WN18RR and FB15k-237. These datasets are subsets of larger knowledge graphs and have been curated to address inverse relation test leakage problems present in their predecessor datasets, WN18 and FB15k. They provide widely accepted benchmarks for evaluating link prediction models and their uncertainty estimation capabilities. 
+In our study, we mainly focus on two widely used benchmark datasets for Knowledge Graph Link Prediction: WN18RR\cite{dettmers2018convolutional} and FB15k-237\cite{toutanova2015observed}. These datasets are subsets of larger knowledge graphs and have been curated to address inverse relation test leakage problems present in their predecessor datasets, WN18 and FB15k. They provide widely accepted benchmarks for evaluating link prediction models and their uncertainty estimation capabilities. 
 
 
 
@@ -33,7 +33,7 @@ The model architecture used in our experiments is illustrated in Figure~\ref{fig
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{figures/model}
+    \includegraphics[width=1\textwidth]{figures/experiment/model}
     \caption{Model Configuration}
     \label{fig:model}
 \end{figure}
@@ -134,7 +134,7 @@ Reliability Diagram provides a visual representation of the calibration of predi
 We will now describe the specific experimental protocols followed in our study to evaluate the performance of various models and techniques. Our experiments are designed to systematically assess the impact of different methods on link prediction accuracy and uncertainty estimation. Therefore, we will start with a baseline model and progressively introduce various techniques to observe their implication on performance and uncertainty. For each configuration, we will measure link prediction metrics (MR, MRR, Hits@K) and uncertainty estimation metrics (ECE, ACE, Brier Score). We will analyze the results on both datasets: WN18RR and FB15k-237. In all experiments, we will ensure that the training, validation, and test splits remain consistent to allow for fair comparisons across different methods.
 
 
-\subsection{ Regularization Impact}
+\subsection{Experiment 1: Regularization Impact}
 \label{subsec:regularization_impact}
 
 \textbf{Objective:}
@@ -148,7 +148,7 @@ We conduct a controlled comparison by training the base model with and without e
 
 
 
-\subsection{Uncertainty Estimation Methods}
+\subsection{Experiment 2: Uncertainty Estimation Methods}
 \label{subsec:uncertainty_estimation_methods}
 \textbf{Objective:}
 In this experiment, we will investigate the effect of \nameref{subsubsec:monte_carlo_dropout} and \nameref{subsubsec:deep_ensembles} on the model's performance and uncertainty estimation. We will compare each variant against the base model. 
@@ -160,7 +160,7 @@ In the literature, Monte Carlo Dropout\cite{gal2016dropoutbayesianapproximationr
 We conduct a controlled comparison by training the base model, base model with monte carlo and deep ensembles. We maintain consistent hyperparameters across all experiments similar to previous experiment. We will evaluate Monte Carlo Dropout with 5 inference samples. For Deep Ensembles, we will train 5 independent models and aggregate their predictions to estimate uncertainty.
 
 
-\subsection{Calibration Methods}
+\subsection{Experiment 3: Calibration Methods}
 \label{subsec:calibration_methods}
 \textbf{Objective:}
 To evaluate the effectiveness of post-hoc calibration methods, \nameref{subsubsec:scalar_temperature_scaling}, \nameref{subsubsec:input_dependent_temperature_scaling} and \nameref{subsubsec:isotonic_regression}, on improving the calibration of uncertainty estimates in our link prediction model. 
@@ -173,13 +173,13 @@ We will apply each calibration method to the baseline model and the best model f
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\textwidth]{figures/idts_parameter}
+    \includegraphics[width=1\textwidth]{figures/experiment/idts_parameter}
     \caption{Input-Dependent Temperature Scaling Network Architecture}
     \label{fig:idts_parameter}
 \end{figure}
 
 
-\subsection{Hybrid Approaches}
+\subsection{Experiment 4: Hybrid Approaches}
 \label{subsec:hybrid_approaches}
 
 \textbf{Objective:}

@@ -1,0 +1,58 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{cycle list/Set1-6}
+
+\begin{document}
+
+\begin{tikzpicture}
+\begin{axis}[
+    title={\textbf{WN18RR Reliability Curves}},
+    xlabel={Mean Predicted Probability},
+    ylabel={Fraction of Positives},
+    xmin=0, xmax=1,
+    ymin=0, ymax=1,
+    xtick={0, 0.2, 0.4, 0.6, 0.8, 1.0},
+    ytick={0, 0.2, 0.4, 0.6, 0.8, 1.0},
+    legend pos=north west,
+    legend style={nodes={scale=0.7, transform shape}, font=\small},
+    grid=both,
+    grid style={line width=.1pt, draw=gray!20},
+    major grid style={line width=.2pt, draw=gray!40},
+    width=12cm,
+    height=9cm,
+    cycle list name=Set1-6
+]
+
+% Perfectly Calibrated Line
+\addplot [color=gray, dashed, line width=1pt, forget plot]
+    coordinates {(0,0)(1,1)};
+
+% Baseline + Edge Dropout (0.2) + Label Smoothing (0.1)
+\addplot+[mark=star, thick, mark size=3pt] coordinates {
+    (9.44693909e-05, 0.06220096) (3.88346429e-04, 0.19617225) (1.02194531e-03, 0.22009569) (1.90336419e-03, 0.42651757)
+    (2.27444838e-03, 0.55183413) (2.48049950e-03, 0.57256778) (2.63678205e-03, 0.56230032) (2.81207867e-03, 0.59489633)
+    (3.02313277e-03, 0.49282297) (3.62914718e-03, 0.3062201)
+};
+\addlegendentry{Baseline + ED (0.2) + LS (0.1) ECE: 0.3965}
+
+\addplot+[mark=triangle*, thick] coordinates {
+    (9.74521212e-05, 0.06060606) (3.96675480e-04, 0.19776715) (1.08993530e-03, 0.23444976) (2.29971721e-03, 0.48242812)
+    (2.78207574e-03, 0.62519936) (3.01484096e-03, 0.57256778) (3.19949920e-03, 0.53354633) (3.41838358e-03, 0.49122807)
+    (3.68063469e-03, 0.46889952) (4.53944351e-03, 0.29665072)
+};
+\addlegendentry{Baseline + ED (0.2) + LS (0.1) + (MC) ECE: 0.3938}
+
+\addplot+[mark=diamond*, thick] coordinates {
+    (2.44394718e-05, 0.14991763) (2.44875934e-05, 0.50741351) (2.44987594e-05, 0.49752883) (2.45064332e-05, 0.52310231)
+    (2.45647936e-05, 0.24711697) (1.37006312e-04, 0.10049423) (7.17091072e-04, 0.2970297) (2.41172134e-03, 0.45963756)
+    (3.00029100e-03, 0.66886326) (3.55695495e-03, 0.70345964)
+};
+\addlegendentry{Baseline + ED (0.2) + LS (0.1) + (DP) ECE: 0.414}
+
+
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

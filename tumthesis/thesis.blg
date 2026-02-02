@@ -24,45 +24,45 @@ Warning--I didn't find a database entry for "IEEEexample:BSTcontrol"
 Biblatex version: 3.20
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 12 entries,
+You've used 30 entries,
             6402 wiz_defined-function locations,
-            1793 strings with 27328 characters,
-and the built_in function-call counts, 105726 in all, are:
-= -- 8845
-> -- 1394
-< -- 278
-+ -- 3625
-- -- 631
-* -- 7596
-:= -- 13302
+            1924 strings with 35401 characters,
+and the built_in function-call counts, 347502 in all, are:
+= -- 30487
+> -- 4223
+< -- 1023
++ -- 11901
+- -- 1894
+* -- 25531
+:= -- 43435
 add.period$ -- 0
-call.type$ -- 12
-change.case$ -- 77
+call.type$ -- 30
+change.case$ -- 453
 chr.to.int$ -- 44
-cite$ -- 22
-duplicate$ -- 11695
-empty$ -- 8560
-format.name$ -- 915
-if$ -- 20609
+cite$ -- 58
+duplicate$ -- 37185
+empty$ -- 27695
+format.name$ -- 2788
+if$ -- 67944
 int.to.chr$ -- 0
-int.to.str$ -- 22
+int.to.str$ -- 74
 missing$ -- 0
-newline$ -- 440
-num.names$ -- 418
-pop$ -- 4322
+newline$ -- 1339
+num.names$ -- 1387
+pop$ -- 11794
 preamble$ -- 1
-purify$ -- 172
+purify$ -- 755
 quote$ -- 0
-skip$ -- 1970
+skip$ -- 6042
 stack$ -- 0
-substring$ -- 16200
-swap$ -- 1683
-text.length$ -- 338
+substring$ -- 57473
+swap$ -- 5283
+text.length$ -- 939
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 396
+type$ -- 1008
 warning$ -- 0
-while$ -- 1729
+while$ -- 5405
 width$ -- 0
-write$ -- 429
+write$ -- 1310
 (There was 1 warning)

@@ -17,46 +17,35 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global/global}
-  \entry{yang2014embedding}{article}{}{}
-    \name{author}{5}{}{%
-      {{hash=YB}{%
-         family={Yang},
-         familyi={Y\bibinitperiod},
-         given={Bishan},
-         giveni={B\bibinitperiod},
+  \entry{kipf2017semisupervisedclassificationgraphconvolutional}{misc}{}{}
+    \name{author}{2}{}{%
+      {{hash=KTN}{%
+         family={Kipf},
+         familyi={K\bibinitperiod},
+         given={Thomas\bibnamedelima N.},
+         giveni={T\bibinitperiod\bibinitdelim N\bibinitperiod},
       }}%
-      {{hash=YWt}{%
-         family={Yih},
-         familyi={Y\bibinitperiod},
-         given={Wen-tau},
-         giveni={W\bibinithyphendelim t\bibinitperiod},
-      }}%
-      {{hash=HX}{%
-         family={He},
-         familyi={H\bibinitperiod},
-         given={Xiaodong},
-         giveni={X\bibinitperiod},
-      }}%
-      {{hash=GJ}{%
-         family={Gao},
-         familyi={G\bibinitperiod},
-         given={Jianfeng},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=DL}{%
-         family={Deng},
-         familyi={D\bibinitperiod},
-         given={Li},
-         giveni={L\bibinitperiod},
+      {{hash=WM}{%
+         family={Welling},
+         familyi={W\bibinitperiod},
+         given={Max},
+         giveni={M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{YB+1}
-    \strng{fullhash}{YBYWtHXGJDL1}
+    \strng{namehash}{KTNWM1}
+    \strng{fullhash}{KTNWM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{title}{Embedding entities and relations for learning and inference in knowledge bases}
-    \field{journaltitle}{arXiv preprint arXiv:1412.6575}
-    \field{year}{2014}
+    \verb{eprint}
+    \verb 1609.02907
+    \endverb
+    \field{title}{Semi-Supervised Classification with Graph Convolutional Networks}
+    \verb{url}
+    \verb https://arxiv.org/abs/1609.02907
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs.LG}
+    \field{year}{2017}
   \endentry
 
   \entry{schlichtkrull2017modelingrelationaldatagraph}{misc}{}{}
@@ -114,6 +103,244 @@
     \field{eprinttype}{arXiv}
     \field{eprintclass}{stat.ML}
     \field{year}{2017}
+  \endentry
+
+  \entry{Fey/etal/2025}{inproceedings}{}{}
+    \name{author}{13}{}{%
+      {{hash=FM}{%
+         family={Fey},
+         familyi={F\bibinitperiod},
+         given={Matthias},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Sunil},
+         familyi={S\bibinitperiod},
+         given={Jinu},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=NA}{%
+         family={Nitta},
+         familyi={N\bibinitperiod},
+         given={Akihiro},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PR}{%
+         family={Puri},
+         familyi={P\bibinitperiod},
+         given={Rishi},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Shah},
+         familyi={S\bibinitperiod},
+         given={Manan},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SB}{%
+         family={Stojanovi{\v{c}}},
+         familyi={S\bibinitperiod},
+         given={Bla{\v{z}}},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=BR}{%
+         family={Bendias},
+         familyi={B\bibinitperiod},
+         given={Ramona},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=AB}{%
+         family={Alexandria},
+         familyi={A\bibinitperiod},
+         given={Barghi},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=KV}{%
+         family={Kocijan},
+         familyi={K\bibinitperiod},
+         given={Vid},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=ZZ}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Zecheng},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=HX}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Xinwei},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=LJE}{%
+         family={Lenssen},
+         familyi={L\bibinitperiod},
+         given={Jan\bibnamedelima E.},
+         giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Leskovec},
+         familyi={L\bibinitperiod},
+         given={Jure},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FM+1}
+    \strng{fullhash}{FMSJNAPRSMSBBRABKVZZHXLJELJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Temporal Graph Learning Workshop @ KDD}
+    \field{title}{{PyG} 2.0: Scalable Learning on Real World Graphs}
+    \field{year}{2025}
+  \endentry
+
+  \entry{Fey/Lenssen/2019}{inproceedings}{}{}
+    \name{author}{2}{}{%
+      {{hash=FM}{%
+         family={Fey},
+         familyi={F\bibinitperiod},
+         given={Matthias},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=LJE}{%
+         family={Lenssen},
+         familyi={L\bibinitperiod},
+         given={Jan\bibnamedelima E.},
+         giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FMLJE1}
+    \strng{fullhash}{FMLJE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{ICLR Workshop on Representation Learning on Graphs and Manifolds}
+    \field{title}{Fast Graph Representation Learning with {PyTorch Geometric}}
+    \field{year}{2019}
+  \endentry
+
+  \entry{yang2014embedding}{article}{}{}
+    \name{author}{5}{}{%
+      {{hash=YB}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Bishan},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=YWt}{%
+         family={Yih},
+         familyi={Y\bibinitperiod},
+         given={Wen-tau},
+         giveni={W\bibinithyphendelim t\bibinitperiod},
+      }}%
+      {{hash=HX}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Xiaodong},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Gao},
+         familyi={G\bibinitperiod},
+         given={Jianfeng},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=DL}{%
+         family={Deng},
+         familyi={D\bibinitperiod},
+         given={Li},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{YB+1}
+    \strng{fullhash}{YBYWtHXGJDL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Embedding entities and relations for learning and inference in knowledge bases}
+    \field{journaltitle}{arXiv preprint arXiv:1412.6575}
+    \field{year}{2014}
+  \endentry
+
+  \entry{bordes_translating_2013}{inproceedings}{}{}
+    \name{author}{5}{}{%
+      {{hash=BA}{%
+         family={Bordes},
+         familyi={B\bibinitperiod},
+         given={Antoine},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=UN}{%
+         family={Usunier},
+         familyi={U\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=GDA}{%
+         family={Garcia-Duran},
+         familyi={G\bibinithyphendelim D\bibinitperiod},
+         given={Alberto},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=WJ}{%
+         family={Weston},
+         familyi={W\bibinitperiod},
+         given={Jason},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=YO}{%
+         family={Yakhnenko},
+         familyi={Y\bibinitperiod},
+         given={Oksana},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \name{editor}{5}{}{%
+      {{hash=BCJ}{%
+         family={Burges},
+         familyi={B\bibinitperiod},
+         given={C.\bibnamedelima J.},
+         giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=BL}{%
+         family={Bottou},
+         familyi={B\bibinitperiod},
+         given={L.},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=WM}{%
+         family={Welling},
+         familyi={W\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GZ}{%
+         family={Ghahramani},
+         familyi={G\bibinitperiod},
+         given={Z.},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=WKQ}{%
+         family={Weinberger},
+         familyi={W\bibinitperiod},
+         given={K.\bibnamedelima Q.},
+         giveni={K\bibinitperiod\bibinitdelim Q\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Curran Associates, Inc.}%
+    }
+    \strng{namehash}{BA+1}
+    \strng{fullhash}{BAUNGDAWJYO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Advances in {Neural} {Information} {Processing} {Systems}}
+    \field{title}{Translating {Embeddings} for {Modeling} {Multi}-relational {Data}}
+    \verb{url}
+    \verb https://proceedings.neurips.cc/paper_files/paper/2013/file/1cecc7a779
+    \verb 28ca8133fa24680a88d2f9-Paper.pdf
+    \endverb
+    \field{volume}{26}
+    \field{year}{2013}
   \endentry
 
   \entry{rong2019dropedge}{article}{}{}
@@ -195,6 +422,329 @@
     \field{year}{2016}
   \endentry
 
+  \entry{srivastava2014dropout}{article}{}{}
+    \name{author}{5}{}{%
+      {{hash=SN}{%
+         family={Srivastava},
+         familyi={S\bibinitperiod},
+         given={Nitish},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=HG}{%
+         family={Hinton},
+         familyi={H\bibinitperiod},
+         given={Geoffrey},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Krizhevsky},
+         familyi={K\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SI}{%
+         family={Sutskever},
+         familyi={S\bibinitperiod},
+         given={Ilya},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Salakhutdinov},
+         familyi={S\bibinitperiod},
+         given={Ruslan},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {JMLR. org}%
+    }
+    \strng{namehash}{SN+1}
+    \strng{fullhash}{SNHGKASISR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{1929\bibrangedash 1958}
+    \field{title}{Dropout: a simple way to prevent neural networks from overfitting}
+    \field{volume}{15}
+    \field{journaltitle}{The journal of machine learning research}
+    \field{year}{2014}
+  \endentry
+
+  \entry{xiao2021node}{inproceedings}{}{}
+    \name{author}{3}{}{%
+      {{hash=XBY}{%
+         family={Xiao},
+         familyi={X\bibinitperiod},
+         given={Bing-Yu},
+         giveni={B\bibinithyphendelim Y\bibinitperiod},
+      }}%
+      {{hash=TCC}{%
+         family={Tseng},
+         familyi={T\bibinitperiod},
+         given={Chien-Cheng},
+         giveni={C\bibinithyphendelim C\bibinitperiod},
+      }}%
+      {{hash=LSL}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Su-Ling},
+         giveni={S\bibinithyphendelim L\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{XBY+1}
+    \strng{fullhash}{XBYTCCLSL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{TENCON 2021-2021 IEEE Region 10 Conference (TENCON)}
+    \field{pages}{84\bibrangedash 87}
+    \field{title}{Node classification using graph convolutional network with dropout regularization}
+    \field{year}{2021}
+  \endentry
+
+  \entry{ioffe2015batch}{inproceedings}{}{}
+    \name{author}{2}{}{%
+      {{hash=IS}{%
+         family={Ioffe},
+         familyi={I\bibinitperiod},
+         given={Sergey},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SC}{%
+         family={Szegedy},
+         familyi={S\bibinitperiod},
+         given={Christian},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {pmlr}%
+    }
+    \strng{namehash}{ISSC1}
+    \strng{fullhash}{ISSC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{International conference on machine learning}
+    \field{pages}{448\bibrangedash 456}
+    \field{title}{Batch normalization: Accelerating deep network training by reducing internal covariate shift}
+    \field{year}{2015}
+  \endentry
+
+  \entry{luobeyond}{inproceedings}{}{}
+    \name{author}{3}{}{%
+      {{hash=LY}{%
+         family={Luo},
+         familyi={L\bibinitperiod},
+         given={Yuankai},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=WXM}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Xiao-Ming},
+         giveni={X\bibinithyphendelim M\bibinitperiod},
+      }}%
+      {{hash=ZH}{%
+         family={Zhu},
+         familyi={Z\bibinitperiod},
+         given={Hao},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LY+1}
+    \strng{fullhash}{LYWXMZH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{The Thirteenth International Conference on Learning Representations}
+    \field{title}{Beyond random masking: When dropout meets graph convolutional networks}
+  \endentry
+
+  \entry{zhu2023closerlookprobabilitycalibration}{inproceedings}{}{}
+    \name{author}{8}{}{%
+      {{hash=ZR}{%
+         family={Zhu},
+         familyi={Z\bibinitperiod},
+         given={Ruiqi},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=WF}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Fangrong},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Bundy},
+         familyi={B\bibinitperiod},
+         given={Alan},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LX}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Xue},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=NK}{%
+         family={Nuamah},
+         familyi={N\bibinitperiod},
+         given={Kwabena},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=XL}{%
+         family={Xu},
+         familyi={X\bibinitperiod},
+         given={Lei},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Mauceri},
+         familyi={M\bibinitperiod},
+         given={Stefano},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=PJZ}{%
+         family={Pan},
+         familyi={P\bibinitperiod},
+         given={Jeff\bibnamedelima Z.},
+         giveni={J\bibinitperiod\bibinitdelim Z\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \keyw{Knowledge Graph Embedding, Probability Calibration}
+    \strng{namehash}{ZR+1}
+    \strng{fullhash}{ZRWFBALXNKXLMSPJZ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    When the estimated probabilities do not match the relative frequencies, we say these estimated probabilities are uncalibrated [39], which may cause incorrect decision making, and is particularly undesired in high-stakes tasks [45]. Knowledge Graph embedding models are reported to produce uncalibrated probabilities [36], e.g., for all the triples predicted with probability 0.9, the percentage of them being truly correct triples is not . In this article, we take a closer look at this problem. First, we confirmed the issue that typical KG Embedding models are uncalibrated. Then, we show how off-the-shelf calibration techniques can be used to mitigate this issue, among which binning-based calibration produces more calibrated probabilities. We also investigated the possible reasons for the uncalibrated probabilities and found that the expit transform, the way used to convert embedding scores into probabilities, is ineffective in most cases.%
+    }
+    \field{booktitle}{Proceedings of the 11th International Joint Conference on Knowledge Graphs}
+    \verb{doi}
+    \verb 10.1145/3579051.3579072
+    \endverb
+    \field{isbn}{9781450399876}
+    \field{pages}{104–109}
+    \field{series}{IJCKG '22}
+    \field{title}{A Closer Look at Probability Calibration of Knowledge Graph Embedding}
+    \verb{url}
+    \verb https://doi.org/10.1145/3579051.3579072
+    \endverb
+    \list{location}{1}{%
+      {Hangzhou, China}%
+    }
+    \field{year}{2023}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{tabacof2019probability}{article}{}{}
+    \name{author}{2}{}{%
+      {{hash=TP}{%
+         family={Tabacof},
+         familyi={T\bibinitperiod},
+         given={Pedro},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=CL}{%
+         family={Costabello},
+         familyi={C\bibinitperiod},
+         given={Luca},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TPCL1}
+    \strng{fullhash}{TPCL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Probability calibration for knowledge graph embedding models}
+    \field{journaltitle}{arXiv preprint arXiv:1912.10000}
+    \field{year}{2019}
+  \endentry
+
+  \entry{gawlikowski2023survey}{article}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{10}{}{%
+      {{hash=GJ}{%
+         family={Gawlikowski},
+         familyi={G\bibinitperiod},
+         given={Jakob},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=TCRN}{%
+         family={Tassi},
+         familyi={T\bibinitperiod},
+         given={Cedrique Rovile\bibnamedelima Njieutcheu},
+         giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=AM}{%
+         family={Ali},
+         familyi={A\bibinitperiod},
+         given={Mohsin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Jongseok},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HM}{%
+         family={Humt},
+         familyi={H\bibinitperiod},
+         given={Matthias},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=FJ}{%
+         family={Feng},
+         familyi={F\bibinitperiod},
+         given={Jianxiang},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Kruspe},
+         familyi={K\bibinitperiod},
+         given={Anna},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=TR}{%
+         family={Triebel},
+         familyi={T\bibinitperiod},
+         given={Rudolph},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=JP}{%
+         family={Jung},
+         familyi={J\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=RR}{%
+         family={Roscher},
+         familyi={R\bibinitperiod},
+         given={Ribana},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer}%
+    }
+    \strng{namehash}{GJ+1}
+    \strng{fullhash}{GJTCRNAMLJHMFJKATRJPRR+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{Suppl 1}
+    \field{pages}{1513\bibrangedash 1589}
+    \field{title}{A survey of uncertainty in deep neural networks}
+    \field{volume}{56}
+    \field{journaltitle}{Artificial Intelligence Review}
+    \field{year}{2023}
+  \endentry
+
   \entry{gal2016dropoutbayesianapproximationrepresenting}{misc}{}{}
     \name{author}{2}{}{%
       {{hash=GY}{%
@@ -263,40 +813,78 @@
     \field{year}{2017}
   \endentry
 
-  \entry{tomani2022parameterizedtemperaturescalingboosting}{misc}{}{}
-    \name{author}{3}{}{%
-      {{hash=TC}{%
-         family={Tomani},
-         familyi={T\bibinitperiod},
-         given={Christian},
-         giveni={C\bibinitperiod},
-      }}%
-      {{hash=CD}{%
-         family={Cremers},
-         familyi={C\bibinitperiod},
-         given={Daniel},
-         giveni={D\bibinitperiod},
-      }}%
-      {{hash=BF}{%
-         family={Buettner},
-         familyi={B\bibinitperiod},
-         given={Florian},
-         giveni={F\bibinitperiod},
+  \entry{platt1999probabilistic}{article}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=PJ}{%
+         family={Platt},
+         familyi={P\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
       }}%
     }
-    \strng{namehash}{TC+1}
-    \strng{fullhash}{TCCDBF1}
+    \list{publisher}{1}{%
+      {Cambridge, MA}%
+    }
+    \strng{namehash}{PJ+1}
+    \strng{fullhash}{PJ+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{3}
+    \field{pages}{61\bibrangedash 74}
+    \field{title}{Probabilistic outputs for support vector machines and comparisons to regularized likelihood methods}
+    \field{volume}{10}
+    \field{journaltitle}{Advances in large margin classifiers}
+    \field{year}{1999}
+  \endentry
+
+  \entry{joy2022sampledependentadaptivetemperaturescaling}{misc}{}{}
+    \name{author}{5}{}{%
+      {{hash=JT}{%
+         family={Joy},
+         familyi={J\bibinitperiod},
+         given={Tom},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=PF}{%
+         family={Pinto},
+         familyi={P\bibinitperiod},
+         given={Francesco},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=LSN}{%
+         family={Lim},
+         familyi={L\bibinitperiod},
+         given={Ser-Nam},
+         giveni={S\bibinithyphendelim N\bibinitperiod},
+      }}%
+      {{hash=TPHS}{%
+         family={Torr},
+         familyi={T\bibinitperiod},
+         given={Philip H.\bibnamedelima S.},
+         giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=DPK}{%
+         family={Dokania},
+         familyi={D\bibinitperiod},
+         given={Puneet\bibnamedelima K.},
+         giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JT+1}
+    \strng{fullhash}{JTPFLSNTPHSDPK1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \verb{eprint}
-    \verb 2102.12182
+    \verb 2207.06211
     \endverb
-    \field{title}{Parameterized Temperature Scaling for Boosting the Expressive Power in Post-Hoc Uncertainty Calibration}
+    \field{title}{Sample-dependent Adaptive Temperature Scaling for Improved Calibration}
     \verb{url}
-    \verb https://arxiv.org/abs/2102.12182
+    \verb https://arxiv.org/abs/2207.06211
     \endverb
     \field{eprinttype}{arXiv}
-    \field{eprintclass}{cs.LG}
+    \field{eprintclass}{cs.CV}
     \field{year}{2022}
   \endentry
 
@@ -341,6 +929,185 @@
     \field{eprinttype}{arXiv}
     \field{eprintclass}{cs.LG}
     \field{year}{2017}
+  \endentry
+
+  \entry{zadrozny2002transformingclassifierscores}{inproceedings}{}{}
+    \name{author}{2}{}{%
+      {{hash=ZB}{%
+         family={Zadrozny},
+         familyi={Z\bibinitperiod},
+         given={Bianca},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=EC}{%
+         family={Elkan},
+         familyi={E\bibinitperiod},
+         given={Charles},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Association for Computing Machinery}%
+    }
+    \strng{namehash}{ZBEC1}
+    \strng{fullhash}{ZBEC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Class membership probability estimates are important for many applications of data mining in which classification outputs are combined with other sources of information for decision-making, such as example-dependent misclassification costs, the outputs of other classifiers, or domain knowledge. Previous calibration methods apply only to two-class problems. Here, we show how to obtain accurate probability estimates for multiclass problems by combining calibrated binary probability estimates. We also propose a new method for obtaining calibrated two-class probability estimates that can be applied to any classifier that produces a ranking of examples. Using naive Bayes and support vector machine classifiers, we give experimental results from a variety of two-class and multiclass domains, including direct marketing, text categorization and digit recognition.%
+    }
+    \field{booktitle}{Proceedings of the Eighth ACM SIGKDD International Conference on Knowledge Discovery and Data Mining}
+    \verb{doi}
+    \verb 10.1145/775047.775151
+    \endverb
+    \field{isbn}{158113567X}
+    \field{pages}{694–699}
+    \field{series}{KDD '02}
+    \field{title}{Transforming classifier scores into accurate multiclass probability estimates}
+    \verb{url}
+    \verb https://doi.org/10.1145/775047.775151
+    \endverb
+    \list{location}{1}{%
+      {Edmonton, Alberta, Canada}%
+    }
+    \field{year}{2002}
+    \warn{\item Can't use 'location' + 'address'}
+  \endentry
+
+  \entry{zadrozny2001obtaining}{inproceedings}{}{}
+    \name{author}{2}{}{%
+      {{hash=ZB}{%
+         family={Zadrozny},
+         familyi={Z\bibinitperiod},
+         given={Bianca},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=EC}{%
+         family={Elkan},
+         familyi={E\bibinitperiod},
+         given={Charles},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZBEC1}
+    \strng{fullhash}{ZBEC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Icml}
+    \field{number}{05}
+    \field{title}{Obtaining calibrated probability estimates from decision trees and naive bayesian classifiers}
+    \field{volume}{1}
+    \field{year}{2001}
+  \endentry
+
+  \entry{scikit-learn}{article}{}{}
+    \name{author}{16}{}{%
+      {{hash=PF}{%
+         family={Pedregosa},
+         familyi={P\bibinitperiod},
+         given={F.},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=VG}{%
+         family={Varoquaux},
+         familyi={V\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Gramfort},
+         familyi={G\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MV}{%
+         family={Michel},
+         familyi={M\bibinitperiod},
+         given={V.},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=TB}{%
+         family={Thirion},
+         familyi={T\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=GO}{%
+         family={Grisel},
+         familyi={G\bibinitperiod},
+         given={O.},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Blondel},
+         familyi={B\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PP}{%
+         family={Prettenhofer},
+         familyi={P\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=WR}{%
+         family={Weiss},
+         familyi={W\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=DV}{%
+         family={Dubourg},
+         familyi={D\bibinitperiod},
+         given={V.},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=VJ}{%
+         family={Vanderplas},
+         familyi={V\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Passos},
+         familyi={P\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=CD}{%
+         family={Cournapeau},
+         familyi={C\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Brucher},
+         familyi={B\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Perrot},
+         familyi={P\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=DE}{%
+         family={Duchesnay},
+         familyi={D\bibinitperiod},
+         given={E.},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PF+1}
+    \strng{fullhash}{PFVGGAMVTBGOBMPPWRDVVJPACDBMPMDE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{2825\bibrangedash 2830}
+    \field{title}{Scikit-learn: Machine Learning in {P}ython}
+    \field{volume}{12}
+    \field{journaltitle}{Journal of Machine Learning Research}
+    \field{year}{2011}
   \endentry
 
   \entry{dettmers2018convolutional}{inproceedings}{}{}
@@ -406,35 +1173,167 @@
     \field{year}{2015}
   \endentry
 
-  \entry{pujara2017sparsity}{inproceedings}{}{}
+  \entry{naeini2015obtaining}{inproceedings}{}{}
     \name{author}{3}{}{%
-      {{hash=PJ}{%
-         family={Pujara},
-         familyi={P\bibinitperiod},
-         given={Jay},
-         giveni={J\bibinitperiod},
+      {{hash=NMP}{%
+         family={Naeini},
+         familyi={N\bibinitperiod},
+         given={Mahdi\bibnamedelima Pakdaman},
+         giveni={M\bibinitperiod\bibinitdelim P\bibinitperiod},
       }}%
-      {{hash=AE}{%
-         family={Augustine},
-         familyi={A\bibinitperiod},
-         given={Eriq},
-         giveni={E\bibinitperiod},
+      {{hash=CG}{%
+         family={Cooper},
+         familyi={C\bibinitperiod},
+         given={Gregory},
+         giveni={G\bibinitperiod},
       }}%
-      {{hash=GL}{%
-         family={Getoor},
-         familyi={G\bibinitperiod},
-         given={Lise},
-         giveni={L\bibinitperiod},
+      {{hash=HM}{%
+         family={Hauskrecht},
+         familyi={H\bibinitperiod},
+         given={Milos},
+         giveni={M\bibinitperiod},
       }}%
     }
-    \strng{namehash}{PJ+1}
-    \strng{fullhash}{PJAEGL1}
+    \strng{namehash}{NMP+1}
+    \strng{fullhash}{NMPCGHM1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{booktitle}{Proceedings of the 2017 conference on empirical methods in natural language processing}
-    \field{pages}{1751\bibrangedash 1756}
-    \field{title}{Sparsity and noise: Where knowledge graph embeddings fall short}
-    \field{year}{2017}
+    \field{booktitle}{Proceedings of the AAAI conference on artificial intelligence}
+    \field{number}{1}
+    \field{title}{Obtaining well calibrated probabilities using bayesian binning}
+    \field{volume}{29}
+    \field{year}{2015}
+  \endentry
+
+  \entry{nixon2019measuring}{inproceedings}{}{}
+    \name{author}{5}{}{%
+      {{hash=NJ}{%
+         family={Nixon},
+         familyi={N\bibinitperiod},
+         given={Jeremy},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=DMW}{%
+         family={Dusenberry},
+         familyi={D\bibinitperiod},
+         given={Michael\bibnamedelima W},
+         giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=ZL}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Linchuan},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=JG}{%
+         family={Jerfel},
+         familyi={J\bibinitperiod},
+         given={Ghassen},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=TD}{%
+         family={Tran},
+         familyi={T\bibinitperiod},
+         given={Dustin},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NJ+1}
+    \strng{fullhash}{NJDMWZLJGTD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{CVPR workshops}
+    \field{number}{7}
+    \field{title}{Measuring calibration in deep learning.}
+    \field{volume}{2}
+    \field{year}{2019}
+  \endentry
+
+  \entry{glenn1950verification}{article}{}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=GWB}{%
+         family={Glenn},
+         familyi={G\bibinitperiod},
+         given={W\bibnamedelima Brier},
+         giveni={W\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {War Department, Office of the Chief Signal Officer}%
+    }
+    \strng{namehash}{GWB+1}
+    \strng{fullhash}{GWB+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 3}
+    \field{title}{Verification of forecasts expressed in terms of probability}
+    \field{volume}{78}
+    \field{journaltitle}{Monthly weather review}
+    \field{year}{1950}
+  \endentry
+
+  \entry{memariani2025linkpredictionnontargeted}{inproceedings}{}{}
+    \name{author}{5}{}{%
+      {{hash=MA}{%
+         family={Memariani},
+         familyi={M\bibinitperiod},
+         given={Adel},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={R\"{o}der},
+         familyi={R\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Sharma},
+         familyi={S\bibinitperiod},
+         given={Arnab},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DC}{%
+         family={Demir},
+         familyi={D\bibinitperiod},
+         given={Caglar},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=NACN}{%
+         family={Ngomo},
+         familyi={N\bibinitperiod},
+         given={Axel-Cyrille\bibnamedelima Ngonga},
+         giveni={A\bibinithyphendelim C\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer-Verlag}%
+    }
+    \keyw{Knowledge Graph Embeddings, Label Smoothing, Label Relaxation, Non-Adversarial Attacks, Data Poisoning}
+    \strng{namehash}{MA+1}
+    \strng{fullhash}{MARMSADCNACN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Knowledge Graph Embedding (KGE) models rely on precise factual information to learn effective representations. These learned representations support many downstream tasks, with link prediction being a primary application. However, recent studies have shown that noise in training data can compromise the effectiveness of knowledge graph embeddings. Therefore, KGEs are highly vulnerable to data poisoning attacks. Typically current attacks on KGEs are studied under targeted scenarios, where target facts and the model are assumed to be known beforehand. Yet, this information is not often available in real-world scenarios. Thus, more realistic scenarios involve non-targeted but malicious perturbations aimed at reducing the overall model performance. In this paper, we focus on enhancing the robustness of link prediction approaches in non-targeted settings. To mitigate the harmful impact of the noisy data, we explore soft-label loss functions as a strategy for reducing overconfidence in model predictions. We performed a thorough evaluation on six state-of-the-art models and five benchmark datasets, with different noise ratios introduced into each dataset. Our results show that soft labels commonly improve the robustness of KGE models across various noise ratios.%
+    }
+    \field{booktitle}{The Semantic Web – ISWC 2025: 24th International Semantic Web Conference, Nara, Japan, November 2–6, 2025, Proceedings, Part I}
+    \verb{doi}
+    \verb 10.1007/978-3-032-09527-5_6
+    \endverb
+    \field{isbn}{978-3-032-09526-8}
+    \field{pages}{99–121}
+    \field{title}{Link Prediction Under Non-targeted Attacks: Do Soft Labels Always Help?}
+    \verb{url}
+    \verb https://doi.org/10.1007/978-3-032-09527-5_6
+    \endverb
+    \list{location}{1}{%
+      {Nara, Japan}%
+    }
+    \field{year}{2025}
+    \warn{\item Can't use 'location' + 'address'}
   \endentry
 \enddatalist
 \endinput
