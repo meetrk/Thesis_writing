@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1769857737.91752 "/Users/meet/Documents/Documents/thesis/untitled folder/file/tumthesis/tumthesis/figures/exp1graph3.tex" "exp1graph3.pdf" "exp1graph3" 1769857738.67581 0
-  "/Users/meet/Documents/Documents/thesis/untitled folder/file/tumthesis/tumthesis/figures/exp1graph3.tex" 1769857737.74665 3232 4005159e2197ebdc20ffcb0666169e67 ""
+["pdflatex"] 1770108050.99425 "/Users/meet/Documents/Documents/thesis/untitled folder/file/tumthesis/tumthesis/figures/experiment1/exp1graph3.tex" "exp1graph3.pdf" "exp1graph3" 1770108052.12417 0
+  "/Users/meet/Documents/Documents/thesis/untitled folder/file/tumthesis/tumthesis/figures/experiment1/exp1graph3.tex" 1770108050.78818 3318 c10f4f6e5ff50a99e82a7db31b5b1a38 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1136768653 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
@@ -144,8 +144,8 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1768422460 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1768422417 3345735 29c916e3cbbc8963fa2ef9cc12e2ff0d ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "exp1graph3.aux" 1769857738.63974 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "exp1graph3.tex" 1769857737.74665 3232 4005159e2197ebdc20ffcb0666169e67 ""
+  "exp1graph3.aux" 1770108052.08282 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "exp1graph3.tex" 1770108050.78818 3318 c10f4f6e5ff50a99e82a7db31b5b1a38 ""
   (generated)
   "exp1graph3.aux"
   "exp1graph3.log"
