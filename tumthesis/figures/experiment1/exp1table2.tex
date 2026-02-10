@@ -1,30 +1,24 @@
 \documentclass[preview,border=2pt]{standalone}
+\usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{multirow}
-\usepackage{makecell} 
 
 \begin{document}
 
-% \setlength{\tabcolsep}{7pt} 
-
-\begin{tabular}{lcccc}
-\toprule
-\multirow{2}{*}{\textbf{Model}} & \multicolumn{2}{c}{\textbf{ECE}} & \multicolumn{2}{c}{\textbf{ACE}} \\
-\cmidrule(lr){2-3} \cmidrule(lr){4-5}
- & \textbf{WN18RR} & \textbf{\makecell{FB15K\\-237}} & \textbf{WN18RR} & \textbf{\makecell{FB15K\\-237}} \\
-\midrule
-\textbf{Baseline} & 0.2968 & 0.0 & 0.2753 & \textbf{0.0} \\
-\addlinespace
-\makecell[l]{Baseline \\+ Edge Dropout (0.1)} & 0.2946 & 0.0 & 0.2109 & 0.0 \\
-\addlinespace
-\makecell[l]{Baseline \\+ Edge Dropout (0.2)} & 0.2985 & 0.0 & 0.2178 & 0.0 \\
-\addlinespace
-\makecell[l]{Baseline \\+ Label Smoothing (0.1)} & 0.4530 & 0.0 & 0.4530 & \textbf{0.0} \\
-\addlinespace
-\makecell[l]{Baseline \\+ Label Smoothing (0.2)} & 0.4403 & 0.0 & 0.4403 & \textbf{0.0} \\
-\addlinespace
-\makecell[l]{Baseline \\+ Edge Dropout (0.2) \\+ Label Smoothing (0.1)} & \textbf{0.5142} & 0.0 & \textbf{0.5142} & \textbf{0.0} \\
-\bottomrule
-\end{tabular}
+\resizebox{1\textwidth}{!}{%
+\begin{tabular}{@{}lcccccccc@{}}
+\hline
+\textbf{Model} & \multicolumn{2}{c}{\textbf{Brier Score}} & \multicolumn{2}{c}{\textbf{ECE}} & \multicolumn{2}{c}{\textbf{ACE}} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+ & WN18RR & FB15K-237 & WN18RR & FB15K-237 & WN18RR & FB15K-237 \\
+\hline
+Baseline & 0.3152 & 0.2755 & 0.3185 & 0.3003 & 0.4405 & 0.3998 \\
+Baseline \\+ Edge Dropout (0.1) & 0.2922 & 0.2426 & 0.2999 & 0.2709 & 0.4378 & 0.3999 \\
+Baseline \\+ Edge Dropout (0.2) & 0.2941 & 0.2309 & 0.3014 & 0.2542 & 0.4319 & 0.3961 \\
+Baseline \\+ Label Smoothing (0.1) & 0.3134 & 0.1838 & 0.3293 & 0.2151 & 0.4394 & 0.3717 \\
+Baseline \\+ Label Smoothing (0.2) & 0.2385 & 0.1537 & 0.2504 & 0.1905 & \textbf{0.3907} & \textbf{0.3064} \\
+Baseline \\+ Edge Dropout (0.2) \\+ Label Smoothing (0.1) & \textbf{0.2013} & \textbf{0.1256} & \textbf{0.2383} & \textbf{0.1578} & 0.4013 & 0.3478 \\
+\hline
+\end{tabular}%
+}
 
 \end{document}

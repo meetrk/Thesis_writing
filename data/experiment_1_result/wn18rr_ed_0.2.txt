@@ -1,12 +1,12 @@
-2026-02-07 15:12:58,135 - __main__ - INFO - Loading configuration from: config/lp_wn18rr.yaml
-2026-02-07 15:12:58,302 - __main__ - INFO - Dataset 'WN18RR' loaded successfully.
-2026-02-07 15:12:58,303 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 173670], num_nodes=40943, edge_type=[173670], train_edge_index=[2, 86835], train_edge_type=[86835], valid_edge_index=[2, 3034], valid_edge_type=[3034], test_edge_index=[2, 3134], test_edge_type=[3134], num_relations=22)
-2026-02-07 15:12:58,303 - __main__ - INFO - Decoder calibration method: scalar
-2026-02-07 15:12:58,303 - __main__ - INFO - Decoder initialized: DistMult(40943, num_relations=11, embedding_dim=500)
-2026-02-07 15:12:58,303 - __main__ - INFO - Decoder parameters count: 5501
-2026-02-07 15:12:58,405 - __main__ - INFO - Encoder initialized successfully.
-2026-02-07 15:12:58,405 - __main__ - INFO - Encoder parameters count: 23474220
-2026-02-07 15:12:58,475 - __main__ - INFO - GAE architecture:
+2026-02-10 12:11:28,907 - __main__ - INFO - Loading configuration from: config/lp_wn18rr.yaml
+2026-02-10 12:11:29,062 - __main__ - INFO - Dataset 'WN18RR' loaded successfully.
+2026-02-10 12:11:29,062 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 173670], num_nodes=40943, edge_type=[173670], train_edge_index=[2, 86835], train_edge_type=[86835], valid_edge_index=[2, 3034], valid_edge_type=[3034], test_edge_index=[2, 3134], test_edge_type=[3134], num_relations=22)
+2026-02-10 12:11:29,062 - __main__ - INFO - Decoder calibration method: scalar
+2026-02-10 12:11:29,062 - __main__ - INFO - Decoder initialized: DistMult(40943, num_relations=11, embedding_dim=500)
+2026-02-10 12:11:29,062 - __main__ - INFO - Decoder parameters count: 5500
+2026-02-10 12:11:29,164 - __main__ - INFO - Encoder initialized successfully.
+2026-02-10 12:11:29,164 - __main__ - INFO - Encoder parameters count: 23474220
+2026-02-10 12:11:29,234 - __main__ - INFO - GAE architecture:
 GAE(
   (encoder): RGCN(
     (bn1): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
@@ -15,30 +15,25 @@ GAE(
   )
   (decoder): DistMult(40943, num_relations=11, embedding_dim=500)
 )
-2026-02-07 15:12:58,478 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'WN18RR', 'path': './dataset/wn18rr'}_20260207-151258
-2026-02-07 15:12:58,478 - __main__ - INFO - Starting uncertainty evaluation on test set...
-2026-02-07 15:12:58,886 - __main__ - INFO - Checkpoint loaded from ./new_models/experiment_1/WN18RR_checkpoint_label_1_negative_sampling_3_edge_dropout_0.2_epoch_2700.pth
-2026-02-07 15:12:58,887 - __main__ - INFO - Pipeline loaded from checkpoint.
-2026-02-07 15:12:58,887 - __main__ - INFO - Starting link prediction evaluation...
-2026-02-07 15:12:58,887 - __main__ - INFO - Uncertainty Estimation Type : standard
-2026-02-07 15:12:58,887 - __main__ - INFO - Calibration Method : scalar
-Before Calibration:
-Average Confidence of Top-1 Predictions: 0.132359856531164
-Max Confidence of Top-1 Predictions: 1.0
-Min Confidence of Top-1 Predictions: 1.4830710288237e-31
-Std Dev of Confidence of Top-1 Predictions: 0.33107407878302003
-2026-02-07 15:13:06,955 - __main__ - INFO - MRR = 0.4048
-2026-02-07 15:13:06,955 - __main__ - INFO - Mean Rank = 3792.8865
-2026-02-07 15:13:06,955 - __main__ - INFO - Hits@1 = 0.3765
-2026-02-07 15:13:06,955 - __main__ - INFO - Hits@3 = 0.4167 
-2026-02-07 15:13:06,955 - __main__ - INFO - Hits@10 = 0.4561
-2026-02-07 15:13:06,955 - __main__ - INFO - Brier Score: 0.1960
-2026-02-07 15:13:06,955 - __main__ - INFO - ECE: 0.2010
-2026-02-07 15:13:06,955 - __main__ - INFO - ACE: 0.4187
-2026-02-07 15:13:06,956 - __main__ - INFO - Probability True: [0.03402446 0.04787234 0.0712766  0.09574468 0.1573631  0.17659574
- 0.26489362 0.52234043 0.96331738 1.        ]
-2026-02-07 15:13:06,956 - __main__ - INFO - Probability Predicted: [3.69319549e-15 7.78519134e-13 2.40448273e-11 3.42369684e-10
- 3.88907172e-09 4.72235565e-08 8.02860184e-07 1.31574583e-04
- 3.23624091e-01 9.99881118e-01]
-2026-02-07 15:13:06,956 - __main__ - INFO - Calibration not enabled; skipping calibration step.
-2026-02-07 15:13:07,132 - __main__ - INFO - Checkpoint saved to new_models/experiment_1/calibrated_WN18RR_checkpoint_label_1_negative_sampling_3_edge_dropout_0.2_epoch_2700.pth
+2026-02-10 12:11:29,238 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'WN18RR', 'path': './dataset/wn18rr'}_20260210-121129
+2026-02-10 12:11:29,238 - __main__ - INFO - Starting uncertainty evaluation on test set...
+2026-02-10 12:11:29,335 - __main__ - INFO - Checkpoint loaded from ./new_models/experiment_1/WN18RR_checkpoint_label_1_negative_sampling_3_edge_dropout_0.2_epoch_2700.pth
+2026-02-10 12:11:29,335 - __main__ - INFO - Pipeline loaded from checkpoint.
+2026-02-10 12:11:29,335 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-10 12:11:29,335 - __main__ - INFO - Uncertainty Estimation Type : standard
+2026-02-10 12:11:29,335 - __main__ - INFO - Calibration Method : scalar
+2026-02-10 12:11:35,066 - __main__ - INFO - MRR = 0.4048
+2026-02-10 12:11:35,066 - __main__ - INFO - Mean Rank = 3792.8865
+2026-02-10 12:11:35,066 - __main__ - INFO - Hits@1 = 0.3765
+2026-02-10 12:11:35,066 - __main__ - INFO - Hits@3 = 0.4167 
+2026-02-10 12:11:35,066 - __main__ - INFO - Hits@10 = 0.4561
+2026-02-10 12:11:35,121 - __main__ - INFO - brier_score: 0.2941
+2026-02-10 12:11:35,121 - __main__ - INFO - ece: 0.3014
+2026-02-10 12:11:35,121 - __main__ - INFO - ace: 0.4319
+2026-02-10 12:11:35,121 - __main__ - INFO - prob_true: [0.07336523 0.10685805 0.15948963 0.25878594 0.27910686 0.43859649
+ 0.72204473 0.96331738 0.9984051  1.        ]
+2026-02-10 12:11:35,121 - __main__ - INFO - prob_pred: [2.40124033e-14 5.03503951e-12 1.68613258e-10 3.19757249e-09
+ 4.92120305e-08 1.05490864e-06 1.46652632e-04 4.90035375e-02
+ 9.36193196e-01 9.99954469e-01]
+2026-02-10 12:11:35,121 - __main__ - INFO - Calibration not enabled; skipping calibration step.
+2026-02-10 12:11:35,283 - __main__ - INFO - Checkpoint saved to new_models/experiment_1/calibrated_WN18RR_checkpoint_label_1_negative_sampling_3_edge_dropout_0.2_epoch_2700.pth

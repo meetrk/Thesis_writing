@@ -1,12 +1,12 @@
-2026-02-07 15:20:04,466 - __main__ - INFO - Loading configuration from: config/lp_fb15k237.yaml
-2026-02-07 15:20:04,648 - __main__ - INFO - Dataset 'FB15k-237' loaded successfully.
-2026-02-07 15:20:04,648 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 544230], num_nodes=14541, edge_type=[544230], train_edge_index=[2, 272115], train_edge_type=[272115], valid_edge_index=[2, 17535], valid_edge_type=[17535], test_edge_index=[2, 20466], test_edge_type=[20466], num_relations=474)
-2026-02-07 15:20:04,648 - __main__ - INFO - Decoder calibration method: scalar
-2026-02-07 15:20:04,649 - __main__ - INFO - Decoder initialized: DistMult(14541, num_relations=237, embedding_dim=500)
-2026-02-07 15:20:04,649 - __main__ - INFO - Decoder parameters count: 118501
-2026-02-07 15:20:04,959 - __main__ - INFO - Encoder initialized successfully.
-2026-02-07 15:20:04,960 - __main__ - INFO - Encoder parameters count: 55173000
-2026-02-07 15:20:05,123 - __main__ - INFO - GAE architecture:
+2026-02-10 12:17:34,138 - __main__ - INFO - Loading configuration from: config/lp_fb15k237.yaml
+2026-02-10 12:17:34,298 - __main__ - INFO - Dataset 'FB15k-237' loaded successfully.
+2026-02-10 12:17:34,298 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 544230], num_nodes=14541, edge_type=[544230], train_edge_index=[2, 272115], train_edge_type=[272115], valid_edge_index=[2, 17535], valid_edge_type=[17535], test_edge_index=[2, 20466], test_edge_type=[20466], num_relations=474)
+2026-02-10 12:17:34,298 - __main__ - INFO - Decoder calibration method: scalar
+2026-02-10 12:17:34,299 - __main__ - INFO - Decoder initialized: DistMult(14541, num_relations=237, embedding_dim=500)
+2026-02-10 12:17:34,299 - __main__ - INFO - Decoder parameters count: 118500
+2026-02-10 12:17:34,608 - __main__ - INFO - Encoder initialized successfully.
+2026-02-10 12:17:34,608 - __main__ - INFO - Encoder parameters count: 55173000
+2026-02-10 12:17:34,770 - __main__ - INFO - GAE architecture:
 GAE(
   (encoder): RGCN(
     (bn1): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
@@ -15,29 +15,24 @@ GAE(
   )
   (decoder): DistMult(14541, num_relations=237, embedding_dim=500)
 )
-2026-02-07 15:20:05,126 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'FB15k-237', 'path': './dataset/fb15k237'}_20260207-152005
-2026-02-07 15:20:05,126 - __main__ - INFO - Starting uncertainty evaluation on test set...
-2026-02-07 15:20:05,348 - __main__ - INFO - Checkpoint loaded from ./new_models/experiment_1/FB15k-237_checkpoint_label_1_negative_sampling_3_edge_dropout_0.2_epoch_1000.pth
-2026-02-07 15:20:05,348 - __main__ - INFO - Pipeline loaded from checkpoint.
-2026-02-07 15:20:05,348 - __main__ - INFO - Starting link prediction evaluation...
-2026-02-07 15:20:05,348 - __main__ - INFO - Uncertainty Estimation Type : standard
-2026-02-07 15:20:05,348 - __main__ - INFO - Calibration Method : scalar
-Before Calibration:
-Average Confidence of Top-1 Predictions: 0.16096364829421694
-Max Confidence of Top-1 Predictions: 1.0
-Min Confidence of Top-1 Predictions: 1.3853320920430755e-36
-Std Dev of Confidence of Top-1 Predictions: 0.33134832329151337
-2026-02-07 15:20:36,767 - __main__ - INFO - MRR = 0.2551
-2026-02-07 15:20:36,767 - __main__ - INFO - Mean Rank = 376.7083
-2026-02-07 15:20:36,767 - __main__ - INFO - Hits@1 = 0.1640
-2026-02-07 15:20:36,767 - __main__ - INFO - Hits@3 = 0.2804 
-2026-02-07 15:20:36,767 - __main__ - INFO - Hits@10 = 0.4433
-2026-02-07 15:20:36,767 - __main__ - INFO - Brier Score: 0.1512
-2026-02-07 15:20:36,767 - __main__ - INFO - ECE: 0.1724
-2026-02-07 15:20:36,767 - __main__ - INFO - ACE: 0.3951
-2026-02-07 15:20:36,768 - __main__ - INFO - Probability True: [0.0120531  0.01824253 0.02899023 0.0371396  0.05       0.08991692
- 0.27605863 0.84883532 0.9771154  0.99519505]
-2026-02-07 15:20:36,768 - __main__ - INFO - Probability Predicted: [6.02721575e-12 1.29734704e-09 3.34260155e-08 4.07535639e-07
- 3.61076906e-06 3.20110666e-05 7.80562504e-04 5.26806841e-02
- 5.75344777e-01 9.80798625e-01]
-2026-02-07 15:20:36,768 - __main__ - INFO - Calibration not enabled; skipping calibration step.
+2026-02-10 12:17:34,773 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'FB15k-237', 'path': './dataset/fb15k237'}_20260210-121734
+2026-02-10 12:17:34,773 - __main__ - INFO - Starting uncertainty evaluation on test set...
+2026-02-10 12:17:34,969 - __main__ - INFO - Checkpoint loaded from ./new_models/experiment_1/FB15k-237_checkpoint_label_1_negative_sampling_3_edge_dropout_0.2_epoch_1000.pth
+2026-02-10 12:17:34,970 - __main__ - INFO - Pipeline loaded from checkpoint.
+2026-02-10 12:17:34,970 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-10 12:17:34,970 - __main__ - INFO - Uncertainty Estimation Type : standard
+2026-02-10 12:17:34,970 - __main__ - INFO - Calibration Method : scalar
+2026-02-10 12:18:00,495 - __main__ - INFO - MRR = 0.2551
+2026-02-10 12:18:00,495 - __main__ - INFO - Mean Rank = 376.7083
+2026-02-10 12:18:00,495 - __main__ - INFO - Hits@1 = 0.1640
+2026-02-10 12:18:00,495 - __main__ - INFO - Hits@3 = 0.2804 
+2026-02-10 12:18:00,495 - __main__ - INFO - Hits@10 = 0.4433
+2026-02-10 12:18:00,771 - __main__ - INFO - brier_score: 0.2309
+2026-02-10 12:18:00,771 - __main__ - INFO - ece: 0.2542
+2026-02-10 12:18:00,771 - __main__ - INFO - ace: 0.3961
+2026-02-10 12:18:00,771 - __main__ - INFO - prob_true: [0.02638007 0.04031273 0.07158563 0.10041534 0.21964329 0.67529929
+ 0.95602248 0.97068165 0.95357928 0.98607719]
+2026-02-10 12:18:00,772 - __main__ - INFO - prob_pred: [3.10811739e-11 7.63909715e-09 2.53771226e-07 4.31989170e-06
+ 8.08379661e-05 4.95505135e-03 8.09656606e-02 4.69685332e-01
+ 9.08257778e-01 9.93836925e-01]
+2026-02-10 12:18:00,772 - __main__ - INFO - Calibration not enabled; skipping calibration step.
