@@ -1,8 +1,8 @@
-PWD /Users/meet/Documents/Documents/thesis/untitled folder/file/tumthesis/tumthesis/figures/experiment2
+PWD /Users/meet/Documents/Documents/thesis/project/file/tumthesis/tumthesis/figures/experiment2
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/meet/Documents/Documents/thesis/untitled folder/file/tumthesis/tumthesis/figures/experiment2/graph_fb15.tex
+INPUT /Users/meet/Documents/Documents/thesis/project/file/tumthesis/tumthesis/figures/experiment2/graph_fb15.tex
 OUTPUT graph_fb15.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/standalone/standalone.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/standalone/standalone.cls
