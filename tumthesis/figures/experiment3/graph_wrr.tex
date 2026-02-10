@@ -1,0 +1,75 @@
+\documentclass[preview,border=2pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{patchplots}
+\usetikzlibrary{patterns}
+\usepackage{xcolor}
+
+\begin{document}
+
+\begin{tikzpicture}
+    \begin{axis}[
+        ybar=0pt,
+        title={\textbf{WN18RR Metrics After Calibration}},
+        width=\textwidth,
+        height=8cm,
+        symbolic x coords={MRR, Hits@1, Hits@3, Hits@10, Brier Score, ECE},
+        xtick=data,
+        nodes near coords,
+        nodes near coords style={font=\scriptsize, rotate=90, anchor=west, /pgf/number format/fixed, /pgf/number format/precision=4},
+        ymin=0, ymax=0.65,
+        ylabel={Score},
+        ymajorgrids=true,
+        grid style=dashed,
+        bar width=8pt,
+        enlarge x limits=0.15,
+        legend style={at={(0.5,-0.15)}, anchor=north, legend columns=2, column sep=15pt, /tikz/every even column/.append style={column sep=60pt}, draw=none},
+        xticklabel style={font=\small},
+    ]
+    
+
+    % Uncalibrated
+    \addplot[pattern=crosshatch, pattern color=gray!70, fill=gray!20, draw=black] coordinates {
+        (MRR, 0.4386)
+        (Hits@1, 0.3998)
+        (Hits@3, 0.4544)
+        (Hits@10, 0.5123)
+        (Brier Score, 0.3972)
+        (ECE, 0.2377)
+    };
+    
+    % Temperature Scaling (wn18rr_combined_ts)
+    \addplot[fill=orange!60!white, draw=black] coordinates {
+        (MRR, 0.4386)
+        (Hits@1, 0.3998)
+        (Hits@3, 0.4544)
+        (Hits@10, 0.5123)
+        (Brier Score, 0.1806)
+        (ECE, 0.1820)
+    };
+    
+    % Platt Scaling (wn18rr_combined_ps)
+    \addplot[fill=purple!60!white, draw=black] coordinates {
+        (MRR, 0.4386)
+        (Hits@1, 0.3998)
+        (Hits@3, 0.4544)
+        (Hits@10, 0.5123)
+        (Brier Score, 0.1076)
+        (ECE, 0.0310)
+    };
+    
+    % Isotonic Regression (wn18rr_combined_iso)
+    \addplot[fill=teal!60!white, draw=black] coordinates {
+        (MRR, 0.4250)
+        (Hits@1, 0.3748)
+        (Hits@3, 0.4389)
+        (Hits@10, 0.5010)
+        (Brier Score, 0.1427)
+        (ECE, 0.1475)
+    };
+
+    \legend{Uncalibrated, Temperature Scaling, Platt Scaling, Isotonic Regression}
+    \end{axis}
+\end{tikzpicture}
+
+\end{document}
