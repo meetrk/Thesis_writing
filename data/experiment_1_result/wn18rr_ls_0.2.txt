@@ -1,0 +1,43 @@
+2026-02-07 15:13:27,938 - __main__ - INFO - Loading configuration from: config/lp_wn18rr.yaml
+2026-02-07 15:13:28,106 - __main__ - INFO - Dataset 'WN18RR' loaded successfully.
+2026-02-07 15:13:28,106 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 173670], num_nodes=40943, edge_type=[173670], train_edge_index=[2, 86835], train_edge_type=[86835], valid_edge_index=[2, 3034], valid_edge_type=[3034], test_edge_index=[2, 3134], test_edge_type=[3134], num_relations=22)
+2026-02-07 15:13:28,106 - __main__ - INFO - Decoder calibration method: scalar
+2026-02-07 15:13:28,106 - __main__ - INFO - Decoder initialized: DistMult(40943, num_relations=11, embedding_dim=500)
+2026-02-07 15:13:28,106 - __main__ - INFO - Decoder parameters count: 5501
+2026-02-07 15:13:28,209 - __main__ - INFO - Encoder initialized successfully.
+2026-02-07 15:13:28,210 - __main__ - INFO - Encoder parameters count: 23474220
+2026-02-07 15:13:28,279 - __main__ - INFO - GAE architecture:
+GAE(
+  (encoder): RGCN(
+    (bn1): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1): RGCNConv(500, 500, num_relations=22)
+    (conv2): RGCNConv(500, 500, num_relations=22)
+  )
+  (decoder): DistMult(40943, num_relations=11, embedding_dim=500)
+)
+2026-02-07 15:13:28,282 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'WN18RR', 'path': './dataset/wn18rr'}_20260207-151328
+2026-02-07 15:13:28,283 - __main__ - INFO - Starting uncertainty evaluation on test set...
+2026-02-07 15:13:28,389 - __main__ - INFO - Checkpoint loaded from ./new_models/experiment_1/WN18RR_checkpoint_label_0.9_negative_sampling_3_edge_dropout_0_epoch_2300.pth
+2026-02-07 15:13:28,389 - __main__ - INFO - Pipeline loaded from checkpoint.
+2026-02-07 15:13:28,389 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-07 15:13:28,389 - __main__ - INFO - Uncertainty Estimation Type : standard
+2026-02-07 15:13:28,389 - __main__ - INFO - Calibration Method : scalar
+Before Calibration:
+Average Confidence of Top-1 Predictions: 0.19814775265201331
+Max Confidence of Top-1 Predictions: 0.8888283967971802
+Min Confidence of Top-1 Predictions: 0.010228910483419895
+Std Dev of Confidence of Top-1 Predictions: 0.23979507602561617
+2026-02-07 15:13:36,441 - __main__ - INFO - MRR = 0.3963
+2026-02-07 15:13:36,441 - __main__ - INFO - Mean Rank = 5480.4912
+2026-02-07 15:13:36,441 - __main__ - INFO - Hits@1 = 0.3784
+2026-02-07 15:13:36,441 - __main__ - INFO - Hits@3 = 0.4019 
+2026-02-07 15:13:36,441 - __main__ - INFO - Hits@10 = 0.4298
+2026-02-07 15:13:36,441 - __main__ - INFO - Brier Score: 0.1621
+2026-02-07 15:13:36,441 - __main__ - INFO - ECE: 0.1352
+2026-02-07 15:13:36,441 - __main__ - INFO - ACE: 0.3653
+2026-02-07 15:13:36,441 - __main__ - INFO - Probability True: [0.08931419 0.0893617  0.10106383 0.13928761 0.16489362 0.18723404
+ 0.21052632 0.43593833 0.91595745 1.        ]
+2026-02-07 15:13:36,441 - __main__ - INFO - Probability Predicted: [0.0676453  0.08165575 0.08819443 0.09324373 0.09759619 0.1032166
+ 0.11239978 0.13515396 0.36551221 0.83706391]
+2026-02-07 15:13:36,441 - __main__ - INFO - Calibration not enabled; skipping calibration step.
+2026-02-07 15:13:36,612 - __main__ - INFO - Checkpoint saved to new_models/experiment_1/calibrated_WN18RR_checkpoint_label_0.9_negative_sampling_3_edge_dropout_0_epoch_2300.pth

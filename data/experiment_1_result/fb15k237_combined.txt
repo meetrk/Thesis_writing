@@ -1,0 +1,42 @@
+2026-02-07 15:24:15,561 - __main__ - INFO - Loading configuration from: config/lp_fb15k237.yaml
+2026-02-07 15:24:15,742 - __main__ - INFO - Dataset 'FB15k-237' loaded successfully.
+2026-02-07 15:24:15,742 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 544230], num_nodes=14541, edge_type=[544230], train_edge_index=[2, 272115], train_edge_type=[272115], valid_edge_index=[2, 17535], valid_edge_type=[17535], test_edge_index=[2, 20466], test_edge_type=[20466], num_relations=474)
+2026-02-07 15:24:15,743 - __main__ - INFO - Decoder calibration method: scalar
+2026-02-07 15:24:15,744 - __main__ - INFO - Decoder initialized: DistMult(14541, num_relations=237, embedding_dim=500)
+2026-02-07 15:24:15,744 - __main__ - INFO - Decoder parameters count: 118501
+2026-02-07 15:24:16,052 - __main__ - INFO - Encoder initialized successfully.
+2026-02-07 15:24:16,052 - __main__ - INFO - Encoder parameters count: 55173000
+2026-02-07 15:24:16,215 - __main__ - INFO - GAE architecture:
+GAE(
+  (encoder): RGCN(
+    (bn1): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1): RGCNConv(500, 500, num_relations=474)
+    (conv2): RGCNConv(500, 500, num_relations=474)
+  )
+  (decoder): DistMult(14541, num_relations=237, embedding_dim=500)
+)
+2026-02-07 15:24:16,217 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'FB15k-237', 'path': './dataset/fb15k237'}_20260207-152416
+2026-02-07 15:24:16,218 - __main__ - INFO - Starting uncertainty evaluation on test set...
+2026-02-07 15:24:16,431 - __main__ - INFO - Checkpoint loaded from ./new_models/experiment_1/FB15k-237_checkpoint_label_0.9_negative_sampling_3_edge_dropout_0.2_epoch_1000.pth
+2026-02-07 15:24:16,431 - __main__ - INFO - Pipeline loaded from checkpoint.
+2026-02-07 15:24:16,432 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-07 15:24:16,432 - __main__ - INFO - Uncertainty Estimation Type : standard
+2026-02-07 15:24:16,432 - __main__ - INFO - Calibration Method : scalar
+Before Calibration:
+Average Confidence of Top-1 Predictions: 0.2421801447870156
+Max Confidence of Top-1 Predictions: 0.9984009861946106
+Min Confidence of Top-1 Predictions: 0.000261287932517007
+Std Dev of Confidence of Top-1 Predictions: 0.3230395009544444
+2026-02-07 15:24:47,995 - __main__ - INFO - MRR = 0.2416
+2026-02-07 15:24:47,995 - __main__ - INFO - Mean Rank = 371.6471
+2026-02-07 15:24:47,995 - __main__ - INFO - Hits@1 = 0.1501
+2026-02-07 15:24:47,995 - __main__ - INFO - Hits@3 = 0.2657 
+2026-02-07 15:24:47,995 - __main__ - INFO - Hits@10 = 0.4325
+2026-02-07 15:24:47,995 - __main__ - INFO - Brier Score: 0.0830
+2026-02-07 15:24:47,995 - __main__ - INFO - ECE: 0.1027
+2026-02-07 15:24:47,995 - __main__ - INFO - ACE: 0.3197
+2026-02-07 15:24:47,995 - __main__ - INFO - Probability True: [0.0267101  0.01563645 0.00944702 0.0120531  0.01873117 0.04055705
+ 0.3465798  0.89502402 0.9746722  0.99413585]
+2026-02-07 15:24:47,995 - __main__ - INFO - Probability Predicted: [0.01873723 0.03047901 0.03747909 0.04349554 0.05009087 0.06035469
+ 0.10337613 0.39143193 0.77538506 0.91105587]
+2026-02-07 15:24:47,995 - __main__ - INFO - Calibration not enabled; skipping calibration step.

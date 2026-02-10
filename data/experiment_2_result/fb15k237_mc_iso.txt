@@ -1,0 +1,29 @@
+2026-02-09 15:47:01,859 - __main__ - INFO - Loading configuration from: config/lp_fb15k237ed2.yaml
+2026-02-09 15:47:02,018 - __main__ - INFO - Dataset 'FB15k-237' loaded successfully.
+2026-02-09 15:47:02,018 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 544230], num_nodes=14541, edge_type=[544230], train_edge_index=[2, 272115], train_edge_type=[272115], valid_edge_index=[2, 17535], valid_edge_type=[17535], test_edge_index=[2, 20466], test_edge_type=[20466], num_relations=474)
+2026-02-09 15:47:02,018 - __main__ - INFO - Decoder calibration method: isotonic_regression
+2026-02-09 15:47:02,019 - __main__ - INFO - Decoder initialized: DistMult(14541, num_relations=237, embedding_dim=500)
+2026-02-09 15:47:02,019 - __main__ - INFO - Decoder parameters count: 118500
+2026-02-09 15:47:02,328 - __main__ - INFO - Encoder initialized successfully.
+2026-02-09 15:47:02,328 - __main__ - INFO - Encoder parameters count: 55173000
+2026-02-09 15:47:02,490 - __main__ - INFO - GAE architecture:
+GAE(
+  (encoder): RGCN(
+    (bn1): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1): RGCNConv(500, 500, num_relations=474)
+    (conv2): RGCNConv(500, 500, num_relations=474)
+  )
+  (decoder): DistMult(14541, num_relations=237, embedding_dim=500)
+)
+2026-02-09 15:47:02,494 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'FB15k-237', 'path': './dataset/fb15k237'}_20260209-154702
+2026-02-09 15:47:02,494 - __main__ - INFO - Starting uncertainty evaluation on test set...
+2026-02-09 15:47:02,688 - __main__ - INFO - Checkpoint loaded from ./new_models/experiment_1/FB15k-237_checkpoint_label_1_negative_sampling_3_edge_dropout_0.2_epoch_1000.pth
+2026-02-09 15:47:02,689 - __main__ - INFO - Pipeline loaded from checkpoint.
+2026-02-09 15:47:02,689 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-09 15:47:02,689 - __main__ - INFO - Uncertainty Estimation Type : mc_dropout
+2026-02-09 15:47:02,689 - __main__ - INFO - Calibration Method : isotonic_regression
+2026-02-09 15:47:59,460 - __main__ - INFO - MRR = 0.2525
+2026-02-09 15:47:59,460 - __main__ - INFO - Mean Rank = 359.2489
+2026-02-09 15:47:59,460 - __main__ - INFO - Hits@1 = 0.1619
+2026-02-09 15:47:59,460 - __main__ - INFO - Hits@3 = 0.2772 
+2026-02-09 15:47:59,461 - __main__ - INFO - Hits@10 = 0.4407

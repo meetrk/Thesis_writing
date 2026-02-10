@@ -1,0 +1,68 @@
+2026-02-08 22:45:45,038 - __main__ - INFO - Loading configuration from: config/lp_fb15k237.yaml
+2026-02-08 22:45:45,170 - __main__ - INFO - Dataset 'FB15k-237' loaded successfully.
+2026-02-08 22:45:45,170 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 544230], num_nodes=14541, edge_type=[544230], train_edge_index=[2, 272115], train_edge_type=[272115], valid_edge_index=[2, 17535], valid_edge_type=[17535], test_edge_index=[2, 20466], test_edge_type=[20466], num_relations=474)
+2026-02-08 22:45:45,170 - __main__ - INFO - Decoder calibration method: scalar
+2026-02-08 22:45:45,171 - __main__ - INFO - Decoder initialized: DistMult(14541, num_relations=237, embedding_dim=500)
+2026-02-08 22:45:45,171 - __main__ - INFO - Decoder parameters count: 118500
+2026-02-08 22:45:45,488 - __main__ - INFO - Encoder initialized successfully.
+2026-02-08 22:45:45,488 - __main__ - INFO - Encoder parameters count: 55173000
+2026-02-08 22:45:45,652 - __main__ - INFO - GAE architecture:
+GAE(
+  (encoder): RGCN(
+    (bn1): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1): RGCNConv(500, 500, num_relations=474)
+    (conv2): RGCNConv(500, 500, num_relations=474)
+  )
+  (decoder): DistMult(14541, num_relations=237, embedding_dim=500)
+)
+2026-02-08 22:45:45,656 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'FB15k-237', 'path': './dataset/fb15k237'}_20260208-224545
+2026-02-08 22:45:45,656 - __main__ - INFO - Starting uncertainty evaluation on test set...
+2026-02-08 22:45:46,250 - __main__ - INFO - Checkpoint loaded from ./new_models/experiment_1/FB15k-237_checkpoint_label_1_negative_sampling_3_edge_dropout_0.2_epoch_1000.pth
+2026-02-08 22:45:46,251 - __main__ - INFO - Pipeline loaded from checkpoint.
+2026-02-08 22:45:46,251 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-08 22:45:46,251 - __main__ - INFO - Uncertainty Estimation Type : standard
+2026-02-08 22:45:46,251 - __main__ - INFO - Calibration Method : scalar
+2026-02-08 22:46:18,232 - __main__ - INFO - MRR = 0.2551
+2026-02-08 22:46:18,233 - __main__ - INFO - Mean Rank = 376.7083
+2026-02-08 22:46:18,233 - __main__ - INFO - Hits@1 = 0.1640
+2026-02-08 22:46:18,233 - __main__ - INFO - Hits@3 = 0.2804 
+2026-02-08 22:46:18,233 - __main__ - INFO - Hits@10 = 0.4433
+2026-02-08 22:46:18,645 - __main__ - INFO - brier_score: 0.2312
+2026-02-08 22:46:18,646 - __main__ - INFO - ece: 0.2540
+2026-02-08 22:46:18,646 - __main__ - INFO - ace: 0.3973
+2026-02-08 22:46:18,646 - __main__ - INFO - prob_true: [0.02833415 0.04055705 0.06963108 0.09919375 0.21964329 0.68433912
+ 0.94893721 0.96946005 0.95528952 0.98461163]
+2026-02-08 22:46:18,646 - __main__ - INFO - prob_pred: [4.21827188e-11 8.90112614e-09 2.61931652e-07 4.30301209e-06
+ 8.06938248e-05 5.08208580e-03 8.14976601e-02 4.70707676e-01
+ 9.08945809e-01 9.93830265e-01]
+2026-02-08 22:46:18,653 - __main__ - INFO - Starting calibration on test set...
+2026-02-08 22:46:18,653 - __main__ - INFO - Starting calibration process...
+2026-02-08 22:46:18,653 - __main__ - INFO - Uncertainty model type: {'type': 'standard', 'mc_samples': 5}
+2026-02-08 22:46:18,653 - __main__ - INFO - Calibration method: scalar
+Before Temperature Scaling:
+  BCE Loss: 2.6019
+  MRL Loss: 0.0380
+  Initial Temperature: 1.000
+Early stopping at iteration 900
+
+After Temperature Scaling:
+  BCE Loss: 0.9538 (Δ -1.6481)
+  MRL Loss: 0.0102 (Δ -0.0278)
+  Optimal Temperature: 6.842
+  Optimization steps: 900
+  Ranking violations: 675/17535 (3.8%)
+2026-02-08 22:46:23,843 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-08 22:46:23,843 - __main__ - INFO - Uncertainty Estimation Type : standard
+2026-02-08 22:46:23,843 - __main__ - INFO - Calibration Method : scalar
+2026-02-08 22:46:55,737 - __main__ - INFO - MRR = 0.2551
+2026-02-08 22:46:55,737 - __main__ - INFO - Mean Rank = 376.7083
+2026-02-08 22:46:55,738 - __main__ - INFO - Hits@1 = 0.1640
+2026-02-08 22:46:55,738 - __main__ - INFO - Hits@3 = 0.2805 
+2026-02-08 22:46:55,738 - __main__ - INFO - Hits@10 = 0.4433
+2026-02-08 22:46:56,081 - __main__ - INFO - brier_score: 0.1620
+2026-02-08 22:46:56,081 - __main__ - INFO - ece: 0.2152
+2026-02-08 22:46:56,081 - __main__ - INFO - ace: 0.2476
+2026-02-08 22:46:56,082 - __main__ - INFO - prob_true: [0.02711285 0.04177865 0.07011972 0.09870511 0.22086489 0.6816516
+ 0.95406792 0.97459076 0.94722697 0.98387885]
+2026-02-08 22:46:56,082 - __main__ - INFO - prob_pred: [0.01969207 0.05656311 0.09451978 0.13687364 0.1935414  0.29674543
+ 0.40583074 0.49564094 0.59126087 0.70170417]

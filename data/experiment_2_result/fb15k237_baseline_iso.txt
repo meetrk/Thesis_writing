@@ -1,0 +1,59 @@
+2026-02-09 15:53:09,548 - __main__ - INFO - Loading configuration from: config/lp_fb15k237.yaml
+2026-02-09 15:53:09,728 - __main__ - INFO - Dataset 'FB15k-237' loaded successfully.
+2026-02-09 15:53:09,728 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 544230], num_nodes=14541, edge_type=[544230], train_edge_index=[2, 272115], train_edge_type=[272115], valid_edge_index=[2, 17535], valid_edge_type=[17535], test_edge_index=[2, 20466], test_edge_type=[20466], num_relations=474)
+2026-02-09 15:53:09,728 - __main__ - INFO - Decoder calibration method: isotonic_regression
+2026-02-09 15:53:09,729 - __main__ - INFO - Decoder initialized: DistMult(14541, num_relations=237, embedding_dim=500)
+2026-02-09 15:53:09,729 - __main__ - INFO - Decoder parameters count: 118500
+2026-02-09 15:53:10,037 - __main__ - INFO - Encoder initialized successfully.
+2026-02-09 15:53:10,038 - __main__ - INFO - Encoder parameters count: 55173000
+2026-02-09 15:53:10,200 - __main__ - INFO - GAE architecture:
+GAE(
+  (encoder): RGCN(
+    (bn1): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1): RGCNConv(500, 500, num_relations=474)
+    (conv2): RGCNConv(500, 500, num_relations=474)
+  )
+  (decoder): DistMult(14541, num_relations=237, embedding_dim=500)
+)
+2026-02-09 15:53:10,204 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'FB15k-237', 'path': './dataset/fb15k237'}_20260209-155310
+2026-02-09 15:53:10,205 - __main__ - INFO - Starting uncertainty evaluation on test set...
+2026-02-09 15:53:10,406 - __main__ - INFO - Checkpoint loaded from ./new_models/experiment_1/FB15k-237_checkpoint_label_1_negative_sampling_3_edge_dropout_0.2_epoch_1000.pth
+2026-02-09 15:53:10,406 - __main__ - INFO - Pipeline loaded from checkpoint.
+2026-02-09 15:53:10,406 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-09 15:53:10,406 - __main__ - INFO - Uncertainty Estimation Type : standard
+2026-02-09 15:53:10,406 - __main__ - INFO - Calibration Method : isotonic_regression
+2026-02-09 15:53:36,018 - __main__ - INFO - MRR = 0.2551
+2026-02-09 15:53:36,018 - __main__ - INFO - Mean Rank = 376.7083
+2026-02-09 15:53:36,018 - __main__ - INFO - Hits@1 = 0.1640
+2026-02-09 15:53:36,018 - __main__ - INFO - Hits@3 = 0.2804 
+2026-02-09 15:53:36,018 - __main__ - INFO - Hits@10 = 0.4433
+2026-02-09 15:53:36,403 - __main__ - INFO - brier_score: 0.2325
+2026-02-09 15:53:36,403 - __main__ - INFO - ece: 0.2533
+2026-02-09 15:53:36,403 - __main__ - INFO - ace: 0.3941
+2026-02-09 15:53:36,403 - __main__ - INFO - prob_true: [0.02760137 0.04055705 0.07085268 0.10408014 0.22550696 0.68702663
+ 0.95113609 0.96823846 0.94209626 0.98290181]
+2026-02-09 15:53:36,404 - __main__ - INFO - prob_pred: [3.39816534e-11 8.55992371e-09 2.74897726e-07 4.60973053e-06
+ 9.08166207e-05 5.35099937e-03 8.43287266e-02 4.79787510e-01
+ 9.11094071e-01 9.93881859e-01]
+2026-02-09 15:53:36,412 - __main__ - INFO - Starting calibration on test set...
+2026-02-09 15:53:36,412 - __main__ - INFO - Starting calibration process...
+2026-02-09 15:53:36,412 - __main__ - INFO - Uncertainty model type: {'type': 'standard', 'mc_samples': 5}
+2026-02-09 15:53:36,412 - __main__ - INFO - Starting Isotonic Regression Calibration
+2026-02-09 15:53:36,685 - __main__ - INFO - Isotonic Regression model fitted.
+2026-02-09 15:53:36,685 - __main__ - INFO - Calibration Complete!
+2026-02-09 15:53:36,685 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-09 15:53:36,685 - __main__ - INFO - Uncertainty Estimation Type : standard
+2026-02-09 15:53:36,685 - __main__ - INFO - Calibration Method : isotonic_regression
+2026-02-09 15:54:31,097 - __main__ - INFO - MRR = 0.2228
+2026-02-09 15:54:31,097 - __main__ - INFO - Mean Rank = 383.8751
+2026-02-09 15:54:31,097 - __main__ - INFO - Hits@1 = 0.1250
+2026-02-09 15:54:31,097 - __main__ - INFO - Hits@3 = 0.2417 
+2026-02-09 15:54:31,097 - __main__ - INFO - Hits@10 = 0.3987
+2026-02-09 15:54:31,365 - __main__ - INFO - Uncertainty scores after calibration:
+2026-02-09 15:54:31,374 - __main__ - INFO - brier_score: 0.1193
+2026-02-09 15:54:31,374 - __main__ - INFO - ece: 0.1747
+2026-02-09 15:54:31,374 - __main__ - INFO - ace: 0.3037
+2026-02-09 15:54:31,374 - __main__ - INFO - prob_true: [0.02760137 0.03957977 0.07158563 0.10192837 0.23264494 0.69809905
+ 0.95563917 0.97274827 0.9890411 ]
+2026-02-09 15:54:31,375 - __main__ - INFO - prob_pred: [0.00447062 0.00451427 0.00582714 0.01136408 0.02856824 0.24354534
+ 0.68144797 0.77860894 0.88349675]

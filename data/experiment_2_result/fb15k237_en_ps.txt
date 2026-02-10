@@ -1,0 +1,62 @@
+2026-02-09 15:21:32,073 - __main__ - INFO - Loading configuration from: config/lp_fb15k237_ensemble.yaml
+2026-02-09 15:21:32,246 - __main__ - INFO - Dataset 'FB15k-237' loaded successfully.
+2026-02-09 15:21:32,246 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 544230], num_nodes=14541, edge_type=[544230], train_edge_index=[2, 272115], train_edge_type=[272115], valid_edge_index=[2, 17535], valid_edge_type=[17535], test_edge_index=[2, 20466], test_edge_type=[20466], num_relations=474)
+2026-02-09 15:21:32,246 - __main__ - INFO - Decoder calibration method: platt_scaling
+2026-02-09 15:21:32,246 - __main__ - INFO - Creating Deep Ensemble with 5 models...
+2026-02-09 15:21:35,200 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'FB15k-237', 'path': './dataset/fb15k237'}_20260209-152135
+2026-02-09 15:21:35,200 - __main__ - INFO - Starting uncertainty evaluation on test set...
+2026-02-09 15:21:36,268 - __main__ - INFO - Ensemble checkpoint loaded from ./new_models/experiment_2/FB15k-237_ensemble_checkpoint_scalar_epoch_1000.pth
+2026-02-09 15:21:36,268 - __main__ - INFO - Checkpoint loaded. Evaluating ensemble uncertainty on test set...
+2026-02-09 15:21:36,268 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-09 15:21:36,269 - __main__ - INFO - Uncertainty Estimation Type : ensemble
+2026-02-09 15:21:36,269 - __main__ - INFO - Calibration Method : platt_scaling
+2026-02-09 15:22:08,784 - __main__ - INFO - MRR = 0.2864
+2026-02-09 15:22:08,785 - __main__ - INFO - Mean Rank = 229.9972
+2026-02-09 15:22:08,785 - __main__ - INFO - Hits@1 = 0.1877
+2026-02-09 15:22:08,785 - __main__ - INFO - Hits@3 = 0.3185 
+2026-02-09 15:22:08,785 - __main__ - INFO - Hits@10 = 0.4897
+2026-02-09 15:22:10,068 - __main__ - INFO - brier_score: 0.1702
+2026-02-09 15:22:10,068 - __main__ - INFO - ece: 0.1918
+2026-02-09 15:22:10,068 - __main__ - INFO - ace: 0.3966
+2026-02-09 15:22:10,068 - __main__ - INFO - prob_true: [0.00781632 0.02150012 0.04324456 0.07622771 0.19887613 0.76716345
+ 0.96457366 0.95235768 0.98045443 0.98778701]
+2026-02-09 15:22:10,068 - __main__ - INFO - prob_pred: [6.75597240e-11 1.12192813e-08 3.27377770e-07 5.31384332e-06
+ 1.42051279e-04 1.89680759e-02 2.87895760e-01 8.47065622e-01
+ 9.88663433e-01 9.99125288e-01]
+2026-02-09 15:22:10,068 - __main__ - INFO - Starting calibration process...
+2026-02-09 15:22:10,068 - __main__ - INFO - Uncertainty model type: {'type': 'ensemble', 'mc_samples': 5}
+2026-02-09 15:22:10,069 - __main__ - INFO - Calibration method: platt_scaling
+Before Platt Scaling (MC Dropout):
+  BCE Loss: 1.7956
+  MRL Loss: 0.0301
+  Total Loss: 1.8257
+Early stopping at iteration 600
+
+After Platt Scaling (MC Dropout):
+  BCE Loss: 0.4401 (Δ -1.3555)
+  MRL Loss: 0.0081 (Δ -0.0220)
+  Total Loss: 0.4482 (Δ -1.3775)
+  Step count: 600
+  Ranking violations: 530/17535 (3.0%)
+
+Calibrated probability statistics:
+  Positives - Mean: 0.877, Std: 0.210
+  Negatives - Mean: 0.123, Std: 0.203
+2026-02-09 15:22:14,822 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-09 15:22:14,822 - __main__ - INFO - Uncertainty Estimation Type : ensemble
+2026-02-09 15:22:14,822 - __main__ - INFO - Calibration Method : platt_scaling
+2026-02-09 15:22:47,755 - __main__ - INFO - MRR = 0.2864
+2026-02-09 15:22:47,755 - __main__ - INFO - Mean Rank = 229.9986
+2026-02-09 15:22:47,755 - __main__ - INFO - Hits@1 = 0.1877
+2026-02-09 15:22:47,755 - __main__ - INFO - Hits@3 = 0.3185 
+2026-02-09 15:22:47,755 - __main__ - INFO - Hits@10 = 0.4897
+2026-02-09 15:22:49,009 - __main__ - INFO - Applied Platt Scaling with Ensemble calibration
+2026-02-09 15:22:49,018 - __main__ - INFO - brier_score: 0.0589
+2026-02-09 15:22:49,018 - __main__ - INFO - ece: 0.0248
+2026-02-09 15:22:49,018 - __main__ - INFO - ace: 0.0603
+2026-02-09 15:22:49,018 - __main__ - INFO - prob_true: [0.00830484 0.02150012 0.04446616 0.07476179 0.20205228 0.77204984
+ 0.96799414 0.94820425 0.97336917 0.98729849]
+2026-02-09 15:22:49,018 - __main__ - INFO - prob_pred: [8.72635908e-04 8.82598834e-03 3.54056857e-02 9.90015057e-02
+ 2.70669862e-01 6.84698102e-01 9.05010116e-01 9.69376326e-01
+ 9.89669269e-01 9.96545915e-01]
+2026-02-09 15:22:50,687 - __main__ - INFO - Ensemble checkpoint saved to saved_models/experiment_2/calibrated_FB15k-237_ensemble_checkpoint_scalar_epoch_1000.pth

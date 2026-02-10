@@ -13,8 +13,9 @@
 \contentsline {table}{\numberline {5.1}{\ignorespaces Link Prediction Performance on WN18RR and FB15k-237 Datasets}}{26}{table.caption.23}%
 \contentsline {table}{\numberline {5.2}{\ignorespaces Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Regularization Techniques. Here Edge Dropout is denoted as ED and Label Smoothing as LS.}}{28}{table.caption.24}%
 \contentsline {table}{\numberline {5.3}{\ignorespaces Link prediction performance of Uncertainty Estimation Methods on WN18RR and FB15k-237 Datasets}}{29}{table.caption.25}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Uncertainty Estimation Methods. Here Edge Dropout is denoted as ED and Label Smoothing as LS.}}{30}{table.caption.26}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Hyperparameter Settings}}{35}{table.caption.26}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Hyperparameter Settings}}{35}{table.caption.27}%
 \babel@toc {english}{}\relax 

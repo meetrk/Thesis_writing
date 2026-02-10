@@ -54,11 +54,18 @@ Figure \ref{tab:uncertainty_metrics_analysis} illustrates the impact of differen
 \section{Experiment 2: Uncertainty Estimation Methods}
 \label{sec:experiment_2_uncertainty_estimation_methods}
 
-This section presents the results of Experiment 2, which evaluates monte carlo dropout (MC Dropout) and deep ensembles as uncertainty estimation methods applied to the best performing regularized RGCN model from Experiment 1 (edge dropout of 0.2 and label smoothing of 0.1). The performance and uncertainty estimation metrics are compared against the baseline regularized model without uncertainty estimation.
+This section presents the results of Experiment 2, which evaluates monte carlo dropout (MC Dropout) and deep ensembles as uncertainty estimation methods applied to the best performing regularized RGCN model from Experiment 1 - For WN18RR, Baseline + ED + LS and For FB15K-237, Baseline + ED. The performance and uncertainty estimation metrics are compared against the baseline regularized model without uncertainty estimation.
 
 \subsection{Link Prediction Performance}
 \label{subsec:link_prediction_performance_exp2}
-Table \ref{tab:link_prediction_performance_exp2} summarizes the link prediction performance of the uncertainty estimation methods on the WN18RR and FB15k-237 datasets.
+Table \ref{tab:link_prediction_performance_exp2} summarizes the link prediction performance of the uncertainty estimation methods on the WN18RR and FB15k-237 datasets. Key observations include:
+
+\begin{itemize}
+        \item \textbf{Impact of } 
+        \item \textbf{Basline} 
+        \item \textbf{Basline} 
+        \item \textbf{Basline} 
+\end{itemize} 
 
 \begin{table}[htbp]
         \centering
@@ -70,6 +77,15 @@ Table \ref{tab:link_prediction_performance_exp2} summarizes the link prediction 
 
 \subsection{Reliability Diagrams}
 \label{subsec:reliability_diagrams}
+
+\begin{table}[htbp]
+        \centering
+        \includegraphics[width=0.75\textwidth]{figures/experiment2/graph_wrr}
+        \includegraphics[width=0.75\textwidth]{figures/experiment2/graph_fb15}
+        \caption{Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Uncertainty Estimation Methods. Here Edge Dropout is denoted as ED and Label Smoothing as LS.}
+        \label{tab:uncertainty_metrics_analysis_exp2}
+\end{table}
+
 
 \subsection{Computational Overhead (OPTIONAL)}
 \label{subsec:computational_overhead}

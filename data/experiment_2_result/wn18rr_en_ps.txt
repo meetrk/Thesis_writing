@@ -1,0 +1,60 @@
+2026-02-09 15:16:30,324 - __main__ - INFO - Loading configuration from: config/lp_wn18rr_ensemble.yaml
+2026-02-09 15:16:30,508 - __main__ - INFO - Dataset 'WN18RR' loaded successfully.
+2026-02-09 15:16:30,508 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 173670], num_nodes=40943, edge_type=[173670], train_edge_index=[2, 86835], train_edge_type=[86835], valid_edge_index=[2, 3034], valid_edge_type=[3034], test_edge_index=[2, 3134], test_edge_type=[3134], num_relations=22)
+2026-02-09 15:16:30,508 - __main__ - INFO - Decoder calibration method: platt_scaling
+2026-02-09 15:16:30,508 - __main__ - INFO - Creating Deep Ensemble with 5 models...
+2026-02-09 15:16:31,499 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'WN18RR', 'path': './dataset/wn18rr'}_20260209-151631
+2026-02-09 15:16:31,500 - __main__ - INFO - Starting uncertainty evaluation on test set...
+2026-02-09 15:16:32,000 - __main__ - INFO - Ensemble checkpoint loaded from ./new_models/experiment_2/WN18RR_ensemble_checkpoint_scalar_epoch_4200.pth
+2026-02-09 15:16:32,001 - __main__ - INFO - Checkpoint loaded. Evaluating ensemble uncertainty on test set...
+2026-02-09 15:16:32,001 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-09 15:16:32,001 - __main__ - INFO - Uncertainty Estimation Type : ensemble
+2026-02-09 15:16:32,001 - __main__ - INFO - Calibration Method : platt_scaling
+2026-02-09 15:16:43,412 - __main__ - INFO - MRR = 0.4559
+2026-02-09 15:16:43,413 - __main__ - INFO - Mean Rank = 2561.5356
+2026-02-09 15:16:43,413 - __main__ - INFO - Hits@1 = 0.4097
+2026-02-09 15:16:43,413 - __main__ - INFO - Hits@3 = 0.4729 
+2026-02-09 15:16:43,413 - __main__ - INFO - Hits@10 = 0.5391
+2026-02-09 15:16:43,575 - __main__ - INFO - brier_score: 0.1962
+2026-02-09 15:16:43,575 - __main__ - INFO - ece: 0.2334
+2026-02-09 15:16:43,575 - __main__ - INFO - ace: 0.4139
+2026-02-09 15:16:43,576 - __main__ - INFO - prob_true: [0.05103668 0.06060606 0.1307815  0.20926518 0.20893142 0.42424242
+ 0.92332268 0.99681021 0.99681021 0.9984051 ]
+2026-02-09 15:16:43,576 - __main__ - INFO - prob_pred: [0.03780089 0.04440801 0.04798559 0.05084357 0.05446427 0.06695115
+ 0.15765402 0.47628908 0.84304004 0.88570044]
+2026-02-09 15:16:43,576 - __main__ - INFO - Starting calibration process...
+2026-02-09 15:16:43,576 - __main__ - INFO - Uncertainty model type: {'type': 'ensemble', 'mc_samples': 5}
+2026-02-09 15:16:43,576 - __main__ - INFO - Calibration method: platt_scaling
+Before Platt Scaling (MC Dropout):
+  BCE Loss: 1.2322
+  MRL Loss: 0.0231
+  Total Loss: 1.2553
+Early stopping at iteration 577
+
+After Platt Scaling (MC Dropout):
+  BCE Loss: 0.5925 (Δ -0.6397)
+  MRL Loss: 0.0155 (Δ -0.0076)
+  Total Loss: 0.6080 (Δ -0.6473)
+  Step count: 577
+  Ranking violations: 211/3034 (7.0%)
+
+Calibrated probability statistics:
+  Positives - Mean: 0.825, Std: 0.308
+  Negatives - Mean: 0.174, Std: 0.123
+2026-02-09 15:16:47,834 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-09 15:16:47,835 - __main__ - INFO - Uncertainty Estimation Type : ensemble
+2026-02-09 15:16:47,835 - __main__ - INFO - Calibration Method : platt_scaling
+2026-02-09 15:16:58,943 - __main__ - INFO - MRR = 0.4470
+2026-02-09 15:16:58,944 - __main__ - INFO - Mean Rank = 2561.5486
+2026-02-09 15:16:58,944 - __main__ - INFO - Hits@1 = 0.3826
+2026-02-09 15:16:58,944 - __main__ - INFO - Hits@3 = 0.4706 
+2026-02-09 15:16:58,944 - __main__ - INFO - Hits@10 = 0.5389
+2026-02-09 15:16:59,073 - __main__ - INFO - Applied Platt Scaling with Ensemble calibration
+2026-02-09 15:16:59,077 - __main__ - INFO - brier_score: 0.0835
+2026-02-09 15:16:59,077 - __main__ - INFO - ece: 0.0141
+2026-02-09 15:16:59,077 - __main__ - INFO - ace: 0.0626
+2026-02-09 15:16:59,077 - __main__ - INFO - prob_true: [0.05263158 0.06220096 0.12759171 0.21565495 0.20255183 0.41148325
+ 0.9313099  1.         0.99840383]
+2026-02-09 15:16:59,077 - __main__ - INFO - prob_pred: [0.06146737 0.10953045 0.14186112 0.17252283 0.21340922 0.3772662
+ 0.90265927 0.99942355 0.99999988]
+2026-02-09 15:16:59,853 - __main__ - INFO - Ensemble checkpoint saved to saved_models/experiment_2/calibrated_WN18RR_ensemble_checkpoint_scalar_epoch_4200.pth
