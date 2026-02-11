@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.14)  11 FEB 2026 12:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2026.1.14)  11 FEB 2026 15:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1666,7 +1666,12 @@ l.139 \tableofcontents
 [4
 
 
-] (./thesis.lof)
+] (./thesis.lof
+Overfull \hbox (5.12036pt too wide) in paragraph at lines 19--19
+ [][] [][]\T1/lmr/m/n/10.95 Reliability Curves on FB15K-237 Dataset with Dif-fer-ent Cal-i-bra-tion Meth- 
+ []
+
+)
 \tf@lof=\write7
 \openout7 = `thesis.lof'.
 
@@ -1690,11 +1695,6 @@ Overfull \hbox (19.90259pt too wide) in paragraph at lines 18--18
  [][] [][]\T1/lmr/m/n/10.95 Link pre-dic-tion per-for-mance of Un-cer-tainty Es-ti-ma-tion Meth-ods on WN18RR 
  []
 
-
-Overfull \hbox (5.12036pt too wide) in paragraph at lines 21--21
- [][] [][]\T1/lmr/m/n/10.95 Reliability Curves on FB15K-237 Dataset with Dif-fer-ent Cal-i-bra-tion Meth- 
- []
-
 )
 \tf@lot=\write8
 \openout8 = `thesis.lot'.
@@ -1705,13 +1705,14 @@ Overfull \hbox (5.12036pt too wide) in paragraph at lines 21--21
 
 ]
 
-[8] (./include/introduction.tex
+[8
+
+
+] (./include/introduction.tex
 Chapter 1.
 ) (./include/relatedwork.tex
 
 [1
-
-
 
 ]
 
@@ -1730,7 +1731,7 @@ Chapter 3.
 
 
 [5{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
-<figures/approach/messagepassing.png, id=464, 2975.115pt x 786.94pt>
+<figures/approach/messagepassing.png, id=469, 2975.115pt x 786.94pt>
 File: figures/approach/messagepassing.png Graphic file (type png)
 <use figures/approach/messagepassing.png>
 Package pdftex.def Info: figures/approach/messagepassing.png  used on input line 32.
@@ -1745,7 +1746,7 @@ Overfull \hbox (0.555pt too wide) in paragraph at lines 54--55
 
 
 [7]
-<figures/approach/autoencoder.png, id=492, 2742.245pt x 1128.215pt>
+<figures/approach/autoencoder.png, id=497, 2742.245pt x 1128.215pt>
 File: figures/approach/autoencoder.png Graphic file (type png)
 <use figures/approach/autoencoder.png>
 Package pdftex.def Info: figures/approach/autoencoder.png  used on input line 74.
@@ -1753,7 +1754,7 @@ Package pdftex.def Info: figures/approach/autoencoder.png  used on input line 74
 
 
 [8 <./figures/approach/autoencoder.png>]
-<figures/approach/pipeline.png, id=512, 3661.68pt x 2176.13pt>
+<figures/approach/pipeline.png, id=517, 3661.68pt x 2176.13pt>
 File: figures/approach/pipeline.png Graphic file (type png)
 <use figures/approach/pipeline.png>
 Package pdftex.def Info: figures/approach/pipeline.png  used on input line 102.
@@ -1785,7 +1786,7 @@ Chapter 4.
 
 
 [17]
-<figures/experiment/model.pdf, id=628, 392.95909pt x 198.20349pt>
+<figures/experiment/model.pdf, id=633, 392.95909pt x 198.20349pt>
 File: figures/experiment/model.pdf Graphic file (type pdf)
 <use figures/experiment/model.pdf>
 Package pdftex.def Info: figures/experiment/model.pdf  used on input line 36.
@@ -1803,7 +1804,7 @@ Package pdftex.def Info: figures/experiment/model.pdf  used on input line 36.
 [22]
 
 [23]
-<figures/experiment/idts_parameter.pdf, id=731, 348.99988pt x 75.14172pt>
+<figures/experiment/idts_parameter.pdf, id=736, 348.99988pt x 75.14172pt>
 File: figures/experiment/idts_parameter.pdf Graphic file (type pdf)
 <use figures/experiment/idts_parameter.pdf>
 Package pdftex.def Info: figures/experiment/idts_parameter.pdf  used on input line 176.
@@ -1817,7 +1818,7 @@ Chapter 5.
 [25
 
 ]
-<figures/experiment1/exp1table.pdf, id=766, 348.99988pt x 108.50638pt>
+<figures/experiment1/exp1table.pdf, id=771, 348.99988pt x 108.50638pt>
 File: figures/experiment1/exp1table.pdf Graphic file (type pdf)
 <use figures/experiment1/exp1table.pdf>
 Package pdftex.def Info: figures/experiment1/exp1table.pdf  used on input line 24.
@@ -1825,12 +1826,12 @@ Package pdftex.def Info: figures/experiment1/exp1table.pdf  used on input line 2
 
 
 [26 <./figures/experiment1/exp1table.pdf>]
-<figures/experiment1/exp1graph2.pdf, id=782, 335.71924pt x 261.89442pt>
+<figures/experiment1/exp1graph2.pdf, id=787, 335.71924pt x 261.89442pt>
 File: figures/experiment1/exp1graph2.pdf Graphic file (type pdf)
 <use figures/experiment1/exp1graph2.pdf>
 Package pdftex.def Info: figures/experiment1/exp1graph2.pdf  used on input line 52.
 (pdftex.def)             Requested size: 199.42929pt x 155.57935pt.
-<figures/experiment1/exp1graph3.pdf, id=783, 335.71924pt x 261.89442pt>
+<figures/experiment1/exp1graph3.pdf, id=788, 335.71924pt x 261.89442pt>
 File: figures/experiment1/exp1graph3.pdf Graphic file (type pdf)
 <use figures/experiment1/exp1graph3.pdf>
 Package pdftex.def Info: figures/experiment1/exp1graph3.pdf  used on input line 57.
@@ -1838,7 +1839,7 @@ Package pdftex.def Info: figures/experiment1/exp1graph3.pdf  used on input line 
 
 
 [27 <./figures/experiment1/exp1graph2.pdf> <./figures/experiment1/exp1graph3.pdf>]
-<figures/experiment2/table.pdf, id=826, 348.99988pt x 81.25958pt>
+<figures/experiment2/table.pdf, id=831, 348.99988pt x 81.25958pt>
 File: figures/experiment2/table.pdf Graphic file (type pdf)
 <use figures/experiment2/table.pdf>
 Package pdftex.def Info: figures/experiment2/table.pdf  used on input line 80.
@@ -1846,22 +1847,22 @@ Package pdftex.def Info: figures/experiment2/table.pdf  used on input line 80.
 
 
 [28 <./figures/experiment2/table.pdf>]
-<figures/experiment2/graph_wrr.pdf, id=840, 335.71924pt x 261.89442pt>
+<figures/experiment2/graph_wrr.pdf, id=846, 335.71924pt x 261.89442pt>
 File: figures/experiment2/graph_wrr.pdf Graphic file (type pdf)
 <use figures/experiment2/graph_wrr.pdf>
 Package pdftex.def Info: figures/experiment2/graph_wrr.pdf  used on input line 104.
 (pdftex.def)             Requested size: 199.42929pt x 155.57935pt.
-<figures/experiment2/graph_fb15.pdf, id=841, 335.71924pt x 261.89442pt>
+<figures/experiment2/graph_fb15.pdf, id=847, 335.71924pt x 261.89442pt>
 File: figures/experiment2/graph_fb15.pdf Graphic file (type pdf)
 <use figures/experiment2/graph_fb15.pdf>
 Package pdftex.def Info: figures/experiment2/graph_fb15.pdf  used on input line 109.
 (pdftex.def)             Requested size: 199.42929pt x 155.57935pt.
-<figures/experiment3/graph_wrr.pdf, id=845, 348.99988pt x 262.9042pt>
+<figures/experiment3/graph_wrr.pdf, id=851, 348.99988pt x 262.9042pt>
 File: figures/experiment3/graph_wrr.pdf Graphic file (type pdf)
 <use figures/experiment3/graph_wrr.pdf>
 Package pdftex.def Info: figures/experiment3/graph_wrr.pdf  used on input line 128.
 (pdftex.def)             Requested size: 199.42929pt x 150.23402pt.
-<figures/experiment3/graph_fb15k.pdf, id=846, 348.99988pt x 262.90822pt>
+<figures/experiment3/graph_fb15k.pdf, id=852, 348.99988pt x 262.90822pt>
 File: figures/experiment3/graph_fb15k.pdf Graphic file (type pdf)
 <use figures/experiment3/graph_fb15k.pdf>
 Package pdftex.def Info: figures/experiment3/graph_fb15k.pdf  used on input line 133.
@@ -1871,87 +1872,92 @@ Package pdftex.def Info: figures/experiment3/graph_fb15k.pdf  used on input line
 [29 <./figures/experiment2/graph_wrr.pdf> <./figures/experiment2/graph_fb15.pdf>]
 
 [30 <./figures/experiment3/graph_wrr.pdf> <./figures/experiment3/graph_fb15k.pdf>]
-<figures/experiment3/graph_rea_wn18.pdf, id=949, 335.71924pt x 261.89442pt>
+<figures/experiment3/graph_rea_wn18.pdf, id=954, 335.71924pt x 261.89442pt>
 File: figures/experiment3/graph_rea_wn18.pdf Graphic file (type pdf)
 <use figures/experiment3/graph_rea_wn18.pdf>
 Package pdftex.def Info: figures/experiment3/graph_rea_wn18.pdf  used on input line 153.
 (pdftex.def)             Requested size: 199.42929pt x 155.57935pt.
-<figures/experiment3/graph_rea_fb15k.pdf, id=950, 335.71924pt x 261.89442pt>
+<figures/experiment3/graph_rea_fb15k.pdf, id=955, 335.71924pt x 261.89442pt>
 File: figures/experiment3/graph_rea_fb15k.pdf Graphic file (type pdf)
 <use figures/experiment3/graph_rea_fb15k.pdf>
 Package pdftex.def Info: figures/experiment3/graph_rea_fb15k.pdf  used on input line 158.
 (pdftex.def)             Requested size: 199.42929pt x 155.57935pt.
-<figures/experiment4/table.pdf, id=951, 348.99988pt x 60.80818pt>
+<figures/experiment4/table.pdf, id=956, 469.755pt x 211.84746pt>
 File: figures/experiment4/table.pdf Graphic file (type pdf)
 <use figures/experiment4/table.pdf>
 Package pdftex.def Info: figures/experiment4/table.pdf  used on input line 173.
-(pdftex.def)             Requested size: 415.4814pt x 72.39786pt.
-<figures/experiment4/figure_wn_mc.pdf, id=952, 335.71924pt x 261.89442pt>
-File: figures/experiment4/figure_wn_mc.pdf Graphic file (type pdf)
-<use figures/experiment4/figure_wn_mc.pdf>
-Package pdftex.def Info: figures/experiment4/figure_wn_mc.pdf  used on input line 187.
-(pdftex.def)             Requested size: 199.42929pt x 155.57935pt.
-<figures/experiment4/figure_wn_en.pdf, id=953, 335.71924pt x 261.89442pt>
-File: figures/experiment4/figure_wn_en.pdf Graphic file (type pdf)
-<use figures/experiment4/figure_wn_en.pdf>
-Package pdftex.def Info: figures/experiment4/figure_wn_en.pdf  used on input line 192.
-(pdftex.def)             Requested size: 199.42929pt x 155.57935pt.
-<figures/experiment4/figure_fb_mc.pdf, id=954, 335.71924pt x 261.89442pt>
-File: figures/experiment4/figure_fb_mc.pdf Graphic file (type pdf)
-<use figures/experiment4/figure_fb_mc.pdf>
-Package pdftex.def Info: figures/experiment4/figure_fb_mc.pdf  used on input line 203.
-(pdftex.def)             Requested size: 199.42929pt x 155.57935pt.
-<figures/experiment4/figure_fb_en.pdf, id=955, 335.71924pt x 261.89442pt>
-File: figures/experiment4/figure_fb_en.pdf Graphic file (type pdf)
-<use figures/experiment4/figure_fb_en.pdf>
-Package pdftex.def Info: figures/experiment4/figure_fb_en.pdf  used on input line 208.
-(pdftex.def)             Requested size: 199.42929pt x 155.57935pt.
-) (./include/discussion.tex
+(pdftex.def)             Requested size: 415.4814pt x 187.37022pt.
+
 
 [31 <./figures/experiment3/graph_rea_wn18.pdf> <./figures/experiment3/graph_rea_fb15k.pdf>]
 
-[32 <./figures/experiment4/table.pdf> <./figures/experiment4/figure_wn_mc.pdf> <./figures/experiment4/figure_wn_en.pdf> <./figures/experiment4/figure_fb_mc.pdf> <./figures/experiment4/figure_fb_en.pdf>]
+[32 <./figures/experiment4/table.pdf>]
+<figures/experiment4/figure_wn_mc.pdf, id=1017, 335.71924pt x 261.89442pt>
+File: figures/experiment4/figure_wn_mc.pdf Graphic file (type pdf)
+<use figures/experiment4/figure_wn_mc.pdf>
+Package pdftex.def Info: figures/experiment4/figure_wn_mc.pdf  used on input line 212.
+(pdftex.def)             Requested size: 199.42929pt x 155.57935pt.
+<figures/experiment4/figure_wn_en.pdf, id=1018, 335.71924pt x 261.89442pt>
+File: figures/experiment4/figure_wn_en.pdf Graphic file (type pdf)
+<use figures/experiment4/figure_wn_en.pdf>
+Package pdftex.def Info: figures/experiment4/figure_wn_en.pdf  used on input line 217.
+(pdftex.def)             Requested size: 199.42929pt x 155.57935pt.
+<figures/experiment4/figure_fb_mc.pdf, id=1019, 335.71924pt x 261.89442pt>
+File: figures/experiment4/figure_fb_mc.pdf Graphic file (type pdf)
+<use figures/experiment4/figure_fb_mc.pdf>
+Package pdftex.def Info: figures/experiment4/figure_fb_mc.pdf  used on input line 228.
+(pdftex.def)             Requested size: 199.42929pt x 155.57935pt.
+<figures/experiment4/figure_fb_en.pdf, id=1020, 335.71924pt x 261.89442pt>
+File: figures/experiment4/figure_fb_en.pdf Graphic file (type pdf)
+<use figures/experiment4/figure_fb_en.pdf>
+Package pdftex.def Info: figures/experiment4/figure_fb_en.pdf  used on input line 233.
+(pdftex.def)             Requested size: 199.42929pt x 155.57935pt.
+) (./include/discussion.tex
+
+[33 <./figures/experiment4/figure_wn_mc.pdf> <./figures/experiment4/figure_wn_en.pdf>]
+
+[34 <./figures/experiment4/figure_fb_mc.pdf> <./figures/experiment4/figure_fb_en.pdf>]
 Chapter 6.
 ) (./include/conclusion.tex
 
-[33
+[35
 
 ]
 
-[34
+[36
 
 ]
 Chapter 7.
 ) (./include/appendix.tex
 
-[35]
+[37]
 
-[36
+[38
 
 ]
 Appendix A.
-<figures/approach/hyperparameter.pdf, id=1093, 258.90326pt x 227.22491pt>
+<figures/approach/hyperparameter.pdf, id=1115, 258.90326pt x 227.22491pt>
 File: figures/approach/hyperparameter.pdf Graphic file (type pdf)
 <use figures/approach/hyperparameter.pdf>
 Package pdftex.def Info: figures/approach/hyperparameter.pdf  used on input line 10.
 (pdftex.def)             Requested size: 166.19002pt x 145.8603pt.
 )
 
-[37 <./figures/approach/hyperparameter.pdf>] (./include/acronym.tex)
+[39 <./figures/approach/hyperparameter.pdf>] (./include/acronym.tex)
 
-[38
-
-]
-
-[39
-
-
+[40
 
 ]
 
-[40]
+[41
 
-[41]
+
+
+]
+
+[42]
+
+[43]
 
 Package caption Warning: Unused \captionsetup[subfloat] on input line 27.
 See the caption package documentation for explanation.
@@ -1966,7 +1972,7 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 0733832B78589A7177529D46D2F557A8;10555.
+(rerunfilecheck)             Checksum: 76E16214F9C7A7ECEC841A5F575CE487;10682.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                thesis
@@ -1977,18 +1983,18 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 55895 strings out of 473190
- 1284780 string characters out of 5715800
- 2059338 words of memory out of 5000000
- 77991 multiletter control sequences out of 15000+600000
+ 55900 strings out of 473190
+ 1284862 string characters out of 5715800
+ 2058388 words of memory out of 5000000
+ 77993 multiletter control sequences out of 15000+600000
  666761 words of font info for 104 fonts, out of 8000000 for 9000
  1149 hyphenation exceptions out of 8191
  147i,16n,149p,1945b,2998s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (57 pages, 1240848 bytes).
+Output written on thesis.pdf (59 pages, 1246898 bytes).
 PDF statistics:
- 1316 PDF objects out of 1440 (max. 8388607)
- 1096 compressed objects within 11 object streams
- 195 named destinations out of 1000 (max. 500000)
- 606 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1338 PDF objects out of 1440 (max. 8388607)
+ 1114 compressed objects within 12 object streams
+ 198 named destinations out of 1000 (max. 500000)
+ 614 words of extra memory for PDF output out of 10000 (max. 10000000)
 

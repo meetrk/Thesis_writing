@@ -1,23 +1,46 @@
-\documentclass[preview,border=2pt]{standalone}
-\usepackage{graphicx}
+\documentclass[preview]{standalone}
+\usepackage[utf8]{inputenc}
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{margin=1in}
+\newcommand{\best}[1]{\textbf{#1}}
 
 \begin{document}
 
-% The resizebox scales the table content to fit a theoretical text width.
-\resizebox{1\textwidth}{!}{%
-\begin{tabular}{@{}llcccc@{}}
+\begin{table}[ht]
+\centering
+\caption{Calibration Performance Comparison: Ranking and Probability Metrics (Bold = Best per Metric per Dataset)}
+\label{tab:calibration_results}
+\setlength{\tabcolsep}{8pt} 
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllcccccc}
 \toprule
-\textbf{Dataset} & \textbf{Model} & \textbf{Uncalibrated} & \textbf{Temp. Scaling} & \textbf{Platt Scaling} & \textbf{Isotonic} \\ 
+\textbf{Dataset} & \textbf{Model} & \textbf{Method} & \textbf{MRR} ($\uparrow$) & \textbf{H@1} ($\uparrow$) & \textbf{H@10} ($\uparrow$) & \textbf{ECE} ($\downarrow$) & \textbf{Brier} ($\downarrow$) & \textbf{ACE} ($\downarrow$) \\ 
 \midrule
-\multirow{2}{*}{WN18RR} & Monte Carlo Dropout & 23.44\% & 19.77\% & 7.13\% & 12.87\% \\
- & Deep Ensemble & 23.37\%  & 20.49\% & 1.41\% & 12.26\% \\
+\multirow{8}{*}{WN18RR} & \multirow{4}{*}{MC Dropout} & Uncalibrated & 0.4353 & 0.3952 & 0.5093 & 0.2344 & 0.1997 & 0.4213 \\
+ &  & Temp Scaling & 0.4350 & 0.3952 & 0.5110 & 0.1977 & 0.1780 & 0.3457 \\
+ &  & Platt Scaling & 0.4356 & 0.3958 & 0.5080 & 0.0713 & 0.0980 & 0.1562 \\
+ &  & Isotonic & 0.1736 & 0.0549 & 0.4100 & 0.1287 & 0.1239 & 0.3370 \\
+\cmidrule(lr){2-9}
+ & \multirow{4}{*}{Deep Ensemble} & Uncalibrated & 0.4559 & 0.4097 & 0.5391 & 0.2337 & 0.1959 & 0.4122 \\
+ &  & Temp Scaling & \best{0.4559} & \best{0.4097} & \best{0.5391} & 0.2049 & 0.1752 & 0.3963 \\
+ &  & Platt Scaling & 0.4470 & 0.3826 & 0.5389 & \best{0.0141} & \best{0.0835} & \best{0.0626} \\
+ &  & Isotonic & 0.3680 & 0.2589 & 0.5246 & 0.1226 & 0.000 & 0.000 \\
 \midrule
-\multirow{2}{*}{FB15K-237} & Monte Carlo Dropout & 25.18\% & 21.36\% & 3.11\% & 17.32\% \\
- & Deep Ensemble & 19.30\% & 18.43\% & 2.48\% & 15.80\% \\
+\multirow{8}{*}{FB15K-237} & \multirow{4}{*}{MC Dropout} & Uncalibrated & 0.2530 & 0.1624 & 0.4400 & 0.2518 & 0.2253 & 0.3958 \\
+ &  & Temp Scaling & 0.2523 & 0.1607 & 0.4425 & 0.2136 & 0.1614 & 0.2481 \\
+ &  & Platt Scaling & 0.2529 & 0.1616 & 0.4409 & 0.0311 & 0.0739 & 0.0568 \\
+ &  & Isotonic & 0.2143 & 0.1183 & 0.3835 & 0.1732 & 0.1148 & 0.3249 \\
+\cmidrule(lr){2-9}
+ & \multirow{4}{*}{Deep Ensemble} & Uncalibrated & 0.2864 & 0.1877 & 0.4897 & 0.1930 & 0.1709 & 0.4007 \\
+ &  & Temp Scaling & 0.2864 & 0.1877 & 0.4897 & 0.1843 & 0.1310 & 0.2787 \\
+ &  & Platt Scaling & \best{0.2864} & \best{0.1877} & \best{0.4897} & \best{0.0248} & \best{0.0589} & \best{0.0603} \\
+ &  & Isotonic & 0.2521 & 0.1438 & 0.4463 & 0.1580 & 0.1007 & 0.3068 \\
 \bottomrule
 \end{tabular}%
 }
+\end{table}
 
 \end{document}

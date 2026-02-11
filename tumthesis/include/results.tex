@@ -176,11 +176,36 @@ In this section, we explore the best combination of regularization techniques, u
 \end{table}
 
 
-\subsection{Best Combined Configurations}
-\label{subsec:best_combined_configurations}
+\subsection{Quantitative Analysis}
+\label{subsec:quantitative_analysis_exp4}
+We analyse the numerical performance of the experiment from \ref{tab:ece_table_exp4}.
+
+\begin{itemize}
+        \item \textbf{Effect of Calibration} \begin{itemize}
+                \item \textit{Starting point} Deep Ensemble models provides better starting point as compared to the Monte Carlo Methods. In WN18RR, the ECE score for uncalibrated Deep Ensemble model is lesser than the ECE score for uncalibrated Monte Carlo Dropout model.
+                \item \textit{Platt Scaling} We can observe and confirm that Platt scaling is the best performing calibration method as we have seen in the last experiment. Platt scaling provides the best calibration performance in both uncertainty estimation methods across both datasets. For WN18RR, the ECE score for Platt scaling is 0.071 for Monte Carlo Dropout and 0.01 for Deep Ensemble. For FB15K-237, the ECE score for Platt scaling is 0.031 for Monte Carlo Dropout and 0.024 for Deep Ensemble.
+                \item \textit{Failure} As we have observed in the last experiment, Temperature scaling is the worst performing calibration method among the three methods. It showed very slight improvement in the ECE score for both uncertainty estimation methods across both datasets. For WN18RR, around 17\% improvement in ECE score is observed for Monte Carlo Dropout and around 13\% improvement is observed for Deep Ensemble. For FB15K-237, around 16\% improvement in ECE score is observed for Monte Carlo Dropout and around 5\% improvement is observed for Deep Ensemble. 
+        \end{itemize}
+        \item \textbf{Effect of Link Prediction} \begin{itemize}
+                \item \textit{Stablity of Parametric Calibration Methods} Both Temperature scaling and Platt scaling shows stablity in the link prediction performance as no significant drop in the MRR and Hits@K metrics is observed. 
+                \item \textit{Failure of Isotonic Regression} Isotonic regression shows degrading performance in the link prediction metrics for both uncertainty estimation methods across both datasets. About 60\% drop in MRR and 87\% drop Hits@K metrics is observed for Monte Carlo Dropout and about 20\% drop in MRR and 37.5\% drop in Hits@K metrics is observed for Deep Ensemble. This suggests a underlying issue with the isotonic regression method when applied to the uncertainty estimation methods in our setting. We will discuss the possible reasons for this failure in the next chapter.
+        \end{itemize}
+\end{itemize}
 
 
-\begin{table}[htbp]
+
+\subsection{Qualitative Analysis}
+\label{subsec:qualitative_analysis_exp4}
+\begin{itemize}
+        \item \textbf{Temperature Scaling} The red curve in both reliability diagrams in \ref{fig:compare_metrics_wn_exp4} and \ref{fig:compare_metrics_fb_exp4} represents the temperature scaling method. We can see that the curve is far from the diagonal line for the higher confidence bins which shows that the model is under confident in its predictions. 
+        \item \textbf{Platt Scaling} The blue curve in both reliability diagrams represents the Platt scaling method. We can see that the curve is closely aligned to the diagonal line for both datasets which shows that the model is well calibrated in its predictions.
+        \item \textbf{Isotonic Regression} The Green curve represents Isotonic regression method. Consistent with our observations in the \ref{sec:experiment_3_calibration_methods}, the curve for isotonic regression is in between the curve for Platt scaling and Temperature scaling. It is closer to the diagonal line as compared to temperature scaling but not as close as Platt scaling. 
+\end{itemize}
+
+
+
+
+\begin{figure}[htbp]
         \centering
         \begin{minipage}{0.48\textwidth}
                 \centering
@@ -192,11 +217,11 @@ In this section, we explore the best combination of regularization techniques, u
                 \includegraphics[width=\textwidth]{figures/experiment4/figure_wn_en}
         \end{minipage}
         \caption{Reliability Curves on WN18RR Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods.}
-        \label{tab:compare_metrics_wn_exp4}
-\end{table}
+        \label{fig:compare_metrics_wn_exp4}
+\end{figure}
 
 
-\begin{table}[htbp]
+\begin{figure}[htbp]
         \centering
         \begin{minipage}{0.48\textwidth}
                 \centering
@@ -208,5 +233,5 @@ In this section, we explore the best combination of regularization techniques, u
                 \includegraphics[width=\textwidth]{figures/experiment4/figure_fb_en}
         \end{minipage}
         \caption{Reliability Curves on FB15K-237 Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods.}
-        \label{tab:compare_metrics_fb_exp4}
-\end{table}
+        \label{fig:compare_metrics_fb_exp4}
+\end{figure}

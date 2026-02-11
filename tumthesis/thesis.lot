@@ -17,10 +17,8 @@
 \contentsline {table}{\numberline {5.5}{\ignorespaces Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Uncertainty Estimation Methods. Here Edge Dropout is denoted as ED and Label Smoothing as LS.}}{30}{table.caption.27}%
 \contentsline {table}{\numberline {5.6}{\ignorespaces Link prediction performance of Uncertainty Estimation Methods on WN18RR and FB15K-237}}{31}{table.caption.28}%
 \contentsline {table}{\numberline {5.7}{\ignorespaces Link prediction performance of Uncertainty Estimation Methods. Here, We measured ECE score with 10 bins to understand the calibration performance of the models. We list ECE score for the uncalibrated model and calibrated models with Temperature scaling, Platt scaling and Isotonic regression.}}{32}{table.caption.29}%
-\contentsline {table}{\numberline {5.8}{\ignorespaces Reliability Curves on WN18RR Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods.}}{32}{table.caption.30}%
-\contentsline {table}{\numberline {5.9}{\ignorespaces Reliability Curves on FB15K-237 Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods.}}{32}{table.caption.31}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Hyperparameter Settings}}{37}{table.caption.32}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Hyperparameter Settings}}{39}{table.caption.32}%
 \babel@toc {english}{}\relax 
