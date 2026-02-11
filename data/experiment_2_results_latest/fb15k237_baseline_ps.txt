@@ -1,0 +1,71 @@
+2026-02-08 22:47:11,104 - __main__ - INFO - Loading configuration from: config/lp_fb15k237.yaml
+2026-02-08 22:47:11,235 - __main__ - INFO - Dataset 'FB15k-237' loaded successfully.
+2026-02-08 22:47:11,235 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 544230], num_nodes=14541, edge_type=[544230], train_edge_index=[2, 272115], train_edge_type=[272115], valid_edge_index=[2, 17535], valid_edge_type=[17535], test_edge_index=[2, 20466], test_edge_type=[20466], num_relations=474)
+2026-02-08 22:47:11,235 - __main__ - INFO - Decoder calibration method: platt_scaling
+2026-02-08 22:47:11,236 - __main__ - INFO - Decoder initialized: DistMult(14541, num_relations=237, embedding_dim=500)
+2026-02-08 22:47:11,236 - __main__ - INFO - Decoder parameters count: 118500
+2026-02-08 22:47:11,555 - __main__ - INFO - Encoder initialized successfully.
+2026-02-08 22:47:11,555 - __main__ - INFO - Encoder parameters count: 55173000
+2026-02-08 22:47:11,719 - __main__ - INFO - GAE architecture:
+GAE(
+  (encoder): RGCN(
+    (bn1): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1): RGCNConv(500, 500, num_relations=474)
+    (conv2): RGCNConv(500, 500, num_relations=474)
+  )
+  (decoder): DistMult(14541, num_relations=237, embedding_dim=500)
+)
+2026-02-08 22:47:11,723 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'FB15k-237', 'path': './dataset/fb15k237'}_20260208-224711
+2026-02-08 22:47:11,723 - __main__ - INFO - Starting uncertainty evaluation on test set...
+2026-02-08 22:47:11,937 - __main__ - INFO - Checkpoint loaded from ./new_models/experiment_1/FB15k-237_checkpoint_label_1_negative_sampling_3_edge_dropout_0.2_epoch_1000.pth
+2026-02-08 22:47:11,938 - __main__ - INFO - Pipeline loaded from checkpoint.
+2026-02-08 22:47:11,938 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-08 22:47:11,938 - __main__ - INFO - Uncertainty Estimation Type : standard
+2026-02-08 22:47:11,938 - __main__ - INFO - Calibration Method : platt_scaling
+2026-02-08 22:47:43,844 - __main__ - INFO - MRR = 0.2551
+2026-02-08 22:47:43,844 - __main__ - INFO - Mean Rank = 376.7083
+2026-02-08 22:47:43,844 - __main__ - INFO - Hits@1 = 0.1640
+2026-02-08 22:47:43,844 - __main__ - INFO - Hits@3 = 0.2804 
+2026-02-08 22:47:43,844 - __main__ - INFO - Hits@10 = 0.4433
+2026-02-08 22:47:44,257 - __main__ - INFO - brier_score: 0.2312
+2026-02-08 22:47:44,257 - __main__ - INFO - ece: 0.2539
+2026-02-08 22:47:44,257 - __main__ - INFO - ace: 0.3966
+2026-02-08 22:47:44,257 - __main__ - INFO - prob_true: [0.02808989 0.03909113 0.07036404 0.10017102 0.21744442 0.68385048
+ 0.9538236  0.96897141 0.95480088 0.98339033]
+2026-02-08 22:47:44,257 - __main__ - INFO - prob_pred: [3.58414423e-11 8.48493291e-09 2.57255286e-07 4.16552379e-06
+ 8.03771048e-05 4.97699121e-03 8.16288630e-02 4.70510925e-01
+ 9.09391696e-01 9.93874070e-01]
+2026-02-08 22:47:44,265 - __main__ - INFO - Starting calibration on test set...
+2026-02-08 22:47:44,265 - __main__ - INFO - Starting calibration process...
+2026-02-08 22:47:44,265 - __main__ - INFO - Uncertainty model type: {'type': 'standard', 'mc_samples': 5}
+2026-02-08 22:47:44,265 - __main__ - INFO - Calibration method: platt_scaling
+Before Platt Scaling:
+  BCE Loss: 2.5990
+  MRL Loss: 0.0376
+  Total Loss: 2.6366
+
+After Platt Scaling:
+  BCE Loss: 0.5271 (Δ -2.0720)
+  MRL Loss: 0.0107 (Δ -0.0269)
+  Total Loss: 0.5378 (Δ -2.0988)
+  Step count: 640
+  Ranking violations: 683/17535 (3.9%)
+
+Calibrated probability statistics:
+  Positives - Mean: 0.848, Std: 0.228
+  Negatives - Mean: 0.152, Std: 0.213
+2026-02-08 22:47:47,997 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-08 22:47:47,999 - __main__ - INFO - Uncertainty Estimation Type : standard
+2026-02-08 22:47:47,999 - __main__ - INFO - Calibration Method : platt_scaling
+2026-02-08 22:48:19,909 - __main__ - INFO - MRR = 0.2551
+2026-02-08 22:48:19,909 - __main__ - INFO - Mean Rank = 376.7083
+2026-02-08 22:48:19,909 - __main__ - INFO - Hits@1 = 0.1640
+2026-02-08 22:48:19,909 - __main__ - INFO - Hits@3 = 0.2805 
+2026-02-08 22:48:19,909 - __main__ - INFO - Hits@10 = 0.4433
+2026-02-08 22:48:20,253 - __main__ - INFO - brier_score: 0.0738
+2026-02-08 22:48:20,253 - __main__ - INFO - ece: 0.0325
+2026-02-08 22:48:20,253 - __main__ - INFO - ace: 0.0583
+2026-02-08 22:48:20,254 - __main__ - INFO - prob_true: [0.02662433 0.04006841 0.07060836 0.10041534 0.22379673 0.68336184
+ 0.95015881 0.96603958 0.95235768 0.98656571]
+2026-02-08 22:48:20,254 - __main__ - INFO - prob_pred: [0.00124319 0.01328585 0.05075023 0.1373035  0.31814816 0.65884518
+ 0.87236838 0.94534839 0.97920397 0.99340122]

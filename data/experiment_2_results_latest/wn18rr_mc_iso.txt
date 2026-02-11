@@ -1,0 +1,57 @@
+2026-02-09 15:48:39,696 - __main__ - INFO - Loading configuration from: config/lp_wn18rr.yaml
+2026-02-09 15:48:39,885 - __main__ - INFO - Dataset 'WN18RR' loaded successfully.
+2026-02-09 15:48:39,885 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 173670], num_nodes=40943, edge_type=[173670], train_edge_index=[2, 86835], train_edge_type=[86835], valid_edge_index=[2, 3034], valid_edge_type=[3034], test_edge_index=[2, 3134], test_edge_type=[3134], num_relations=22)
+2026-02-09 15:48:39,885 - __main__ - INFO - Decoder calibration method: isotonic_regression
+2026-02-09 15:48:39,886 - __main__ - INFO - Decoder initialized: DistMult(40943, num_relations=11, embedding_dim=500)
+2026-02-09 15:48:39,886 - __main__ - INFO - Decoder parameters count: 5500
+2026-02-09 15:48:40,029 - __main__ - INFO - Encoder initialized successfully.
+2026-02-09 15:48:40,029 - __main__ - INFO - Encoder parameters count: 23474220
+2026-02-09 15:48:40,126 - __main__ - INFO - GAE architecture:
+GAE(
+  (encoder): RGCN(
+    (bn1): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1): RGCNConv(500, 500, num_relations=22)
+    (conv2): RGCNConv(500, 500, num_relations=22)
+  )
+  (decoder): DistMult(40943, num_relations=11, embedding_dim=500)
+)
+2026-02-09 15:48:40,130 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'WN18RR', 'path': './dataset/wn18rr'}_20260209-154840
+2026-02-09 15:48:40,130 - __main__ - INFO - Starting uncertainty evaluation on test set...
+2026-02-09 15:48:40,228 - __main__ - INFO - Checkpoint loaded from ./new_models/experiment_1/WN18RR_checkpoint_label_0.9_negative_sampling_3_edge_dropout_0.2_epoch_1700.pth
+2026-02-09 15:48:40,228 - __main__ - INFO - Pipeline loaded from checkpoint.
+2026-02-09 15:48:40,228 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-09 15:48:40,228 - __main__ - INFO - Uncertainty Estimation Type : mc_dropout
+2026-02-09 15:48:40,228 - __main__ - INFO - Calibration Method : isotonic_regression
+2026-02-09 15:48:55,748 - __main__ - INFO - MRR = 0.4356
+2026-02-09 15:48:55,748 - __main__ - INFO - Mean Rank = 3944.6104
+2026-02-09 15:48:55,748 - __main__ - INFO - Hits@1 = 0.3958
+2026-02-09 15:48:55,748 - __main__ - INFO - Hits@3 = 0.4507 
+2026-02-09 15:48:55,748 - __main__ - INFO - Hits@10 = 0.5094
+2026-02-09 15:48:55,961 - __main__ - INFO - brier_score: 0.1992
+2026-02-09 15:48:55,961 - __main__ - INFO - ece: 0.2326
+2026-02-09 15:48:55,961 - __main__ - INFO - ace: 0.4106
+2026-02-09 15:48:55,961 - __main__ - INFO - prob_true: [0.2185008  0.10845295 0.14194577 0.15175719 0.15470494 0.32695375
+ 0.89776358 1.         1.         1.        ]
+2026-02-09 15:48:55,961 - __main__ - INFO - prob_pred: [0.04003197 0.04748358 0.05178771 0.05631952 0.06219812 0.07452519
+ 0.15408014 0.44918455 0.83818693 0.89947811]
+2026-02-09 15:48:55,963 - __main__ - INFO - Starting calibration on test set...
+2026-02-09 15:48:55,963 - __main__ - INFO - Starting calibration process...
+2026-02-09 15:48:55,963 - __main__ - INFO - Uncertainty model type: {'type': 'mc_dropout', 'mc_samples': 5}
+2026-02-09 15:48:55,963 - __main__ - INFO - Starting Isotonic Regression Calibration
+2026-02-09 15:48:56,155 - __main__ - INFO - Isotonic Regression model fitted.
+2026-02-09 15:48:56,155 - __main__ - INFO - Calibration Complete!
+2026-02-09 15:48:56,155 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-09 15:48:56,155 - __main__ - INFO - Uncertainty Estimation Type : mc_dropout
+2026-02-09 15:48:56,155 - __main__ - INFO - Calibration Method : isotonic_regression
+2026-02-09 15:49:19,946 - __main__ - INFO - MRR = 0.1736
+2026-02-09 15:49:19,946 - __main__ - INFO - Mean Rank = 3931.9885
+2026-02-09 15:49:19,946 - __main__ - INFO - Hits@1 = 0.0549
+2026-02-09 15:49:19,946 - __main__ - INFO - Hits@3 = 0.1975 
+2026-02-09 15:49:19,946 - __main__ - INFO - Hits@10 = 0.4100
+2026-02-09 15:49:20,136 - __main__ - INFO - Uncertainty scores after calibration:
+2026-02-09 15:49:20,140 - __main__ - INFO - brier_score: 0.1239
+2026-02-09 15:49:20,140 - __main__ - INFO - ece: 0.1287
+2026-02-09 15:49:20,140 - __main__ - INFO - ace: 0.3370
+2026-02-09 15:49:20,140 - __main__ - INFO - prob_true: [0.16983305 0.13352827 0.16007194 0.39878543 0.93434343 1.        ]
+2026-02-09 15:49:20,140 - __main__ - INFO - prob_pred: [0.01693974 0.01837741 0.02084091 0.07016192 0.62805058 0.99945111]
+2026-02-09 15:49:20,314 - __main__ - INFO - Checkpoint saved to new_models/experiment_1/calibrated_WN18RR_checkpoint_label_0.9_negative_sampling_3_edge_dropout_0.2_epoch_1700.pth

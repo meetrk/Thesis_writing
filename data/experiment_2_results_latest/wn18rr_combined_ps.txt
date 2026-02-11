@@ -1,0 +1,72 @@
+2026-02-08 16:22:16,949 - __main__ - INFO - Loading configuration from: config/lp_wn18rr.yaml
+2026-02-08 16:22:17,138 - __main__ - INFO - Dataset 'WN18RR' loaded successfully.
+2026-02-08 16:22:17,139 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 173670], num_nodes=40943, edge_type=[173670], train_edge_index=[2, 86835], train_edge_type=[86835], valid_edge_index=[2, 3034], valid_edge_type=[3034], test_edge_index=[2, 3134], test_edge_type=[3134], num_relations=22)
+2026-02-08 16:22:17,139 - __main__ - INFO - Decoder calibration method: platt_scaling
+2026-02-08 16:22:17,139 - __main__ - INFO - Decoder initialized: DistMult(40943, num_relations=11, embedding_dim=500)
+2026-02-08 16:22:17,139 - __main__ - INFO - Decoder parameters count: 5500
+2026-02-08 16:22:17,283 - __main__ - INFO - Encoder initialized successfully.
+2026-02-08 16:22:17,283 - __main__ - INFO - Encoder parameters count: 23474220
+2026-02-08 16:22:17,382 - __main__ - INFO - GAE architecture:
+GAE(
+  (encoder): RGCN(
+    (bn1): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1): RGCNConv(500, 500, num_relations=22)
+    (conv2): RGCNConv(500, 500, num_relations=22)
+  )
+  (decoder): DistMult(40943, num_relations=11, embedding_dim=500)
+)
+2026-02-08 16:22:17,387 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'WN18RR', 'path': './dataset/wn18rr'}_20260208-162217
+2026-02-08 16:22:17,387 - __main__ - INFO - Starting uncertainty evaluation on test set...
+2026-02-08 16:22:17,486 - __main__ - INFO - Checkpoint loaded from ./new_models/experiment_1/WN18RR_checkpoint_label_0.9_negative_sampling_3_edge_dropout_0.2_epoch_1700.pth
+2026-02-08 16:22:17,486 - __main__ - INFO - Pipeline loaded from checkpoint.
+2026-02-08 16:22:17,486 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-08 16:22:17,486 - __main__ - INFO - Uncertainty Estimation Type : standard
+2026-02-08 16:22:17,486 - __main__ - INFO - Calibration Method : platt_scaling
+2026-02-08 16:22:24,766 - __main__ - INFO - MRR = 0.4386
+2026-02-08 16:22:24,766 - __main__ - INFO - Mean Rank = 3854.2061
+2026-02-08 16:22:24,766 - __main__ - INFO - Hits@1 = 0.3998
+2026-02-08 16:22:24,766 - __main__ - INFO - Hits@3 = 0.4544 
+2026-02-08 16:22:24,766 - __main__ - INFO - Hits@10 = 0.5123
+2026-02-08 16:22:24,824 - __main__ - INFO - brier_score: 0.2015
+2026-02-08 16:22:24,824 - __main__ - INFO - ece: 0.2377
+2026-02-08 16:22:24,824 - __main__ - INFO - ace: 0.3952
+2026-02-08 16:22:24,824 - __main__ - INFO - prob_true: [0.11323764 0.1323764  0.19298246 0.21246006 0.20255183 0.35406699
+ 0.80031949 0.99202552 1.         1.        ]
+2026-02-08 16:22:24,824 - __main__ - INFO - prob_pred: [0.03169885 0.04261198 0.04900106 0.05459661 0.06267224 0.08051565
+ 0.15613213 0.44894356 0.8181518  0.87820525]
+2026-02-08 16:22:24,825 - __main__ - INFO - Starting calibration on test set...
+2026-02-08 16:22:24,825 - __main__ - INFO - Starting calibration process...
+2026-02-08 16:22:24,825 - __main__ - INFO - Uncertainty model type: {'type': 'standard', 'mc_samples': 5}
+2026-02-08 16:22:24,825 - __main__ - INFO - Calibration method: platt_scaling
+Before Platt Scaling:
+  BCE Loss: 1.2618
+  MRL Loss: 0.0248
+  Total Loss: 1.2865
+Early stopping at iteration 698
+
+After Platt Scaling:
+  BCE Loss: 0.6581 (Δ -0.6036)
+  MRL Loss: 0.0236 (Δ -0.0012)
+  Total Loss: 0.6817 (Δ -0.6048)
+  Step count: 698
+  Ranking violations: 283/3034 (9.3%)
+
+Calibrated probability statistics:
+  Positives - Mean: 0.790, Std: 0.315
+  Negatives - Mean: 0.208, Std: 0.140
+2026-02-08 16:22:28,635 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-08 16:22:28,635 - __main__ - INFO - Uncertainty Estimation Type : standard
+2026-02-08 16:22:28,635 - __main__ - INFO - Calibration Method : platt_scaling
+2026-02-08 16:22:34,768 - __main__ - INFO - MRR = 0.4386
+2026-02-08 16:22:34,768 - __main__ - INFO - Mean Rank = 3854.2065
+2026-02-08 16:22:34,768 - __main__ - INFO - Hits@1 = 0.3998
+2026-02-08 16:22:34,768 - __main__ - INFO - Hits@3 = 0.4544 
+2026-02-08 16:22:34,768 - __main__ - INFO - Hits@10 = 0.5123
+2026-02-08 16:22:34,810 - __main__ - INFO - brier_score: 0.1076
+2026-02-08 16:22:34,810 - __main__ - INFO - ece: 0.0310
+2026-02-08 16:22:34,810 - __main__ - INFO - ace: 0.0531
+2026-02-08 16:22:34,810 - __main__ - INFO - prob_true: [0.12280702 0.14194577 0.18022329 0.20447284 0.19936204 0.3460925
+ 0.80990415 0.99681021 0.9984051  1.        ]
+2026-02-08 16:22:34,810 - __main__ - INFO - prob_pred: [0.06254386 0.12088944 0.16202269 0.20187139 0.26476478 0.4045728
+ 0.771656   0.98849595 0.99989763 0.9999745 ]
+2026-02-08 16:22:34,983 - __main__ - INFO - Checkpoint saved to new_models/experiment_1/calibrated_WN18RR_checkpoint_label_0.9_negative_sampling_3_edge_dropout_0.2_epoch_1700.pth

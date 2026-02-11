@@ -1,0 +1,60 @@
+2026-02-09 15:17:20,657 - __main__ - INFO - Loading configuration from: config/lp_wn18rr_ensemble.yaml
+2026-02-09 15:17:20,806 - __main__ - INFO - Dataset 'WN18RR' loaded successfully.
+2026-02-09 15:17:20,806 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 173670], num_nodes=40943, edge_type=[173670], train_edge_index=[2, 86835], train_edge_type=[86835], valid_edge_index=[2, 3034], valid_edge_type=[3034], test_edge_index=[2, 3134], test_edge_type=[3134], num_relations=22)
+2026-02-09 15:17:20,806 - __main__ - INFO - Decoder calibration method: scalar
+2026-02-09 15:17:20,807 - __main__ - INFO - Creating Deep Ensemble with 5 models...
+2026-02-09 15:17:21,517 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'WN18RR', 'path': './dataset/wn18rr'}_20260209-151721
+2026-02-09 15:17:21,517 - __main__ - INFO - Starting uncertainty evaluation on test set...
+2026-02-09 15:17:21,968 - __main__ - INFO - Ensemble checkpoint loaded from ./new_models/experiment_2/WN18RR_ensemble_checkpoint_scalar_epoch_4200.pth
+2026-02-09 15:17:21,969 - __main__ - INFO - Checkpoint loaded. Evaluating ensemble uncertainty on test set...
+2026-02-09 15:17:21,969 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-09 15:17:21,969 - __main__ - INFO - Uncertainty Estimation Type : ensemble
+2026-02-09 15:17:21,969 - __main__ - INFO - Calibration Method : scalar
+2026-02-09 15:17:33,105 - __main__ - INFO - MRR = 0.4559
+2026-02-09 15:17:33,106 - __main__ - INFO - Mean Rank = 2561.5356
+2026-02-09 15:17:33,106 - __main__ - INFO - Hits@1 = 0.4097
+2026-02-09 15:17:33,106 - __main__ - INFO - Hits@3 = 0.4729 
+2026-02-09 15:17:33,106 - __main__ - INFO - Hits@10 = 0.5391
+2026-02-09 15:17:33,258 - __main__ - INFO - brier_score: 0.1959
+2026-02-09 15:17:33,259 - __main__ - INFO - ece: 0.2337
+2026-02-09 15:17:33,259 - __main__ - INFO - ace: 0.4122
+2026-02-09 15:17:33,259 - __main__ - INFO - prob_true: [0.05263158 0.06060606 0.12759171 0.22044728 0.20095694 0.40988836
+ 0.93610224 0.99202552 1.         1.        ]
+2026-02-09 15:17:33,259 - __main__ - INFO - prob_pred: [0.03750767 0.04441421 0.04800265 0.05092608 0.05469451 0.06670213
+ 0.15760037 0.47446698 0.8424876  0.88566874]
+2026-02-09 15:17:33,259 - __main__ - INFO - Starting calibration process...
+2026-02-09 15:17:33,259 - __main__ - INFO - Uncertainty model type: {'type': 'ensemble', 'mc_samples': 5}
+torch.Size([3034]) torch.Size([3034])
+Before Platt Scaling (MC Dropout):
+  BCE Loss: 1.2316
+  MRL Loss: 0.0234
+  Total Loss: 1.2551
+
+After Platt Scaling (MC Dropout):
+  BCE Loss: 1.0567 (Δ -0.1749)
+  MRL Loss: 0.0213 (Δ -0.0021)
+  Total Loss: 1.0780 (Δ -0.1770)
+  Step count: 604
+  Optimal Temperature: 1.930
+  Ranking violations: 181/3034 (6.0%)
+
+Calibrated probability statistics:
+  Positives - Mean: 0.483, Std: 0.224
+  Negatives - Mean: 0.177, Std: 0.021
+2026-02-09 15:17:36,891 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-09 15:17:36,891 - __main__ - INFO - Uncertainty Estimation Type : ensemble
+2026-02-09 15:17:36,891 - __main__ - INFO - Calibration Method : scalar
+2026-02-09 15:17:47,934 - __main__ - INFO - MRR = 0.4559
+2026-02-09 15:17:47,934 - __main__ - INFO - Mean Rank = 2561.5339
+2026-02-09 15:17:47,934 - __main__ - INFO - Hits@1 = 0.4097
+2026-02-09 15:17:47,934 - __main__ - INFO - Hits@3 = 0.4729 
+2026-02-09 15:17:47,934 - __main__ - INFO - Hits@10 = 0.5391
+Applied Scalar Temperature Scaling calibration
+2026-02-09 15:17:48,067 - __main__ - INFO - brier_score: 0.1752
+2026-02-09 15:17:48,067 - __main__ - INFO - ece: 0.2049
+2026-02-09 15:17:48,067 - __main__ - INFO - ace: 0.3963
+2026-02-09 15:17:48,067 - __main__ - INFO - prob_true: [0.05741627 0.05741627 0.14035088 0.22683706 0.18500797 0.40669856
+ 0.92811502 1.         1.         0.9984051 ]
+2026-02-09 15:17:48,067 - __main__ - INFO - prob_pred: [0.15775501 0.16986108 0.17584712 0.18047062 0.18604459 0.20310769
+ 0.29109635 0.48590021 0.70691116 0.74293832]
+2026-02-09 15:17:48,810 - __main__ - INFO - Ensemble checkpoint saved to saved_models/experiment_2/calibrated_WN18RR_ensemble_checkpoint_scalar_epoch_4200.pth

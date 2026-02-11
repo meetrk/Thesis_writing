@@ -3,7 +3,7 @@
 
 \section{Experiment 1: Regularization Impact}
 \label{sec:experiment_1_regularization_impact}
-This section presents the results of Experiment 1, which investigates the impact of different regularization techniques on the performance and uncertainty estimation of RGCN model. We compare the baseline model with models employing edge dropout, label smoothing, and a combination of both techniques.
+This section presents the results of Experiment 1, which investigates the impact of different regularization techniques on the performance and uncertainty calibration of RGCN model. We compare the baseline model with models employing edge dropout, label smoothing, and a combination of both techniques.
 
 
 \subsection{Link Prediction Performance}
@@ -12,10 +12,10 @@ This section presents the results of Experiment 1, which investigates the impact
 Table \ref{tab:link_prediction_performance} summarizes the performance of various models on the WN18RR and FB15k-237 datasets using standard link prediction metrics: Mean Reciprocal Rank (MRR) and Hits@K (K=1,3,10).
 
 \begin{itemize}
-    \item \textbf{Baseline}: The baseline model have an MRR of 0.387 on WN18RR and Hits@1 of 0.370. This serves as reference point.
-    \item \textbf{Edge Dropout}: Introducing edge dropout with rates of 0.1 and 0.2 improves the MRR to 0.401 and 0.404 in the WN18RR and to 0.249 and 0.252 in FB15k-237, respectively. However, the improvement in Hits@1 is marginal. However, Hits@1 shows marginal improvement with 0.369 for WN18RR and for FB15k-237 it shows higher improvement with 0.157 and 0.159 respectively.
-    \item \textbf{Label Smoothing}: Applying label smoothing with values of $\omega = 0.1$ and $\omega = 0.2$ yields MRRs of 0.411 and 0.403 for WN18RR, respectively. The Hits@1 metric also shows improvement, particularly with $\omega = 0.1$, reaching 0.387. While, for FB15K-237, the performance was totally opposite as MRR dropped to 0.219 and 0.2258 respectively and Hits@1 also dropped to 0.128 and 0.135 respectively. 
-    \item \textbf{Combined Techniques}: For WN18RR, The best performance is observed when both edge dropout (0.2) and label smoothing (0.1) are combinely applied, achieving highest MRR of 0.440 and Hits@1 of 0.398. This combination yields highest scoress across all metrics, indicating a synergistic effect of the two regularization methods. However, for FB15k-237, the combined techniques was better than baseline and label smoothing but not better than edge dropout alone.
+    \item \textbf{Baseline}: The baseline RGCN model is a vanilla version where we have not applied edge dropout or label smoothing. We can see that the baseline model achieves an MRR of 0.396 in WN18RR dataset and 0.222 in FB15k-237 dataset. Hits@1 for both datasets are 0.376 and 0.131 respectively. These results serves as a reference point for evaluating the impace of regularization techniques.
+    \item \textbf{Edge Dropout}: Introducing Edge dropout with rates of 0.1 and 0.2 improves the MRR to 0.404 and 0.405 in the WN18RR and to 0.254 and 0.255 in FB15k-237, respectively. The Hits@1 and Hits@3 metrics also show improvement with edge dropout, particularly at the 0.2 rate, which achieves the highest scores across all metrics for both datasets.
+    \item \textbf{Label Smoothing}: Applying label smoothing with values of $\omega = 0.1$ and $\omega = 0.2$ yields MRRs of 0.407 and 0.396 for WN18RR, respectively. The Hits@1 metric also shows improvement, particularly with $\omega = 0.1$, reaching 0.386. While, for FB15K-237, the performance was totally opposite as MRR dropped to 0.221 and 0.222 respectively and Hits@1 also dropped to 0.132 for both values of $\omega$. 
+    \item \textbf{Combined Techniques}: For WN18RR, The best performance is observed when both edge dropout (0.2) and label smoothing (0.1) are combinely applied, achieving highest MRR of 0.4386 and Hits@1 of 0.40. This combination yields highest scoress across all metrics, indicating a synergistic effect of the two regularization methods. However, for FB15k-237, the combined techniques was better than baseline and label smoothing but not better than edge dropout alone. 
 \end{itemize}
 
 
@@ -34,22 +34,32 @@ Table \ref{tab:link_prediction_performance} summarizes the performance of variou
 
 Figure \ref{tab:uncertainty_metrics_analysis} illustrates the impact of different regularization techniques on uncertainty estimation metrics, including Expected Calibration Error (ECE) and Reliability Diagram. Key observations include:
 \begin{itemize}
-    \item \textbf{Basline} shows the lowest ECE among all models, indicating better calibration compared to regularized models. This is counter intuitive as regularization is expected to improve calibration. Here both reliability diagrams have different trends. In WN18RR, it is overconfident in almost all ranges but in FB15K-237, it is underconfident in lower ranges and overconfident in higher ranges. Just like a logit function.
+    \item \textbf{Basline} shows the highest ECE among all models, indicating worse calibration compared to regularized models. Both of the models are under confident in their predictions as we can see in reliability diagram \ref{tab:uncertainty_metrics_analysis} where the red line is above the diagonal line for both datasets. For WN18RR, the ECE is 0.318, while for FB15K-237, the ECE is 0.3003. We can also observe that most of the predictions are concentrated in the lower confidence bins near 0. This shows that the RGCN model are not well calibrated and needs calibration techniques to make them reliable in real world applications.
 
-    \item \textbf{Edge Dropout} While in link prediction it improves the performance in both datasets, in uncertainty estimation it degrades the calibration with increasing dropout rates. In WN18RR, for Edge Dropout 0, ECE is 0.301, for 0.1 it is 0.374 and for 0.2 it is 0.388. In FB15K-237, for Edge Dropout 0, ECE is 0.1341, for 0.1 it is 0.1479 and for 0.2 it is 0.1654. Green and Blue lines shows edge dropout models in reliability diagram. They are also almost identical and follows same function as baseline.
+    \item \textbf{Edge Dropout} The ECE score for edge dropout models are not significantly different from the baseline, with values of 0.299 and 0.301 for WN18RR and for FB15K-237 0.271 and 0.254 for edge dropout rates of 0.1 and 0.2, respectively. It is interesting to note that nature of the reliability diagram for edge dropout models is similar to the baseline, with predictions still concentrated in the lower confidence bins.
+    
 
-    \item \textbf{Label Smoothing} Label smoothing also leads to higher ECE values compared to the baseline. For WN18RR,  The model with $\omega = 0.1$ has an ECE of 0.383, while $\omega = 0.2$ results in an ECE of 0.381. For FB15K-237, the model with $\omega = 0.1$ has an ECE of 0.3912, while $\omega = 0.2$ results in an ECE of 0.4079. Purple and Yellow lines shows label smoothing models and they are way off as compared to other. Our model for both datasets is exteremely skewed to lower confidence predictions and always predicts low confidence. Therefore we can see a horizonatl line near x = 0 in reliability diagram.
-
+    \item \textbf{Label Smoothing} Label smoothing models show a signicant change in the models behavior as the ECE scores dropped and the reliability diagram shows that the model changed from squeeze the predictions in the lower confidence bins to more spread out across the confidence spectrum. Best performance is observed with $\omega = 0.2$ for both datasets, achieving ECE scores dropping by 19\% for WN18RR and 
+    
     \item \textbf{Combined Techniques} The combination of edge dropout (0.2) and label smoothing (0.1) results in the highest ECE of 0.3965 and 0.4222, indicating the poorest calibration among all configurations tested. The yellow line in reliability diagram shows the combined model. As we can see it is exactly overlapping with label smoothing models showing similar trend.
 \end{itemize}
 
+
 \begin{table}[htbp]
         \centering
-        \includegraphics[width=0.75\textwidth]{figures/experiment1/exp1graph2}
-        \includegraphics[width=0.75\textwidth]{figures/experiment1/exp1graph3}
+        \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/experiment1/exp1graph2}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/experiment1/exp1graph3}
+        \end{minipage}
         \caption{Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Regularization Techniques. Here Edge Dropout is denoted as ED and Label Smoothing as LS.}
         \label{tab:uncertainty_metrics_analysis}
 \end{table}
+
 
 \section{Experiment 2: Uncertainty Estimation Methods}
 \label{sec:experiment_2_uncertainty_estimation_methods}
@@ -80,10 +90,19 @@ Table \ref{tab:link_prediction_performance_exp2} summarizes the link prediction 
 
 Here are the description of the reliability diagrams for WN18RR and FB15K-237 datasets with different uncertainty estimation methods:
 
+
+
 \begin{table}[htbp]
         \centering
-        \includegraphics[width=0.75\textwidth]{figures/experiment2/graph_wrr}
-        \includegraphics[width=0.75\textwidth]{figures/experiment2/graph_fb15}
+        \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/experiment2/graph_wrr}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/experiment2/graph_fb15}
+        \end{minipage}
         \caption{Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Uncertainty Estimation Methods. Here Edge Dropout is denoted as ED and Label Smoothing as LS.}
         \label{tab:uncertainty_metrics_analysis_exp2}
 \end{table}
@@ -94,25 +113,36 @@ Here are the description of the reliability diagrams for WN18RR and FB15K-237 da
 
 \section{Experiment 3: Calibration Methods}
 \label{sec:experiment_3_calibration_methods}
+
 \begin{table}[htbp]
         \centering
-        \includegraphics[width=0.75\textwidth]{figures/experiment3/graph_rea_wn18}
-        \caption{Link prediction performance of Uncertainty Estimation Methods on WN18RR}
+        \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/experiment3/graph_rea_wn18}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/experiment3/graph_rea_fb15k}
+        \end{minipage}
+        \caption{Link prediction performance of Uncertainty Estimation Methods on WN18RR and FB15K-237}
         \label{tab:reliability_diagram_wn18rr_exp3}
 \end{table}
 
 
-\begin{table}[htbp]
-        \centering
-        \includegraphics[width=0.75\textwidth]{figures/experiment3/graph_rea_fb15k}
-        \caption{Link prediction performance of Uncertainty Estimation Methods on FB15K-237}
-        \label{tab:reliability_diagram_fb15k_exp3}
-\end{table}
+
 
 \begin{table}[htbp]
         \centering
-        \includegraphics[width=0.95\textwidth]{figures/experiment3/graph_wrr}
-        \includegraphics[width=0.95\textwidth]{figures/experiment3/graph_fb15k}
+        \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/experiment3/graph_wrr}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/experiment3/graph_fb15k}
+        \end{minipage}
         \caption{Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Uncertainty Estimation Methods. Here Edge Dropout is denoted as ED and Label Smoothing as LS.}
         \label{tab:compare_metrics_exp3}
 \end{table}
@@ -129,7 +159,45 @@ Here are the description of the reliability diagrams for WN18RR and FB15K-237 da
 
 
 
+\begin{table}[htbp]
+        \centering
+        \includegraphics[width=1\textwidth]{figures/experiment4/table}
+        \caption{Link prediction performance of Uncertainty Estimation Methods on FB15K-237}
+        \label{tab:ece_table_exp4}
+\end{table}
 
 
 \subsection{Best Combined Configurations}
 \label{subsec:best_combined_configurations}
+
+
+\begin{table}[htbp]
+        \centering
+        \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/experiment4/figure_wn_mc}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/experiment4/figure_wn_en}
+        \end{minipage}
+        \caption{Reliability Curves on WN18RR Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods.}
+        \label{tab:compare_metrics_wn_exp4}
+\end{table}
+
+
+\begin{table}[htbp]
+        \centering
+        \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/experiment4/figure_fb_mc}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{figures/experiment4/figure_fb_en}
+        \end{minipage}
+        \caption{Reliability Curves on FB15K-237 Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods.}
+        \label{tab:compare_metrics_fb_exp4}
+\end{table}

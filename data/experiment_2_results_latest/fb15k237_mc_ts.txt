@@ -1,0 +1,72 @@
+2026-02-09 16:13:31,883 - __main__ - INFO - Loading configuration from: config/lp_fb15k237.yaml
+2026-02-09 16:13:32,079 - __main__ - INFO - Dataset 'FB15k-237' loaded successfully.
+2026-02-09 16:13:32,079 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 544230], num_nodes=14541, edge_type=[544230], train_edge_index=[2, 272115], train_edge_type=[272115], valid_edge_index=[2, 17535], valid_edge_type=[17535], test_edge_index=[2, 20466], test_edge_type=[20466], num_relations=474)
+2026-02-09 16:13:32,079 - __main__ - INFO - Decoder calibration method: scalar
+2026-02-09 16:13:32,080 - __main__ - INFO - Decoder initialized: DistMult(14541, num_relations=237, embedding_dim=500)
+2026-02-09 16:13:32,080 - __main__ - INFO - Decoder parameters count: 118500
+2026-02-09 16:13:32,514 - __main__ - INFO - Encoder initialized successfully.
+2026-02-09 16:13:32,514 - __main__ - INFO - Encoder parameters count: 55173000
+2026-02-09 16:13:32,739 - __main__ - INFO - GAE architecture:
+GAE(
+  (encoder): RGCN(
+    (bn1): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1): RGCNConv(500, 500, num_relations=474)
+    (conv2): RGCNConv(500, 500, num_relations=474)
+  )
+  (decoder): DistMult(14541, num_relations=237, embedding_dim=500)
+)
+2026-02-09 16:13:32,744 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'FB15k-237', 'path': './dataset/fb15k237'}_20260209-161332
+2026-02-09 16:13:32,745 - __main__ - INFO - Starting uncertainty evaluation on test set...
+2026-02-09 16:13:32,953 - __main__ - INFO - Checkpoint loaded from ./new_models/experiment_1/FB15k-237_checkpoint_label_1_negative_sampling_3_edge_dropout_0.2_epoch_1000.pth
+2026-02-09 16:13:32,953 - __main__ - INFO - Pipeline loaded from checkpoint.
+2026-02-09 16:13:32,953 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-09 16:13:32,953 - __main__ - INFO - Uncertainty Estimation Type : mc_dropout
+2026-02-09 16:13:32,953 - __main__ - INFO - Calibration Method : scalar
+2026-02-09 16:14:29,737 - __main__ - INFO - MRR = 0.2530
+2026-02-09 16:14:29,737 - __main__ - INFO - Mean Rank = 362.4945
+2026-02-09 16:14:29,737 - __main__ - INFO - Hits@1 = 0.1624
+2026-02-09 16:14:29,737 - __main__ - INFO - Hits@3 = 0.2796 
+2026-02-09 16:14:29,737 - __main__ - INFO - Hits@10 = 0.4400
+2026-02-09 16:14:31,015 - __main__ - INFO - brier_score: 0.2253
+2026-02-09 16:14:31,015 - __main__ - INFO - ece: 0.2518
+2026-02-09 16:14:31,015 - __main__ - INFO - ace: 0.3958
+2026-02-09 16:14:31,015 - __main__ - INFO - prob_true: [0.02369321 0.03444906 0.06132421 0.09626191 0.21695578 0.71048131
+ 0.95186904 0.97410213 0.94771561 0.98314607]
+2026-02-09 16:14:31,015 - __main__ - INFO - prob_pred: [1.44075803e-10 2.20232701e-08 5.51256726e-07 8.01007305e-06
+ 1.38782212e-04 8.52853797e-03 1.07916471e-01 4.82877058e-01
+ 8.90374851e-01 9.91898650e-01]
+2026-02-09 16:14:31,015 - __main__ - INFO - Starting calibration on test set...
+2026-02-09 16:14:31,015 - __main__ - INFO - Starting calibration process...
+2026-02-09 16:14:31,015 - __main__ - INFO - Uncertainty model type: {'type': 'mc_dropout', 'mc_samples': 5}
+2026-02-09 16:14:31,015 - __main__ - INFO - Calibration method: scalar
+Before Platt Scaling (MC Dropout):
+  BCE Loss: 2.3585
+  MRL Loss: 0.0350
+  Total Loss: 2.3935
+
+After Platt Scaling (MC Dropout):
+  BCE Loss: 0.9518 (Δ -1.4068)
+  MRL Loss: 0.0106 (Δ -0.0244)
+  Total Loss: 0.9623 (Δ -1.4312)
+  Step count: 874
+  Ranking violations: 718/17535 (4.1%)
+
+Calibrated probability statistics:
+  Positives - Mean: 0.484, Std: 0.171
+  Negatives - Mean: 0.118, Std: 0.101
+2026-02-09 16:14:37,551 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-09 16:14:37,551 - __main__ - INFO - Uncertainty Estimation Type : mc_dropout
+2026-02-09 16:14:37,551 - __main__ - INFO - Calibration Method : scalar
+2026-02-09 16:15:34,236 - __main__ - INFO - MRR = 0.2523
+2026-02-09 16:15:34,236 - __main__ - INFO - Mean Rank = 378.4060
+2026-02-09 16:15:34,236 - __main__ - INFO - Hits@1 = 0.1607
+2026-02-09 16:15:34,236 - __main__ - INFO - Hits@3 = 0.2790 
+2026-02-09 16:15:34,236 - __main__ - INFO - Hits@10 = 0.4425
+2026-02-09 16:15:35,489 - __main__ - INFO - Applied Temperature Scaling with MC Dropout calibration
+2026-02-09 16:15:35,498 - __main__ - INFO - brier_score: 0.1614
+2026-02-09 16:15:35,498 - __main__ - INFO - ece: 0.2136
+2026-02-09 16:15:35,498 - __main__ - INFO - ace: 0.2481
+2026-02-09 16:15:35,498 - __main__ - INFO - prob_true: [0.02589155 0.04177865 0.0662106  0.1035915  0.21671146 0.68531639
+ 0.95553384 0.9650623  0.95431224 0.98558867]
+2026-02-09 16:15:35,498 - __main__ - INFO - prob_pred: [0.01916377 0.05528829 0.09153946 0.13403509 0.19175528 0.29562051
+ 0.40502768 0.4962039  0.59367061 0.70696172]

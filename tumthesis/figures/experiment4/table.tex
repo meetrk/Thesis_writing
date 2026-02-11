@@ -1,0 +1,23 @@
+\documentclass[preview,border=2pt]{standalone}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\begin{document}
+
+% The resizebox scales the table content to fit a theoretical text width.
+\resizebox{1\textwidth}{!}{%
+\begin{tabular}{@{}llcccc@{}}
+\toprule
+\textbf{Dataset} & \textbf{Model} & \textbf{Uncalibrated} & \textbf{Temp. Scaling} & \textbf{Platt Scaling} & \textbf{Isotonic} \\ 
+\midrule
+\multirow{2}{*}{WN18RR} & Monte Carlo Dropout & 23.44\% & 19.77\% & 7.13\% & 12.87\% \\
+ & Deep Ensemble & 23.37\%  & 20.49\% & 1.41\% & 12.26\% \\
+\midrule
+\multirow{2}{*}{FB15K-237} & Monte Carlo Dropout & 25.18\% & 21.36\% & 3.11\% & 17.32\% \\
+ & Deep Ensemble & 19.30\% & 18.43\% & 2.48\% & 15.80\% \\
+\bottomrule
+\end{tabular}%
+}
+
+\end{document}

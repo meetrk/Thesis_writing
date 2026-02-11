@@ -1,0 +1,68 @@
+2026-02-08 16:23:17,831 - __main__ - INFO - Loading configuration from: config/lp_wn18rr.yaml
+2026-02-08 16:23:17,988 - __main__ - INFO - Dataset 'WN18RR' loaded successfully.
+2026-02-08 16:23:17,989 - __main__ - INFO - Number of nodes: Data(edge_index=[2, 173670], num_nodes=40943, edge_type=[173670], train_edge_index=[2, 86835], train_edge_type=[86835], valid_edge_index=[2, 3034], valid_edge_type=[3034], test_edge_index=[2, 3134], test_edge_type=[3134], num_relations=22)
+2026-02-08 16:23:17,989 - __main__ - INFO - Decoder calibration method: scalar
+2026-02-08 16:23:17,989 - __main__ - INFO - Decoder initialized: DistMult(40943, num_relations=11, embedding_dim=500)
+2026-02-08 16:23:17,989 - __main__ - INFO - Decoder parameters count: 5500
+2026-02-08 16:23:18,092 - __main__ - INFO - Encoder initialized successfully.
+2026-02-08 16:23:18,092 - __main__ - INFO - Encoder parameters count: 23474220
+2026-02-08 16:23:18,161 - __main__ - INFO - GAE architecture:
+GAE(
+  (encoder): RGCN(
+    (bn1): BatchNorm1d(500, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (conv1): RGCNConv(500, 500, num_relations=22)
+    (conv2): RGCNConv(500, 500, num_relations=22)
+  )
+  (decoder): DistMult(40943, num_relations=11, embedding_dim=500)
+)
+2026-02-08 16:23:18,165 - __main__ - INFO - TensorBoard logs will be saved to: runs/experiment_{'name': 'WN18RR', 'path': './dataset/wn18rr'}_20260208-162318
+2026-02-08 16:23:18,165 - __main__ - INFO - Starting uncertainty evaluation on test set...
+2026-02-08 16:23:18,255 - __main__ - INFO - Checkpoint loaded from ./new_models/experiment_1/WN18RR_checkpoint_label_0.9_negative_sampling_3_edge_dropout_0.2_epoch_1700.pth
+2026-02-08 16:23:18,256 - __main__ - INFO - Pipeline loaded from checkpoint.
+2026-02-08 16:23:18,256 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-08 16:23:18,256 - __main__ - INFO - Uncertainty Estimation Type : standard
+2026-02-08 16:23:18,256 - __main__ - INFO - Calibration Method : scalar
+2026-02-08 16:23:24,463 - __main__ - INFO - MRR = 0.4386
+2026-02-08 16:23:24,463 - __main__ - INFO - Mean Rank = 3854.2065
+2026-02-08 16:23:24,463 - __main__ - INFO - Hits@1 = 0.3998
+2026-02-08 16:23:24,463 - __main__ - INFO - Hits@3 = 0.4544 
+2026-02-08 16:23:24,463 - __main__ - INFO - Hits@10 = 0.5123
+2026-02-08 16:23:24,518 - __main__ - INFO - brier_score: 0.2014
+2026-02-08 16:23:24,519 - __main__ - INFO - ece: 0.2381
+2026-02-08 16:23:24,519 - __main__ - INFO - ace: 0.3995
+2026-02-08 16:23:24,519 - __main__ - INFO - prob_true: [0.11802233 0.1307815  0.18819777 0.19009585 0.19298246 0.36363636
+ 0.82587859 0.99202552 1.         0.9984051 ]
+2026-02-08 16:23:24,519 - __main__ - INFO - prob_pred: [0.03203425 0.04300495 0.04899793 0.05433433 0.06158307 0.07781916
+ 0.15551917 0.44843249 0.81844665 0.87824613]
+2026-02-08 16:23:24,519 - __main__ - INFO - Starting calibration on test set...
+2026-02-08 16:23:24,519 - __main__ - INFO - Starting calibration process...
+2026-02-08 16:23:24,519 - __main__ - INFO - Uncertainty model type: {'type': 'standard', 'mc_samples': 5}
+2026-02-08 16:23:24,519 - __main__ - INFO - Calibration method: scalar
+Before Temperature Scaling:
+  BCE Loss: 1.2612
+  MRL Loss: 0.0241
+  Initial Temperature: 1.000
+
+After Temperature Scaling:
+  BCE Loss: 1.0789 (Δ -0.1823)
+  MRL Loss: 0.0226 (Δ -0.0015)
+  Optimal Temperature: 1.974
+  Optimization steps: 599
+  Ranking violations: 262/3034 (8.6%)
+2026-02-08 16:23:27,750 - __main__ - INFO - Starting link prediction evaluation...
+2026-02-08 16:23:27,750 - __main__ - INFO - Uncertainty Estimation Type : standard
+2026-02-08 16:23:27,750 - __main__ - INFO - Calibration Method : scalar
+2026-02-08 16:23:33,860 - __main__ - INFO - MRR = 0.4386
+2026-02-08 16:23:33,860 - __main__ - INFO - Mean Rank = 3854.2068
+2026-02-08 16:23:33,860 - __main__ - INFO - Hits@1 = 0.3998
+2026-02-08 16:23:33,860 - __main__ - INFO - Hits@3 = 0.4544 
+2026-02-08 16:23:33,860 - __main__ - INFO - Hits@10 = 0.5123
+2026-02-08 16:23:33,898 - __main__ - INFO - Applied Platt Scaling calibration
+2026-02-08 16:23:33,902 - __main__ - INFO - brier_score: 0.1806
+2026-02-08 16:23:33,902 - __main__ - INFO - ece: 0.1820
+2026-02-08 16:23:33,902 - __main__ - INFO - ace: 0.3138
+2026-02-08 16:23:33,902 - __main__ - INFO - prob_true: [0.11323764 0.13716108 0.19776715 0.19968051 0.19776715 0.34130781
+ 0.81948882 0.99362041 1.         1.        ]
+2026-02-08 16:23:33,902 - __main__ - INFO - prob_pred: [0.15077278 0.17154064 0.18234134 0.19101462 0.20159835 0.22310863
+ 0.29389472 0.47243901 0.68375546 0.73157563]
+2026-02-08 16:23:34,077 - __main__ - INFO - Checkpoint saved to new_models/experiment_1/calibrated_WN18RR_checkpoint_label_0.9_negative_sampling_3_edge_dropout_0.2_epoch_1700.pth
