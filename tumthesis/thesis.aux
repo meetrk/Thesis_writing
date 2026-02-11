@@ -160,24 +160,19 @@
 \citation{platt1999probabilistic}
 \abx@aux@cite{0}{platt1999probabilistic}
 \abx@aux@segm{0}{0}{platt1999probabilistic}
-\citation{joy2022sampledependentadaptivetemperaturescaling}
-\abx@aux@cite{0}{joy2022sampledependentadaptivetemperaturescaling}
-\abx@aux@segm{0}{0}{joy2022sampledependentadaptivetemperaturescaling}
 \citation{guo2017calibrationmodernneuralnetworks}
 \abx@aux@cite{0}{guo2017calibrationmodernneuralnetworks}
 \abx@aux@segm{0}{0}{guo2017calibrationmodernneuralnetworks}
-\citation{joy2022sampledependentadaptivetemperaturescaling}
-\abx@aux@cite{0}{joy2022sampledependentadaptivetemperaturescaling}
-\abx@aux@segm{0}{0}{joy2022sampledependentadaptivetemperaturescaling}
 \@writefile{toc}{\contentsline {section}{\numberline {3.4}Calibration Techniques}{13}{section.3.4}\protected@file@percent }
 \newlabel{sec:uncertainty_calibration}{{3.4}{13}{Calibration Techniques}{section.3.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Parameteric Approaches}{13}{subsection.3.4.1}\protected@file@percent }
 \newlabel{subsec:parametric_approaches}{{3.4.1}{13}{Parameteric Approaches}{subsection.3.4.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Scalar Temperature Scaling}{13}{subsubsection*.11}\protected@file@percent }
-\newlabel{subsubsec:scalar_temperature_scaling}{{3.4.1}{13}{Scalar Temperature Scaling}{subsubsection*.11}{}}
-\newlabel{eq:temperature_scaling}{{3.13}{13}{Scalar Temperature Scaling}{equation.3.13}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Input Dependent Temperature Scaling (IDTS)}{13}{subsubsection*.12}\protected@file@percent }
-\newlabel{subsubsec:input_dependent_temperature_scaling}{{3.4.1}{13}{Input Dependent Temperature Scaling (IDTS)}{subsubsection*.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Platt Scaling}{13}{subsubsection*.11}\protected@file@percent }
+\newlabel{subsubsec:platt_scaling}{{3.4.1}{13}{Platt Scaling}{subsubsection*.11}{}}
+\newlabel{eq:platt_scaling}{{3.13}{13}{Platt Scaling}{equation.3.13}{}}
+\newlabel{eq:platt_loss}{{3.14}{13}{Platt Scaling}{equation.3.14}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Scalar Temperature Scaling}{13}{subsubsection*.12}\protected@file@percent }
+\newlabel{subsubsec:scalar_temperature_scaling}{{3.4.1}{13}{Scalar Temperature Scaling}{subsubsection*.12}{}}
 \citation{zadrozny2002transformingclassifierscores}
 \abx@aux@cite{0}{zadrozny2002transformingclassifierscores}
 \abx@aux@segm{0}{0}{zadrozny2002transformingclassifierscores}
@@ -196,7 +191,7 @@
 \citation{scikit-learn}
 \abx@aux@cite{0}{scikit-learn}
 \abx@aux@segm{0}{0}{scikit-learn}
-\newlabel{eq:input_dependent_temperature_scaling}{{3.14}{14}{Input Dependent Temperature Scaling (IDTS)}{equation.3.14}{}}
+\newlabel{eq:temperature_scaling}{{3.15}{14}{Scalar Temperature Scaling}{equation.3.15}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Non-Parametric Approaches}{14}{subsection.3.4.2}\protected@file@percent }
 \newlabel{subsec:non_parametric_approaches}{{3.4.2}{14}{Non-Parametric Approaches}{subsection.3.4.2}{}}
 \@writefile{toc}{\contentsline {subsubsection}{Isotonic Regression}{14}{subsubsection*.13}\protected@file@percent }
@@ -208,38 +203,38 @@
 \citation{toutanova2015observed}
 \abx@aux@cite{0}{toutanova2015observed}
 \abx@aux@segm{0}{0}{toutanova2015observed}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Experiment}{17}{chapter.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Experiment}{15}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:experiment}{{4}{17}{Experiment}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Dataset Description}{17}{section.4.1}\protected@file@percent }
-\newlabel{sec:dataset_description}{{4.1}{17}{Dataset Description}{section.4.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Dataset Characteristics}{17}{subsection.4.1.1}\protected@file@percent }
-\newlabel{subsec:dataset_statistics}{{4.1.1}{17}{Dataset Characteristics}{subsection.4.1.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Model Configuration}}{18}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:model}{{4.1}{18}{Model Configuration}{figure.caption.14}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Sparsity Analysis (OPTIONAL)}{18}{subsection.4.1.2}\protected@file@percent }
-\newlabel{subsec:dataset_sparsity_analysis}{{4.1.2}{18}{Sparsity Analysis (OPTIONAL)}{subsection.4.1.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Experimental Setup}{18}{section.4.2}\protected@file@percent }
-\newlabel{sec:experimental_setup}{{4.2}{18}{Experimental Setup}{section.4.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Model Settings}{18}{subsection.4.2.1}\protected@file@percent }
-\newlabel{subsec:model_settings}{{4.2.1}{18}{Model Settings}{subsection.4.2.1}{}}
+\newlabel{chap:experiment}{{4}{15}{Experiment}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Dataset Description}{15}{section.4.1}\protected@file@percent }
+\newlabel{sec:dataset_description}{{4.1}{15}{Dataset Description}{section.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Dataset Characteristics}{15}{subsection.4.1.1}\protected@file@percent }
+\newlabel{subsec:dataset_statistics}{{4.1.1}{15}{Dataset Characteristics}{subsection.4.1.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Model Configuration}}{16}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:model}{{4.1}{16}{Model Configuration}{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Sparsity Analysis (OPTIONAL)}{16}{subsection.4.1.2}\protected@file@percent }
+\newlabel{subsec:dataset_sparsity_analysis}{{4.1.2}{16}{Sparsity Analysis (OPTIONAL)}{subsection.4.1.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Experimental Setup}{16}{section.4.2}\protected@file@percent }
+\newlabel{sec:experimental_setup}{{4.2}{16}{Experimental Setup}{section.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Model Settings}{16}{subsection.4.2.1}\protected@file@percent }
+\newlabel{subsec:model_settings}{{4.2.1}{16}{Model Settings}{subsection.4.2.1}{}}
 \citation{bordes_translating_2013}
 \abx@aux@cite{0}{bordes_translating_2013}
 \abx@aux@segm{0}{0}{bordes_translating_2013}
 \citation{dettmers2018convolutional}
 \abx@aux@cite{0}{dettmers2018convolutional}
 \abx@aux@segm{0}{0}{dettmers2018convolutional}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Hardware and Software Used}{19}{subsection.4.2.2}\protected@file@percent }
-\newlabel{subsec:hardware_and_software_used}{{4.2.2}{19}{Hardware and Software Used}{subsection.4.2.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Training Protocols}{19}{subsection.4.2.3}\protected@file@percent }
-\newlabel{subsec:training_protocols}{{4.2.3}{19}{Training Protocols}{subsection.4.2.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Evaluation Metrics}{19}{section.4.3}\protected@file@percent }
-\newlabel{sec:evaluation_metrics}{{4.3}{19}{Evaluation Metrics}{section.4.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Link Prediction Metrics}{19}{subsection.4.3.1}\protected@file@percent }
-\newlabel{subsec:link_prediction_metrics}{{4.3.1}{19}{Link Prediction Metrics}{subsection.4.3.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Mean Rank (MR)}{19}{subsubsection*.15}\protected@file@percent }
-\newlabel{subsubsec:mean_rank}{{4.3.1}{19}{Mean Rank (MR)}{subsubsection*.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Hardware and Software Used}{17}{subsection.4.2.2}\protected@file@percent }
+\newlabel{subsec:hardware_and_software_used}{{4.2.2}{17}{Hardware and Software Used}{subsection.4.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Training Protocols}{17}{subsection.4.2.3}\protected@file@percent }
+\newlabel{subsec:training_protocols}{{4.2.3}{17}{Training Protocols}{subsection.4.2.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Evaluation Metrics}{17}{section.4.3}\protected@file@percent }
+\newlabel{sec:evaluation_metrics}{{4.3}{17}{Evaluation Metrics}{section.4.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Link Prediction Metrics}{17}{subsection.4.3.1}\protected@file@percent }
+\newlabel{subsec:link_prediction_metrics}{{4.3.1}{17}{Link Prediction Metrics}{subsection.4.3.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Mean Rank (MR)}{17}{subsubsection*.15}\protected@file@percent }
+\newlabel{subsubsec:mean_rank}{{4.3.1}{17}{Mean Rank (MR)}{subsubsection*.15}{}}
 \citation{naeini2015obtaining}
 \abx@aux@cite{0}{naeini2015obtaining}
 \abx@aux@segm{0}{0}{naeini2015obtaining}
@@ -252,126 +247,124 @@
 \citation{zhu2023closerlookprobabilitycalibration}
 \abx@aux@cite{0}{zhu2023closerlookprobabilitycalibration}
 \abx@aux@segm{0}{0}{zhu2023closerlookprobabilitycalibration}
-\newlabel{eq:mean_rank}{{4.1}{20}{Mean Rank (MR)}{equation.4.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Mean Reciprocal Rank}{20}{subsubsection*.16}\protected@file@percent }
-\newlabel{subsubsec:mean_reciprocal_rank}{{4.3.1}{20}{Mean Reciprocal Rank}{subsubsection*.16}{}}
-\newlabel{eq:mean_reciprocal_rank}{{4.2}{20}{Mean Reciprocal Rank}{equation.4.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Hits@K}{20}{subsubsection*.17}\protected@file@percent }
-\newlabel{subsubsec:hits_at_k}{{4.3.1}{20}{Hits@K}{subsubsection*.17}{}}
-\newlabel{eq:hits_at_k}{{4.3}{20}{Hits@K}{equation.4.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Uncertainty Estimation Metrics}{20}{subsection.4.3.2}\protected@file@percent }
-\newlabel{subsec:uncertainty_estimation_metrics}{{4.3.2}{20}{Uncertainty Estimation Metrics}{subsection.4.3.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Expected Calibration Error (ECE)}{21}{subsubsection*.18}\protected@file@percent }
-\newlabel{subsubsec:expected_calibration_error_ece}{{4.3.2}{21}{Expected Calibration Error (ECE)}{subsubsection*.18}{}}
-\newlabel{eq:ece}{{4.4}{21}{Expected Calibration Error (ECE)}{equation.4.4}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Adaptive Calibration Error (ACE)}{21}{subsubsection*.19}\protected@file@percent }
-\newlabel{subsubsec:adaptive_calibration_error_ace}{{4.3.2}{21}{Adaptive Calibration Error (ACE)}{subsubsection*.19}{}}
+\newlabel{eq:mean_rank}{{4.1}{18}{Mean Rank (MR)}{equation.4.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Mean Reciprocal Rank}{18}{subsubsection*.16}\protected@file@percent }
+\newlabel{subsubsec:mean_reciprocal_rank}{{4.3.1}{18}{Mean Reciprocal Rank}{subsubsection*.16}{}}
+\newlabel{eq:mean_reciprocal_rank}{{4.2}{18}{Mean Reciprocal Rank}{equation.4.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Hits@K}{18}{subsubsection*.17}\protected@file@percent }
+\newlabel{subsubsec:hits_at_k}{{4.3.1}{18}{Hits@K}{subsubsection*.17}{}}
+\newlabel{eq:hits_at_k}{{4.3}{18}{Hits@K}{equation.4.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Uncertainty Estimation Metrics}{18}{subsection.4.3.2}\protected@file@percent }
+\newlabel{subsec:uncertainty_estimation_metrics}{{4.3.2}{18}{Uncertainty Estimation Metrics}{subsection.4.3.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Expected Calibration Error (ECE)}{19}{subsubsection*.18}\protected@file@percent }
+\newlabel{subsubsec:expected_calibration_error_ece}{{4.3.2}{19}{Expected Calibration Error (ECE)}{subsubsection*.18}{}}
+\newlabel{eq:ece}{{4.4}{19}{Expected Calibration Error (ECE)}{equation.4.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Adaptive Calibration Error (ACE)}{19}{subsubsection*.19}\protected@file@percent }
+\newlabel{subsubsec:adaptive_calibration_error_ace}{{4.3.2}{19}{Adaptive Calibration Error (ACE)}{subsubsection*.19}{}}
 \citation{rong2019dropedge}
 \abx@aux@cite{0}{rong2019dropedge}
 \abx@aux@segm{0}{0}{rong2019dropedge}
 \citation{memariani2025linkpredictionnontargeted}
 \abx@aux@cite{0}{memariani2025linkpredictionnontargeted}
 \abx@aux@segm{0}{0}{memariani2025linkpredictionnontargeted}
-\newlabel{eq:ace}{{4.5}{22}{Adaptive Calibration Error (ACE)}{equation.4.5}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Brier Score}{22}{subsubsection*.20}\protected@file@percent }
-\newlabel{subsubsec:brier_score}{{4.3.2}{22}{Brier Score}{subsubsection*.20}{}}
-\newlabel{eq:brier_score}{{4.6}{22}{Brier Score}{equation.4.6}{}}
-\@writefile{toc}{\contentsline {subsubsection}{Reliability Diagram}{22}{subsubsection*.21}\protected@file@percent }
-\newlabel{subsubsec:reliability_diagram}{{4.3.2}{22}{Reliability Diagram}{subsubsection*.21}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Experimental Protocols}{22}{section.4.4}\protected@file@percent }
-\newlabel{sec:experimental_protocols}{{4.4}{22}{Experimental Protocols}{section.4.4}{}}
+\newlabel{eq:ace}{{4.5}{20}{Adaptive Calibration Error (ACE)}{equation.4.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Brier Score}{20}{subsubsection*.20}\protected@file@percent }
+\newlabel{subsubsec:brier_score}{{4.3.2}{20}{Brier Score}{subsubsection*.20}{}}
+\newlabel{eq:brier_score}{{4.6}{20}{Brier Score}{equation.4.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Reliability Diagram}{20}{subsubsection*.21}\protected@file@percent }
+\newlabel{subsubsec:reliability_diagram}{{4.3.2}{20}{Reliability Diagram}{subsubsection*.21}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Experimental Protocols}{20}{section.4.4}\protected@file@percent }
+\newlabel{sec:experimental_protocols}{{4.4}{20}{Experimental Protocols}{section.4.4}{}}
 \citation{gal2016dropoutbayesianapproximationrepresenting}
 \abx@aux@cite{0}{gal2016dropoutbayesianapproximationrepresenting}
 \abx@aux@segm{0}{0}{gal2016dropoutbayesianapproximationrepresenting}
 \citation{lakshminarayanan2017simplescalablepredictiveuncertainty}
 \abx@aux@cite{0}{lakshminarayanan2017simplescalablepredictiveuncertainty}
 \abx@aux@segm{0}{0}{lakshminarayanan2017simplescalablepredictiveuncertainty}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Experiment 1: Regularization Impact}{23}{subsection.4.4.1}\protected@file@percent }
-\newlabel{subsec:regularization_impact}{{4.4.1}{23}{Experiment 1: Regularization Impact}{subsection.4.4.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Experiment 2: Uncertainty Estimation Methods}{23}{subsection.4.4.2}\protected@file@percent }
-\newlabel{subsec:uncertainty_estimation_methods}{{4.4.2}{23}{Experiment 2: Uncertainty Estimation Methods}{subsection.4.4.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}Experiment 3: Calibration Methods}{23}{subsection.4.4.3}\protected@file@percent }
-\newlabel{subsec:calibration_methods}{{4.4.3}{23}{Experiment 3: Calibration Methods}{subsection.4.4.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Input-Dependent Temperature Scaling Network Architecture}}{24}{figure.caption.22}\protected@file@percent }
-\newlabel{fig:idts_parameter}{{4.2}{24}{Input-Dependent Temperature Scaling Network Architecture}{figure.caption.22}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.4}Experiment 4: Hybrid Approaches}{24}{subsection.4.4.4}\protected@file@percent }
-\newlabel{subsec:hybrid_approaches}{{4.4.4}{24}{Experiment 4: Hybrid Approaches}{subsection.4.4.4}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Results}{25}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Experiment 1: Regularization Impact}{21}{subsection.4.4.1}\protected@file@percent }
+\newlabel{subsec:regularization_impact}{{4.4.1}{21}{Experiment 1: Regularization Impact}{subsection.4.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Experiment 2: Uncertainty Estimation Methods}{21}{subsection.4.4.2}\protected@file@percent }
+\newlabel{subsec:uncertainty_estimation_methods}{{4.4.2}{21}{Experiment 2: Uncertainty Estimation Methods}{subsection.4.4.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}Experiment 3: Calibration Methods}{21}{subsection.4.4.3}\protected@file@percent }
+\newlabel{subsec:calibration_methods}{{4.4.3}{21}{Experiment 3: Calibration Methods}{subsection.4.4.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.4}Experiment 4: Hybrid Approaches}{22}{subsection.4.4.4}\protected@file@percent }
+\newlabel{subsec:hybrid_approaches}{{4.4.4}{22}{Experiment 4: Hybrid Approaches}{subsection.4.4.4}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Results}{23}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:results}{{5}{25}{Results}{chapter.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Experiment 1: Regularization Impact}{25}{section.5.1}\protected@file@percent }
-\newlabel{sec:experiment_1_regularization_impact}{{5.1}{25}{Experiment 1: Regularization Impact}{section.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Link Prediction Performance}{25}{subsection.5.1.1}\protected@file@percent }
-\newlabel{subsec:link_prediction_performance}{{5.1.1}{25}{Link Prediction Performance}{subsection.5.1.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Link Prediction Performance on WN18RR and FB15k-237 Datasets}}{26}{table.caption.23}\protected@file@percent }
-\newlabel{tab:link_prediction_performance}{{5.1}{26}{Link Prediction Performance on WN18RR and FB15k-237 Datasets}{table.caption.23}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Uncertainty Metrics Analysis}{26}{subsection.5.1.2}\protected@file@percent }
-\newlabel{subsec:uncertainty_metrics_analysis}{{5.1.2}{26}{Uncertainty Metrics Analysis}{subsection.5.1.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Regularization Techniques. Here Edge Dropout is denoted as ED and Label Smoothing as LS.}}{27}{table.caption.24}\protected@file@percent }
-\newlabel{tab:uncertainty_metrics_analysis}{{5.2}{27}{Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Regularization Techniques. Here Edge Dropout is denoted as ED and Label Smoothing as LS}{table.caption.24}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Experiment 2: Uncertainty Estimation Methods}{27}{section.5.2}\protected@file@percent }
-\newlabel{sec:experiment_2_uncertainty_estimation_methods}{{5.2}{27}{Experiment 2: Uncertainty Estimation Methods}{section.5.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Link Prediction Performance}{28}{subsection.5.2.1}\protected@file@percent }
-\newlabel{subsec:link_prediction_performance_exp2}{{5.2.1}{28}{Link Prediction Performance}{subsection.5.2.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Link prediction performance of Uncertainty Estimation Methods on WN18RR and FB15k-237 Datasets. Here, Left table is for WN18RR and right table is for FB15K-237. The best performing regularized model from Experiment 1 is used as the baseline for comparison. Best performance is highlighted in bold.}}{28}{table.caption.25}\protected@file@percent }
-\newlabel{tab:link_prediction_performance_exp2}{{5.3}{28}{Link prediction performance of Uncertainty Estimation Methods on WN18RR and FB15k-237 Datasets. Here, Left table is for WN18RR and right table is for FB15K-237. The best performing regularized model from Experiment 1 is used as the baseline for comparison. Best performance is highlighted in bold}{table.caption.25}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Reliability Diagrams}{28}{subsection.5.2.2}\protected@file@percent }
-\newlabel{subsec:reliability_diagrams}{{5.2.2}{28}{Reliability Diagrams}{subsection.5.2.2}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Uncertainty Estimation Methods. Here Edge Dropout is denoted as ED and Label Smoothing as LS.}}{29}{table.caption.26}\protected@file@percent }
-\newlabel{tab:uncertainty_metrics_analysis_exp2}{{5.4}{29}{Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Uncertainty Estimation Methods. Here Edge Dropout is denoted as ED and Label Smoothing as LS}{table.caption.26}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Computational Overhead (OPTIONAL)}{29}{subsection.5.2.3}\protected@file@percent }
-\newlabel{subsec:computational_overhead}{{5.2.3}{29}{Computational Overhead (OPTIONAL)}{subsection.5.2.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Experiment 3: Calibration Methods}{29}{section.5.3}\protected@file@percent }
-\newlabel{sec:experiment_3_calibration_methods}{{5.3}{29}{Experiment 3: Calibration Methods}{section.5.3}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Uncertainty Estimation Methods. Here Edge Dropout is denoted as ED and Label Smoothing as LS.}}{30}{table.caption.27}\protected@file@percent }
-\newlabel{tab:compare_metrics_exp3}{{5.5}{30}{Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Uncertainty Estimation Methods. Here Edge Dropout is denoted as ED and Label Smoothing as LS}{table.caption.27}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Comparision of Calibration Methods}{30}{subsection.5.3.1}\protected@file@percent }
-\newlabel{subsec:effect_on_link_prediction_performance_exp3}{{5.3.1}{30}{Comparision of Calibration Methods}{subsection.5.3.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces Link prediction performance of Uncertainty Estimation Methods on WN18RR and FB15K-237}}{31}{table.caption.28}\protected@file@percent }
-\newlabel{tab:reliability_diagram_exp3}{{5.6}{31}{Link prediction performance of Uncertainty Estimation Methods on WN18RR and FB15K-237}{table.caption.28}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Experiment 4: Hybrid Approaches}{31}{section.5.4}\protected@file@percent }
-\newlabel{sec:experiment_4_hybrid_approaches}{{5.4}{31}{Experiment 4: Hybrid Approaches}{section.5.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Quantitative Analysis}{31}{subsection.5.4.1}\protected@file@percent }
-\newlabel{subsec:quantitative_analysis_exp4}{{5.4.1}{31}{Quantitative Analysis}{subsection.5.4.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces Link prediction performance of Uncertainty Estimation Methods. Here, We measured ECE score with 10 bins to understand the calibration performance of the models. We list ECE score for the uncalibrated model and calibrated models with Temperature scaling, Platt scaling and Isotonic regression.}}{32}{table.caption.29}\protected@file@percent }
-\newlabel{tab:ece_table_exp4}{{5.7}{32}{Link prediction performance of Uncertainty Estimation Methods. Here, We measured ECE score with 10 bins to understand the calibration performance of the models. We list ECE score for the uncalibrated model and calibrated models with Temperature scaling, Platt scaling and Isotonic regression}{table.caption.29}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Qualitative Analysis}{33}{subsection.5.4.2}\protected@file@percent }
-\newlabel{subsec:qualitative_analysis_exp4}{{5.4.2}{33}{Qualitative Analysis}{subsection.5.4.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Reliability Curves on WN18RR Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods.}}{33}{figure.caption.30}\protected@file@percent }
-\newlabel{fig:compare_metrics_wn_exp4}{{5.1}{33}{Reliability Curves on WN18RR Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods}{figure.caption.30}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Reliability Curves on FB15K-237 Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods.}}{34}{figure.caption.31}\protected@file@percent }
-\newlabel{fig:compare_metrics_fb_exp4}{{5.2}{34}{Reliability Curves on FB15K-237 Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods}{figure.caption.31}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{35}{chapter.6}\protected@file@percent }
+\newlabel{chap:results}{{5}{23}{Results}{chapter.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Experiment 1: Regularization Impact}{23}{section.5.1}\protected@file@percent }
+\newlabel{sec:experiment_1_regularization_impact}{{5.1}{23}{Experiment 1: Regularization Impact}{section.5.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Link Prediction Performance}{23}{subsection.5.1.1}\protected@file@percent }
+\newlabel{subsec:link_prediction_performance}{{5.1.1}{23}{Link Prediction Performance}{subsection.5.1.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces Link Prediction Performance on WN18RR and FB15k-237 Datasets}}{24}{table.caption.22}\protected@file@percent }
+\newlabel{tab:link_prediction_performance}{{5.1}{24}{Link Prediction Performance on WN18RR and FB15k-237 Datasets}{table.caption.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Uncertainty Metrics Analysis}{24}{subsection.5.1.2}\protected@file@percent }
+\newlabel{subsec:uncertainty_metrics_analysis}{{5.1.2}{24}{Uncertainty Metrics Analysis}{subsection.5.1.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Regularization Techniques. Here Edge Dropout is denoted as ED and Label Smoothing as LS.}}{25}{table.caption.23}\protected@file@percent }
+\newlabel{tab:uncertainty_metrics_analysis}{{5.2}{25}{Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Regularization Techniques. Here Edge Dropout is denoted as ED and Label Smoothing as LS}{table.caption.23}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Experiment 2: Uncertainty Estimation Methods}{25}{section.5.2}\protected@file@percent }
+\newlabel{sec:experiment_2_uncertainty_estimation_methods}{{5.2}{25}{Experiment 2: Uncertainty Estimation Methods}{section.5.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Link Prediction Performance}{26}{subsection.5.2.1}\protected@file@percent }
+\newlabel{subsec:link_prediction_performance_exp2}{{5.2.1}{26}{Link Prediction Performance}{subsection.5.2.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.3}{\ignorespaces Link prediction performance of Uncertainty Estimation Methods on WN18RR and FB15k-237 Datasets. Here, Left table is for WN18RR and right table is for FB15K-237. The best performing regularized model from Experiment 1 is used as the baseline for comparison. Best performance is highlighted in bold.}}{26}{table.caption.24}\protected@file@percent }
+\newlabel{tab:link_prediction_performance_exp2}{{5.3}{26}{Link prediction performance of Uncertainty Estimation Methods on WN18RR and FB15k-237 Datasets. Here, Left table is for WN18RR and right table is for FB15K-237. The best performing regularized model from Experiment 1 is used as the baseline for comparison. Best performance is highlighted in bold}{table.caption.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Reliability Diagrams}{26}{subsection.5.2.2}\protected@file@percent }
+\newlabel{subsec:reliability_diagrams}{{5.2.2}{26}{Reliability Diagrams}{subsection.5.2.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.4}{\ignorespaces Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Uncertainty Estimation Methods. Here Edge Dropout is denoted as ED and Label Smoothing as LS.}}{27}{table.caption.25}\protected@file@percent }
+\newlabel{tab:uncertainty_metrics_analysis_exp2}{{5.4}{27}{Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Uncertainty Estimation Methods. Here Edge Dropout is denoted as ED and Label Smoothing as LS}{table.caption.25}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Computational Overhead (OPTIONAL)}{27}{subsection.5.2.3}\protected@file@percent }
+\newlabel{subsec:computational_overhead}{{5.2.3}{27}{Computational Overhead (OPTIONAL)}{subsection.5.2.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Experiment 3: Calibration Methods}{27}{section.5.3}\protected@file@percent }
+\newlabel{sec:experiment_3_calibration_methods}{{5.3}{27}{Experiment 3: Calibration Methods}{section.5.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.5}{\ignorespaces Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Uncertainty Estimation Methods. Here Edge Dropout is denoted as ED and Label Smoothing as LS.}}{28}{table.caption.26}\protected@file@percent }
+\newlabel{tab:compare_metrics_exp3}{{5.5}{28}{Uncertainty Metrics Analysis on WN18RR and FB15K-237 Datasets with Different Uncertainty Estimation Methods. Here Edge Dropout is denoted as ED and Label Smoothing as LS}{table.caption.26}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Comparision of Calibration Methods}{28}{subsection.5.3.1}\protected@file@percent }
+\newlabel{subsec:effect_on_link_prediction_performance_exp3}{{5.3.1}{28}{Comparision of Calibration Methods}{subsection.5.3.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.6}{\ignorespaces Link prediction performance of Uncertainty Estimation Methods on WN18RR and FB15K-237}}{29}{table.caption.27}\protected@file@percent }
+\newlabel{tab:reliability_diagram_exp3}{{5.6}{29}{Link prediction performance of Uncertainty Estimation Methods on WN18RR and FB15K-237}{table.caption.27}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Experiment 4: Hybrid Approaches}{29}{section.5.4}\protected@file@percent }
+\newlabel{sec:experiment_4_hybrid_approaches}{{5.4}{29}{Experiment 4: Hybrid Approaches}{section.5.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Quantitative Analysis}{29}{subsection.5.4.1}\protected@file@percent }
+\newlabel{subsec:quantitative_analysis_exp4}{{5.4.1}{29}{Quantitative Analysis}{subsection.5.4.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.7}{\ignorespaces Link prediction performance of Uncertainty Estimation Methods. Here, We measured ECE score with 10 bins to understand the calibration performance of the models. We list ECE score for the uncalibrated model and calibrated models with Temperature scaling, Platt scaling and Isotonic regression.}}{30}{table.caption.28}\protected@file@percent }
+\newlabel{tab:ece_table_exp4}{{5.7}{30}{Link prediction performance of Uncertainty Estimation Methods. Here, We measured ECE score with 10 bins to understand the calibration performance of the models. We list ECE score for the uncalibrated model and calibrated models with Temperature scaling, Platt scaling and Isotonic regression}{table.caption.28}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4.2}Qualitative Analysis}{31}{subsection.5.4.2}\protected@file@percent }
+\newlabel{subsec:qualitative_analysis_exp4}{{5.4.2}{31}{Qualitative Analysis}{subsection.5.4.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Reliability Curves on WN18RR Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods.}}{31}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:compare_metrics_wn_exp4}{{5.1}{31}{Reliability Curves on WN18RR Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods}{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Reliability Curves on FB15K-237 Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods.}}{32}{figure.caption.30}\protected@file@percent }
+\newlabel{fig:compare_metrics_fb_exp4}{{5.2}{32}{Reliability Curves on FB15K-237 Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods}{figure.caption.30}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{33}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:discussion}{{6}{35}{Discussion}{chapter.6}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Interpretation of Results}{35}{section.6.1}\protected@file@percent }
-\newlabel{sec:interpretation_of_results}{{6.1}{35}{Interpretation of Results}{section.6.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Limitations}{35}{section.6.2}\protected@file@percent }
-\newlabel{sec:limitations}{{6.2}{35}{Limitations}{section.6.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Implications}{35}{section.6.3}\protected@file@percent }
-\newlabel{sec:implications}{{6.3}{35}{Implications}{section.6.3}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{37}{chapter.7}\protected@file@percent }
+\newlabel{chap:discussion}{{6}{33}{Discussion}{chapter.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Interpretation of Results}{33}{section.6.1}\protected@file@percent }
+\newlabel{sec:interpretation_of_results}{{6.1}{33}{Interpretation of Results}{section.6.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Limitations}{33}{section.6.2}\protected@file@percent }
+\newlabel{sec:limitations}{{6.2}{33}{Limitations}{section.6.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Implications}{33}{section.6.3}\protected@file@percent }
+\newlabel{sec:implications}{{6.3}{33}{Implications}{section.6.3}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{35}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:conclusion}{{7}{37}{Conclusion and Future Work}{chapter.7}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix}{39}{appendix.A}\protected@file@percent }
+\newlabel{chap:conclusion}{{7}{35}{Conclusion and Future Work}{chapter.7}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Appendix}{37}{appendix.A}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:appendix}{{A}{39}{Appendix}{appendix.A}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}Hyperparameter Settings}{39}{section.A.1}\protected@file@percent }
-\newlabel{sec:hyperparameter_settings}{{A.1}{39}{Hyperparameter Settings}{section.A.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Hyperparameter Settings}}{39}{table.caption.32}\protected@file@percent }
-\newlabel{fig:appendix_hyperparameters}{{A.1}{39}{Hyperparameter Settings}{table.caption.32}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.2}List of acronyms}{40}{section.A.2}\protected@file@percent }
-\newlabel{sec:acronym}{{A.2}{40}{List of acronyms}{section.A.2}{}}
+\newlabel{chap:appendix}{{A}{37}{Appendix}{appendix.A}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}Hyperparameter Settings}{37}{section.A.1}\protected@file@percent }
+\newlabel{sec:hyperparameter_settings}{{A.1}{37}{Hyperparameter Settings}{section.A.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Hyperparameter Settings}}{37}{table.caption.31}\protected@file@percent }
+\newlabel{fig:appendix_hyperparameters}{{A.1}{37}{Hyperparameter Settings}{table.caption.31}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.2}List of acronyms}{38}{section.A.2}\protected@file@percent }
+\newlabel{sec:acronym}{{A.2}{38}{List of acronyms}{section.A.2}{}}
 \newacro{PCMCIA}[\AC@hyperlink{PCMCIA}{PCMCIA}]{Personal Computer Memory Card International Association}
 \newacro{DuT}[\AC@hyperlink{DuT}{DuT}]{Device under Test}
 \babel@aux{english}{}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{41}{appendix*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{39}{appendix*.32}\protected@file@percent }
 \gdef\svg@ink@ver@settings{{\m@ne }{inkscape}{\m@ne }}
-\abx@aux@read@bbl@mdfivesum{1658A677094A1F0B9CDC4AE0E577F9FA}
+\abx@aux@read@bbl@mdfivesum{12C1E7D8A9683ECA6EDC189108523C8D}
 \abx@aux@defaultrefcontext{0}{kipf2017semisupervisedclassificationgraphconvolutional}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{schlichtkrull2017modelingrelationaldatagraph}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{Fey/etal/2025}{none/global//global/global/global}
@@ -390,7 +383,6 @@
 \abx@aux@defaultrefcontext{0}{gal2016dropoutbayesianapproximationrepresenting}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{lakshminarayanan2017simplescalablepredictiveuncertainty}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{platt1999probabilistic}{none/global//global/global/global}
-\abx@aux@defaultrefcontext{0}{joy2022sampledependentadaptivetemperaturescaling}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{guo2017calibrationmodernneuralnetworks}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{zadrozny2002transformingclassifierscores}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{zadrozny2001obtaining}{none/global//global/global/global}
@@ -419,7 +411,6 @@
 \abx@aux@defaultlabelprefix{0}{gal2016dropoutbayesianapproximationrepresenting}{}
 \abx@aux@defaultlabelprefix{0}{lakshminarayanan2017simplescalablepredictiveuncertainty}{}
 \abx@aux@defaultlabelprefix{0}{platt1999probabilistic}{}
-\abx@aux@defaultlabelprefix{0}{joy2022sampledependentadaptivetemperaturescaling}{}
 \abx@aux@defaultlabelprefix{0}{guo2017calibrationmodernneuralnetworks}{}
 \abx@aux@defaultlabelprefix{0}{zadrozny2002transformingclassifierscores}{}
 \abx@aux@defaultlabelprefix{0}{zadrozny2001obtaining}{}
@@ -430,4 +421,4 @@
 \abx@aux@defaultlabelprefix{0}{nixon2019measuring}{}
 \abx@aux@defaultlabelprefix{0}{glenn1950verification}{}
 \abx@aux@defaultlabelprefix{0}{memariani2025linkpredictionnontargeted}{}
-\gdef \@abspage@last{59}
+\gdef \@abspage@last{57}

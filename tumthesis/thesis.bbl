@@ -839,55 +839,6 @@
     \field{year}{1999}
   \endentry
 
-  \entry{joy2022sampledependentadaptivetemperaturescaling}{misc}{}{}
-    \name{author}{5}{}{%
-      {{hash=JT}{%
-         family={Joy},
-         familyi={J\bibinitperiod},
-         given={Tom},
-         giveni={T\bibinitperiod},
-      }}%
-      {{hash=PF}{%
-         family={Pinto},
-         familyi={P\bibinitperiod},
-         given={Francesco},
-         giveni={F\bibinitperiod},
-      }}%
-      {{hash=LSN}{%
-         family={Lim},
-         familyi={L\bibinitperiod},
-         given={Ser-Nam},
-         giveni={S\bibinithyphendelim N\bibinitperiod},
-      }}%
-      {{hash=TPHS}{%
-         family={Torr},
-         familyi={T\bibinitperiod},
-         given={Philip H.\bibnamedelima S.},
-         giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim S\bibinitperiod},
-      }}%
-      {{hash=DPK}{%
-         family={Dokania},
-         familyi={D\bibinitperiod},
-         given={Puneet\bibnamedelima K.},
-         giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{JT+1}
-    \strng{fullhash}{JTPFLSNTPHSDPK1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \verb{eprint}
-    \verb 2207.06211
-    \endverb
-    \field{title}{Sample-dependent Adaptive Temperature Scaling for Improved Calibration}
-    \verb{url}
-    \verb https://arxiv.org/abs/2207.06211
-    \endverb
-    \field{eprinttype}{arXiv}
-    \field{eprintclass}{cs.CV}
-    \field{year}{2022}
-  \endentry
-
   \entry{guo2017calibrationmodernneuralnetworks}{misc}{}{}
     \name{author}{4}{}{%
       {{hash=GC}{%

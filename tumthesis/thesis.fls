@@ -719,12 +719,6 @@ INPUT ./figures/experiment/model.pdf
 INPUT ./figures/experiment/model.pdf
 INPUT ./figures/experiment/model.pdf
 INPUT ./figures/experiment/model.pdf
-INPUT ./figures/experiment/idts_parameter.tex
-INPUT ./figures/experiment/idts_parameter.tex
-INPUT ./figures/experiment/idts_parameter.pdf
-INPUT ./figures/experiment/idts_parameter.pdf
-INPUT ./figures/experiment/idts_parameter.pdf
-INPUT ./figures/experiment/idts_parameter.pdf
 INPUT ./include/results.tex
 INPUT ./include/results.tex
 INPUT ./include/results.tex

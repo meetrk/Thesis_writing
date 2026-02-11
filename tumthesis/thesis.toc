@@ -32,53 +32,53 @@
 \contentsline {subsection}{\numberline {3.3.2}Deep Ensembles}{12}{subsection.3.3.2}%
 \contentsline {section}{\numberline {3.4}Calibration Techniques}{13}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Parameteric Approaches}{13}{subsection.3.4.1}%
-\contentsline {subsubsection}{Scalar Temperature Scaling}{13}{subsubsection*.11}%
-\contentsline {subsubsection}{Input Dependent Temperature Scaling (IDTS)}{13}{subsubsection*.12}%
+\contentsline {subsubsection}{Platt Scaling}{13}{subsubsection*.11}%
+\contentsline {subsubsection}{Scalar Temperature Scaling}{13}{subsubsection*.12}%
 \contentsline {subsection}{\numberline {3.4.2}Non-Parametric Approaches}{14}{subsection.3.4.2}%
 \contentsline {subsubsection}{Isotonic Regression}{14}{subsubsection*.13}%
-\contentsline {chapter}{\numberline {4}Experiment}{17}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Dataset Description}{17}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Dataset Characteristics}{17}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Sparsity Analysis (OPTIONAL)}{18}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Experimental Setup}{18}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Model Settings}{18}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Hardware and Software Used}{19}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Training Protocols}{19}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}Evaluation Metrics}{19}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Link Prediction Metrics}{19}{subsection.4.3.1}%
-\contentsline {subsubsection}{Mean Rank (MR)}{19}{subsubsection*.15}%
-\contentsline {subsubsection}{Mean Reciprocal Rank}{20}{subsubsection*.16}%
-\contentsline {subsubsection}{Hits@K}{20}{subsubsection*.17}%
-\contentsline {subsection}{\numberline {4.3.2}Uncertainty Estimation Metrics}{20}{subsection.4.3.2}%
-\contentsline {subsubsection}{Expected Calibration Error (ECE)}{21}{subsubsection*.18}%
-\contentsline {subsubsection}{Adaptive Calibration Error (ACE)}{21}{subsubsection*.19}%
-\contentsline {subsubsection}{Brier Score}{22}{subsubsection*.20}%
-\contentsline {subsubsection}{Reliability Diagram}{22}{subsubsection*.21}%
-\contentsline {section}{\numberline {4.4}Experimental Protocols}{22}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Experiment 1: Regularization Impact}{23}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Experiment 2: Uncertainty Estimation Methods}{23}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Experiment 3: Calibration Methods}{23}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}Experiment 4: Hybrid Approaches}{24}{subsection.4.4.4}%
-\contentsline {chapter}{\numberline {5}Results}{25}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Experiment 1: Regularization Impact}{25}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Link Prediction Performance}{25}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Uncertainty Metrics Analysis}{26}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Experiment 2: Uncertainty Estimation Methods}{27}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Link Prediction Performance}{28}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Reliability Diagrams}{28}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Computational Overhead (OPTIONAL)}{29}{subsection.5.2.3}%
-\contentsline {section}{\numberline {5.3}Experiment 3: Calibration Methods}{29}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Comparision of Calibration Methods}{30}{subsection.5.3.1}%
-\contentsline {section}{\numberline {5.4}Experiment 4: Hybrid Approaches}{31}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Quantitative Analysis}{31}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Qualitative Analysis}{33}{subsection.5.4.2}%
-\contentsline {chapter}{\numberline {6}Discussion}{35}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Interpretation of Results}{35}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Limitations}{35}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Implications}{35}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{37}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Appendix}{39}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Hyperparameter Settings}{39}{section.A.1}%
-\contentsline {section}{\numberline {A.2}List of acronyms}{40}{section.A.2}%
+\contentsline {chapter}{\numberline {4}Experiment}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Dataset Description}{15}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Dataset Characteristics}{15}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Sparsity Analysis (OPTIONAL)}{16}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Experimental Setup}{16}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Model Settings}{16}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Hardware and Software Used}{17}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Training Protocols}{17}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Evaluation Metrics}{17}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Link Prediction Metrics}{17}{subsection.4.3.1}%
+\contentsline {subsubsection}{Mean Rank (MR)}{17}{subsubsection*.15}%
+\contentsline {subsubsection}{Mean Reciprocal Rank}{18}{subsubsection*.16}%
+\contentsline {subsubsection}{Hits@K}{18}{subsubsection*.17}%
+\contentsline {subsection}{\numberline {4.3.2}Uncertainty Estimation Metrics}{18}{subsection.4.3.2}%
+\contentsline {subsubsection}{Expected Calibration Error (ECE)}{19}{subsubsection*.18}%
+\contentsline {subsubsection}{Adaptive Calibration Error (ACE)}{19}{subsubsection*.19}%
+\contentsline {subsubsection}{Brier Score}{20}{subsubsection*.20}%
+\contentsline {subsubsection}{Reliability Diagram}{20}{subsubsection*.21}%
+\contentsline {section}{\numberline {4.4}Experimental Protocols}{20}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Experiment 1: Regularization Impact}{21}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Experiment 2: Uncertainty Estimation Methods}{21}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Experiment 3: Calibration Methods}{21}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Experiment 4: Hybrid Approaches}{22}{subsection.4.4.4}%
+\contentsline {chapter}{\numberline {5}Results}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Experiment 1: Regularization Impact}{23}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Link Prediction Performance}{23}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Uncertainty Metrics Analysis}{24}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Experiment 2: Uncertainty Estimation Methods}{25}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Link Prediction Performance}{26}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Reliability Diagrams}{26}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Computational Overhead (OPTIONAL)}{27}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Experiment 3: Calibration Methods}{27}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Comparision of Calibration Methods}{28}{subsection.5.3.1}%
+\contentsline {section}{\numberline {5.4}Experiment 4: Hybrid Approaches}{29}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Quantitative Analysis}{29}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Qualitative Analysis}{31}{subsection.5.4.2}%
+\contentsline {chapter}{\numberline {6}Discussion}{33}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Interpretation of Results}{33}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Limitations}{33}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Implications}{33}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Conclusion and Future Work}{35}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Appendix}{37}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Hyperparameter Settings}{37}{section.A.1}%
+\contentsline {section}{\numberline {A.2}List of acronyms}{38}{section.A.2}%
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{Bibliography}{41}{appendix*.33}%
+\contentsline {chapter}{Bibliography}{39}{appendix*.32}%

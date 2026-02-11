@@ -12,11 +12,10 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Figure representing Autoencoder Architecture}}{8}{figure.caption.5}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Figure representing Autoencoder Architecture}}{10}{figure.caption.6}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Model Configuration}}{18}{figure.caption.14}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Input-Dependent Temperature Scaling Network Architecture}}{24}{figure.caption.22}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Model Configuration}}{16}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Reliability Curves on WN18RR Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods.}}{33}{figure.caption.30}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Reliability Curves on FB15K-237 Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods.}}{34}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Reliability Curves on WN18RR Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods.}}{31}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Reliability Curves on FB15K-237 Dataset with Different Calibration Methods applied to Monte Carlo Dropout and Deep Ensemble Uncertainty Estimation Methods.}}{32}{figure.caption.30}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

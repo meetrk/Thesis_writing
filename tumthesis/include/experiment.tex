@@ -163,21 +163,13 @@ We conduct a controlled comparison by training the base model, base model with m
 \subsection{Experiment 3: Calibration Methods}
 \label{subsec:calibration_methods}
 \textbf{Objective:}
-To evaluate the effectiveness of post-hoc calibration methods, \nameref{subsubsec:scalar_temperature_scaling}, \nameref{subsubsec:input_dependent_temperature_scaling} and \nameref{subsubsec:isotonic_regression}, on improving the calibration of uncertainty estimates in our link prediction model. 
+To evaluate the effectiveness of post-hoc calibration methods, \nameref{subsubsec:scalar_temperature_scaling}, \nameref{subsubsec:platt_scaling} and \nameref{subsubsec:isotonic_regression}, on improving the calibration of uncertainty estimates in our link prediction model. 
 \newline
 \textbf{Hypothesis:}
 We hypothesize that applying post-hoc calibration methods will lead to better calibrated uncertainty estimates, as measured by reduced ECE and ACE scores, without significantly compromising link prediction performance.
 \newline
 \textbf{Methodology:}
-We will apply each calibration method to the baseline model and the best model from the \ref{subsec:regularization_impact} experiment. As this is a post-hoc technique, we will not retrain the models but will instead used validation set to learn calibration parameters. For temperature scaling, we will initialise the temperature parameter to 1.0, for input-dependent temperature scaling, we will use a small neural network with configuration as fig. \ref{fig:idts_parameter}. For Isotonic Regression, we will use sklearn's implementation with default parameters. We will then evaluate the calibrated models on the test set, measuring both link prediction and uncertainty estimation metrics to assess the impact of calibration.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{figures/experiment/idts_parameter}
-    \caption{Input-Dependent Temperature Scaling Network Architecture}
-    \label{fig:idts_parameter}
-\end{figure}
-
+We will apply each calibration method to the baseline model and the best model from the \ref{subsec:regularization_impact} experiment. As this is a post-hoc technique, we will not retrain the models but will instead used validation set to learn calibration parameters. For temperature scaling, we will initialise the temperature parameter to 1.0, for Platt scaling, we will use 2 parameters A and B. For Isotonic Regression, we will use sklearn's implementation with default parameters. We will then evaluate the calibrated models on the test set, measuring both link prediction and uncertainty estimation metrics to assess the impact of calibration.
 
 \subsection{Experiment 4: Hybrid Approaches}
 \label{subsec:hybrid_approaches}
@@ -189,4 +181,4 @@ To evaluate the combination of uncertainty estimation methods from \ref{subsec:u
 We hypothesize that combining uncertainty estimation methods with calibration techniques will yield more reliable uncertainty estimates as compared to individual methods alone. The lower ECE and ACE scores are expected, along with maintained or improved link prediction metrics.
 \newline
 \textbf{Methodology:}
-We will use the model from \ref{subsec:uncertainty_estimation_methods} and apply the calibration methods from \ref{subsec:calibration_methods}. We will evaluate MonteCarlo Dropout + Temperature Scaling, MonteCarlo Dropout + Input-Dependent Temperature Scaling and Monte Carlo Dropout + Isotonic Regression \& Deep Ensembles + Temperature Scaling, Deep Ensembles + Input-Dependent Temperature Scaling and Deep Ensembles + Isotonic Regression. We will assess the performance of these hybrid models on the test set using the same metrics as before to determine the effectiveness of combining these techniques.
+We will use the model from \ref{subsec:uncertainty_estimation_methods} and apply the calibration methods from \ref{subsec:calibration_methods}. We will evaluate MonteCarlo Dropout + Temperature Scaling, MonteCarlo Dropout + Platt Scaling and Monte Carlo Dropout + Isotonic Regression \& Deep Ensembles + Temperature Scaling, Deep Ensembles + Platt Scaling and Deep Ensembles + Isotonic Regression. We will assess the performance of these hybrid models on the test set using the same metrics as before to determine the effectiveness of combining these techniques.
